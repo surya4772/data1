@@ -1,0 +1,217 @@
+Started by user [8mha:////4DnklqZ3UXiUKxo+R2fxZYS3gCTrm4aBUyBmLGs0b6mNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZu/dLi1CL9xJTczDwAEmIUecAAAAA=[0mAdmin User
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] node
+Running on [8mha:////4IpUL76Inv85u0oD3kLw01+UpqW7/5TBe5hRE114sjG2AAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Svn Checkout)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] checkout
+Updating http://52.66.103.232/svn/gameoflife at revision '2019-12-10T07:09:26.574 +0000' --quiet
+Using sole credentials admin/****** (svn) in realm ‘<http://52.66.103.232:80> Forbidden’
+At revision 2
+
+No changes for http://52.66.103.232/svn/gameoflife since the previous build
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Maven Execution)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] withMaven
+[withMaven] Options: []
+[withMaven] Available options: 
+[withMaven] using JDK installation jdk8
+[withMaven] using Maven installation 'Maven'
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] sh
+[workspace] Running shell script
++ mvn sonar:sonar -Dsonar.host.url=http://52.66.103.232/sonar -Dsonar.login=da3ba73cd77ca3162cf3523489c60f3f9a634ba0
+----- withMaven Wrapper script -----
+Picked up JAVA_TOOL_OPTIONS: -Dmaven.ext.class.path="/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/withMavenc57f5cca/pipeline-maven-spy.jar" -Dorg.jenkinsci.plugins.pipeline.maven.reportsFolder="/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/withMavenc57f5cca" 
+Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 13:51:28+0000)
+Maven home: /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven
+Java version: 1.8.0_221, vendor: Oracle Corporation
+Java home: /var/jenkins_home/tools/hudson.model.JDK/jdk8/jre
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "4.4.0-1099-aws", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/2.2/maven-help-plugin-2.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/2.2/maven-help-plugin-2.2.pom (9 KB at 19.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/2.2/maven-help-plugin-2.2.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/2.2/maven-help-plugin-2.2.jar (67 KB at 139.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.pom (8 KB at 29.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/28/mojo-parent-28.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/28/mojo-parent-28.pom (26 KB at 106.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.jar (34 KB at 136.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.pom (7 KB at 27.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/33/mojo-parent-33.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/33/mojo-parent-33.pom (26 KB at 106.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom (5 KB at 17.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.jar (47 KB at 191.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.pom (7 KB at 28.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.jar (34 KB at 138.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.4/maven-site-plugin-3.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.4/maven-site-plugin-3.4.pom (20 KB at 81.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.4/maven-site-plugin-3.4.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.4/maven-site-plugin-3.4.jar (125 KB at 347.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jooq/jooq-codegen-maven/3.7.1/jooq-codegen-maven-3.7.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/jooq/jooq-codegen-maven/3.7.1/jooq-codegen-maven-3.7.1.pom (4 KB at 8.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jooq/jooq-parent/3.7.1/jooq-parent-3.7.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/jooq/jooq-parent/3.7.1/jooq-parent-3.7.1.pom (19 KB at 11.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jooq/jooq-codegen-maven/3.7.1/jooq-codegen-maven-3.7.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/jooq/jooq-codegen-maven/3.7.1/jooq-codegen-maven-3.7.1.jar (15 KB at 33.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.pom (5 KB at 16.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.jar (31 KB at 128.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.pom (18 KB at 70.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.5.1/maven-assembly-plugin-2.5.1.jar (228 KB at 928.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom (10 KB at 41.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar (42 KB at 172.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.10/maven-dependency-plugin-2.10.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.10/maven-dependency-plugin-2.10.pom (12 KB at 48.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.10/maven-dependency-plugin-2.10.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.10/maven-dependency-plugin-2.10.jar (157 KB at 600.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.0/maven-release-plugin-2.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.0/maven-release-plugin-2.0.pom (8 KB at 31.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/release/maven-release/2.0/maven-release-2.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/release/maven-release/2.0/maven-release-2.0.pom (7 KB at 27.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.0/maven-release-plugin-2.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.0/maven-release-plugin-2.0.jar (38 KB at 156.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.9/maven-eclipse-plugin-2.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.9/maven-eclipse-plugin-2.9.pom (15 KB at 61.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.9/maven-eclipse-plugin-2.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.9/maven-eclipse-plugin-2.9.jar (213 KB at 871.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18/maven-failsafe-plugin-2.18.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18/maven-failsafe-plugin-2.18.pom (9 KB at 36.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.18/surefire-2.18.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.18/surefire-2.18.pom (17 KB at 67.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 KB at 151.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 KB at 62.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18/maven-failsafe-plugin-2.18.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18/maven-failsafe-plugin-2.18.jar (80 KB at 327.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.5/maven-jar-plugin-2.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.5/maven-jar-plugin-2.5.pom (8 KB at 29.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.5/maven-jar-plugin-2.5.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.5/maven-jar-plugin-2.5.jar (25 KB at 101.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.10.1/maven-javadoc-plugin-2.10.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.10.1/maven-javadoc-plugin-2.10.1.pom (17 KB at 69.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.10.1/maven-javadoc-plugin-2.10.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/2.10.1/maven-javadoc-plugin-2.10.1.jar (401 KB at 1594.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.3/maven-shade-plugin-2.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.3/maven-shade-plugin-2.3.pom (8 KB at 29.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.3/maven-shade-plugin-2.3.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.3/maven-shade-plugin-2.3.jar (99 KB at 410.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.4/maven-source-plugin-2.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.4/maven-source-plugin-2.4.pom (7 KB at 27.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.4/maven-source-plugin-2.4.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.4/maven-source-plugin-2.4.jar (31 KB at 127.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.3.2/exec-maven-plugin-1.3.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.3.2/exec-maven-plugin-1.3.2.pom (12 KB at 46.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.3.2/exec-maven-plugin-1.3.2.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/1.3.2/exec-maven-plugin-1.3.2.jar (46 KB at 188.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.2/versions-maven-plugin-2.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.2/versions-maven-plugin-2.2.pom (16 KB at 64.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom (24 KB at 99.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.2/versions-maven-plugin-2.2.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.2/versions-maven-plugin-2.2.jar (251 KB at 1021.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/pl/project13/maven/git-commit-id-plugin/2.1.11/git-commit-id-plugin-2.1.11.pom
+Downloaded: http://repo.maven.apache.org/maven2/pl/project13/maven/git-commit-id-plugin/2.1.11/git-commit-id-plugin-2.1.11.pom (10 KB at 38.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom (5 KB at 19.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/pl/project13/maven/git-commit-id-plugin/2.1.11/git-commit-id-plugin-2.1.11.jar
+Downloaded: http://repo.maven.apache.org/maven2/pl/project13/maven/git-commit-id-plugin/2.1.11/git-commit-id-plugin-2.1.11.jar (61 KB at 249.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 KB at 55.6 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 KB at 42.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/sonar-maven-plugin/maven-metadata.xml
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/sonar-maven-plugin/maven-metadata.xml (2 KB at 4.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/sonar-maven-plugin/3.7.0.1746/sonar-maven-plugin-3.7.0.1746.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/sonar-maven-plugin/3.7.0.1746/sonar-maven-plugin-3.7.0.1746.pom (2 KB at 4.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/40/mojo-parent-40.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/40/mojo-parent-40.pom (33 KB at 137.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/maven/sonar-maven-plugin/3.7.0.1746/sonar-maven-plugin-3.7.0.1746.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/maven/sonar-maven-plugin/3.7.0.1746/sonar-maven-plugin-3.7.0.1746.pom (10 KB at 38.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonarsource/parent/parent/52/parent-52.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonarsource/parent/parent/52/parent-52.pom (31 KB at 128.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/maven/sonar-maven-plugin/3.7.0.1746/sonar-maven-plugin-3.7.0.1746.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/maven/sonar-maven-plugin/3.7.0.1746/sonar-maven-plugin-3.7.0.1746.jar (43 KB at 178.8 KB/sec)
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building gameoflife 0.0.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- sonar-maven-plugin:3.7.0.1746:sonar (default-cli) @ gameoflife ---
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.4/plexus-sec-dispatcher-1.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.4/plexus-sec-dispatcher-1.4.pom (3 KB at 12.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.pom (6 KB at 21.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/5.1/plexus-5.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/5.1/plexus-5.1.pom (22 KB at 92.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/api/sonar-scanner-api/2.14.0.2002/sonar-scanner-api-2.14.0.2002.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/api/sonar-scanner-api/2.14.0.2002/sonar-scanner-api-2.14.0.2002.pom (6 KB at 20.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/api/sonar-scanner-api-parent/2.14.0.2002/sonar-scanner-api-parent-2.14.0.2002.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/api/sonar-scanner-api-parent/2.14.0.2002/sonar-scanner-api-parent-2.14.0.2002.pom (5 KB at 19.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom (18 KB at 70.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom (31 KB at 127.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.4/plexus-sec-dispatcher-1.4.jar
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.jar
+Downloading: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/api/sonar-scanner-api/2.14.0.2002/sonar-scanner-api-2.14.0.2002.jar
+Downloading: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.4/plexus-sec-dispatcher-1.4.jar (28 KB at 113.2 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.jar (256 KB at 1056.5 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar (278 KB at 330.0 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/sonarsource/scanner/api/sonar-scanner-api/2.14.0.2002/sonar-scanner-api-2.14.0.2002.jar (611 KB at 634.2 KB/sec)
+[INFO] User cache: /var/jenkins_home/.sonar/cache
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] SonarQube server [http://52.66.103.232/sonar] can not be reached
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 20.667s
+[INFO] Finished at: Tue Dec 10 07:09:49 UTC 2019
+[INFO] Final Memory: 19M/235M
+[INFO] ------------------------------------------------------------------------
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar (default-cli) on project gameoflife: Unable to execute SonarQube: Fail to get bootstrap index from server: Status returned by url [http://52.66.103.232/sonar/batch/index] is not valid: [401] -> [Help 1]
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4JOSnVqr3aV9xt9dK4O2ctbA1F7ycyEPgk9BEPK8qQl3AAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // withMaven
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Nexus Upload)
+Stage 'Nexus Upload' skipped due to earlier failure(s)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // node
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE

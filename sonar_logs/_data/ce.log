@@ -1,0 +1,35 @@
+2020.04.13 07:10:37 INFO  ce[][o.s.p.ProcessEntryPoint] Starting ce
+2020.04.13 07:10:37 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2020.04.13 07:10:37 INFO  ce[][o.e.p.PluginsService] no modules loaded
+2020.04.13 07:10:37 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2020.04.13 07:10:37 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2020.04.13 07:10:37 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2020.04.13 07:10:37 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2020.04.13 07:10:39 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2020.04.13 07:10:39 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2020.04.13 07:10:41 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2020.04.13 07:10:41 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin SonarPython [python]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin CSS [css]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin PMD [pmd]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Motion Chart [motionchart]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin SonarQube :: Plugins :: SCM :: SVN [scmsvn]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin JavaScript [javascript]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Tab Metrics [tabmetrics]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Findbugs [findbugs]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin SonarC# [csharp]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin SonarJava [java]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Groovy [groovy]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin LDAP [ldap]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Web [web]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin XML [xml]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Flex [flex]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin SonarQube :: Plugins :: SCM :: Git [scmgit]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Pitest [pitest]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin SonarPHP [php]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Timeline [timeline]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin SonarTS [typescript]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Build Breaker [buildbreaker]
+2020.04.13 07:10:42 INFO  ce[][o.s.c.c.CePluginRepository] Loaded plugin Checkstyle [checkstyle]
+2020.04.13 07:10:43 INFO  ce[][o.s.c.q.PurgeCeActivities] Delete the Compute Engine tasks created before Wed Oct 16 07:10:43 UTC 2019
+2020.04.13 07:10:43 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is operational

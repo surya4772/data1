@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>PROJECT_NAME</name>
+                    <defaultValue/>
+                    <description>The name of the project to be generated.</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.BooleanParameterDefinition>
+                    <name>CUSTOM_SCM_NAMESPACE</name>
+                    <defaultValue>false</defaultValue>
+                    <description>Enables the option to provide a custom project namespace for your SCM provider</description>
+                </hudson.model.BooleanParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>ADMIN_USERS</name>
+                    <defaultValue/>
+                    <description>The list of users' email addresses that should be setup initially as admin. They will have full access to all jobs within the project.</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>DEVELOPER_USERS</name>
+                    <defaultValue/>
+                    <description>The list of users' email addresses that should be setup initially as developers. They will have full access to all non-admin jobs within the project.</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>VIEWER_USERS</name>
+                    <defaultValue/>
+                    <description>The list of users' email addresses that should be setup initially as viewers. They will have read-only access to all non-admin jobs within the project.</description>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>#!/bin/bash -e
+
+# Validate Variables
+pattern=" |'"
+if [[ "${PROJECT_NAME}" =~ ${pattern} ]]; then
+	echo "PROJECT_NAME contains a space, please replace with an underscore - exiting..."
+	exit 1
+fi</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+            <command>set -e
+# LDAP
+${WORKSPACE}/common/ldap/generate_role.sh -r "admin" -n "${WORKSPACE_NAME}.${PROJECT_NAME}" -d "${DC}" -g "${OU_GROUPS}" -p "${OU_PEOPLE}" -u "${ADMIN_USERS}" -f "${OUTPUT_FILE}" -w "${WORKSPACE}"
+${WORKSPACE}/common/ldap/generate_role.sh -r "developer" -n "${WORKSPACE_NAME}.${PROJECT_NAME}" -d "${DC}" -g "${OU_GROUPS}" -p "${OU_PEOPLE}" -u "${DEVELOPER_USERS}" -f "${OUTPUT_FILE}" -w "${WORKSPACE}"
+${WORKSPACE}/common/ldap/generate_role.sh -r "viewer" -n "${WORKSPACE_NAME}.${PROJECT_NAME}" -d "${DC}" -g "${OU_GROUPS}" -p "${OU_PEOPLE}" -u "${VIEWER_USERS}" -f "${OUTPUT_FILE}" -w "${WORKSPACE}"
+
+set +e
+${WORKSPACE}/common/ldap/load_ldif.sh -h ldap -u "${LDAP_ADMIN_USER}" -p "${LDAP_ADMIN_PASSWORD}" -b "${DC}" -f "${OUTPUT_FILE}"
+set -e
+
+ADMIN_USERS=$(echo ${ADMIN_USERS} | tr ',' ' ')
+DEVELOPER_USERS=$(echo ${DEVELOPER_USERS} | tr ',' ' ')
+VIEWER_USERS=$(echo ${VIEWER_USERS} | tr ',' ' ')
+
+# Gerrit
+for user in $ADMIN_USERS $DEVELOPER_USERS $VIEWER_USERS
+do
+        username=$(echo ${user} | cut -d'@' -f1)
+        ${WORKSPACE}/common/gerrit/create_user.sh -g http://gerrit:8080/gerrit -u "${username}" -p "${username}"
+done</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+            <command>#!/bin/bash -ex
+# Gerrit
+source ${WORKSPACE}/projects/gerrit/configure.sh
+# Generate second permission repo with enabled code-review
+source ${WORKSPACE}/projects/gerrit/configure.sh -r permissions-with-review</command>
+        </hudson.tasks.Shell>
+        <javaposse.jobdsl.plugin.ExecuteDslScripts>
+            <targets>projects/jobs/**/*.groovy</targets>
+            <usingScriptText>false</usingScriptText>
+            <scriptText/>
+            <ignoreExisting>false</ignoreExisting>
+            <removedJobAction>IGNORE</removedJobAction>
+            <removedViewAction>IGNORE</removedViewAction>
+            <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+            <additionalClasspath/>
+        </javaposse.jobdsl.plugin.ExecuteDslScripts>
+        <hudson.plugins.groovy.SystemGroovy>
+            <bindings/>
+            <classpath/>
+            <scriptSource class="hudson.plugins.groovy.FileScriptSource">
+                <scriptFile>${WORKSPACE}/projects/groovy/acl_admin.groovy</scriptFile>
+            </scriptSource>
+        </hudson.plugins.groovy.SystemGroovy>
+        <hudson.plugins.groovy.SystemGroovy>
+            <bindings/>
+            <classpath/>
+            <scriptSource class="hudson.plugins.groovy.FileScriptSource">
+                <scriptFile>${WORKSPACE}/projects/groovy/acl_developer.groovy</scriptFile>
+            </scriptSource>
+        </hudson.plugins.groovy.SystemGroovy>
+        <hudson.plugins.groovy.SystemGroovy>
+            <bindings/>
+            <classpath/>
+            <scriptSource class="hudson.plugins.groovy.FileScriptSource">
+                <scriptFile>${WORKSPACE}/projects/groovy/acl_viewer.groovy</scriptFile>
+            </scriptSource>
+        </hudson.plugins.groovy.SystemGroovy>
+    </builders>
+    <publishers/>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <EnvInjectPasswordWrapper>
+            <injectGlobalPasswords>true</injectGlobalPasswords>
+            <maskPasswordParameters>true</maskPasswordParameters>
+            <passwordEntries/>
+        </EnvInjectPasswordWrapper>
+        <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+        <EnvInjectBuildWrapper>
+            <info>
+                <propertiesContent>DC=dc=ldap,dc=example,dc=com
+OU_GROUPS=ou=groups
+OU_PEOPLE=ou=people
+OUTPUT_FILE=output.ldif</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+        </EnvInjectBuildWrapper>
+        <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+            <bindings>
+                <org.jenkinsci.plugins.credentialsbinding.impl.UsernamePasswordMultiBinding>
+                    <credentialsId>adop-ldap-admin</credentialsId>
+                    <usernameVariable>LDAP_ADMIN_USER</usernameVariable>
+                    <passwordVariable>LDAP_ADMIN_PASSWORD</passwordVariable>
+                </org.jenkinsci.plugins.credentialsbinding.impl.UsernamePasswordMultiBinding>
+            </bindings>
+        </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+        <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+            <user>adop-jenkins-master</user>
+        </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    </buildWrappers>
+    <assignedNode>ldap</assignedNode>
+    <scm class="hudson.plugins.git.GitSCM">
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <name>origin</name>
+                <url>ssh://jenkins@gerrit:29418/platform-management</url>
+                <credentialsId>adop-jenkins-master</credentialsId>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>${ADOP_PLATFORM_MANAGEMENT_VERSION}</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <configVersion>2</configVersion>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <authorOrCommitter>false</authorOrCommitter>
+        <clean>false</clean>
+        <wipeOutWorkspace>false</wipeOutWorkspace>
+        <pruneBranches>false</pruneBranches>
+        <remotePoll>false</remotePoll>
+        <ignoreNotifyCommit>false</ignoreNotifyCommit>
+        <gitTool>Default</gitTool>
+        <skipTag>true</skipTag>
+    </scm>
+</project>

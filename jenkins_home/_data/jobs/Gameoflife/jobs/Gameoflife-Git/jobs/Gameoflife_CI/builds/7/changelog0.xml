@@ -1,0 +1,11 @@
+commit df4b827000abefbed3a292487e05730b935f8dda
+tree 510e7e3c3929091dc949b65c85c6840782c05370
+parent dc03c725202d75e4166d449839c3f84669be59e1
+author admin <admin@ldap.example.com> 2019-12-10 09:11:34 +0000
+committer admin <admin@ldap.example.com> 2019-12-10 09:11:34 +0000
+
+    Update pom.xml
+
+
+
+:100644 100644 68db751e1c90b3391c94ac26a49a7225c0a9b0d2 d8000c55f7e07129201df8a52a7f4d6e2c0d5af0 M	pom.xml

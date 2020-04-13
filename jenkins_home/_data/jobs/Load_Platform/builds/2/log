@@ -1,0 +1,138 @@
+Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+[EnvInject] - Preparing an environment for the build.
+[EnvInject] - Keeping Jenkins system variables.
+[EnvInject] - Keeping Jenkins build variables.
+[EnvInject] - Injecting contributions.
+Building on master in workspace /var/jenkins_home/jobs/Load_Platform/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Exec ssh-agent (binary ssh-agent on a remote machine)
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-zt790oPwU9tH/agent.7720
+SSH_AGENT_PID=7723
+[ssh-agent] Started.
+$ ssh-add /var/jenkins_home/jobs/Load_Platform/workspace@tmp/private_key_5903906553399139832.key
+Identity added: /var/jenkins_home/jobs/Load_Platform/workspace@tmp/private_key_5903906553399139832.key (/var/jenkins_home/jobs/Load_Platform/workspace@tmp/private_key_5903906553399139832.key)
+[ssh-agent] Using credentials jenkins (ADOP Jenkins Master)
+Cloning the remote Git repository
+Cloning repository https://github.com/Accenture/adop-platform-management.git
+ > git init /var/jenkins_home/jobs/Load_Platform/workspace # timeout=10
+Fetching upstream changes from https://github.com/Accenture/adop-platform-management.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress https://github.com/Accenture/adop-platform-management.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/Accenture/adop-platform-management.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Accenture/adop-platform-management.git # timeout=10
+Fetching upstream changes from https://github.com/Accenture/adop-platform-management.git
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress https://github.com/Accenture/adop-platform-management.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision f922a490fbaf2856c4745a5185a3e6e9870f7944 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f922a490fbaf2856c4745a5185a3e6e9870f7944
+Commit message: "Merge pull request #62 from gem2578/master"
+ > git rev-list --no-walk f922a490fbaf2856c4745a5185a3e6e9870f7944 # timeout=10
+Run condition [Boolean condition] enabling prebuild for step [Trigger/call builds on other projects]
+[workspace] $ /bin/bash -ex /tmp/jenkins6518319201310460942.sh
++ '[' -z https://github.com/Accenture/adop-platform-management.git ']'
++ target_repo_name=platform-management
++ repo_exists=0
+++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit ls-projects --type code
++ list_of_repos='All-Users
+ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template
+ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests
+ExampleWorkspace/ExampleProject/spring-petclinic
+cartridges/adop-cartridge-aspnet-linux
+cartridges/adop-cartridge-cartridge-dev
+cartridges/adop-cartridge-chef
+cartridges/adop-cartridge-docker
+cartridges/adop-cartridge-flyway
+cartridges/adop-cartridge-java
+platform-management'
++ for repo in ${list_of_repos}
++ '[' All-Users = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' ExampleWorkspace/ExampleProject/spring-petclinic = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-aspnet-linux = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-cartridge-dev = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-chef = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-docker = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-flyway = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-java = platform-management ']'
++ for repo in ${list_of_repos}
++ '[' platform-management = platform-management ']'
++ echo 'Found: platform-management'
+Found: platform-management
++ repo_exists=1
++ break
++ '[' 1 -eq 0 ']'
++ echo 'Repository already exists, skipping: platform-management'
+Repository already exists, skipping: platform-management
++ git remote add adop ssh://jenkins@gerrit:29418/platform-management
++ git fetch adop
+From ssh://gerrit:29418/platform-management
+ * [new branch]      master     -> adop/master
++ git push adop '+refs/remotes/origin/*:refs/heads/*'
+Everything up-to-date
++ '[' '!' -z 69b37adbd7109ec996ab9785ea4935d0fb2a303e ']'
++ [[ 69b37adbd7109ec996ab9785ea4935d0fb2a303e =~ ^[a-fA-F0-9]{8,40}$ ]]
+++ git cat-file -t 69b37adbd7109ec996ab9785ea4935d0fb2a303e
++ '[' commit = commit ']'
++ echo 'INFO - Checking out specified ADOP_PLATFORM_MANAGEMENT_VERSION '\''69b37adbd7109ec996ab9785ea4935d0fb2a303e'\'''
+INFO - Checking out specified ADOP_PLATFORM_MANAGEMENT_VERSION '69b37adbd7109ec996ab9785ea4935d0fb2a303e'
++ git checkout 69b37adbd7109ec996ab9785ea4935d0fb2a303e
+Previous HEAD position was f922a49... Merge pull request #62 from gem2578/master
+HEAD is now at 69b37ad... Merge pull request #52 from RobertNorthard/feature/custom-cartridge-properties
+Processing DSL script Generate_Example_Workspace.groovy
+Warning: (Generate_Example_Workspace.groovy, line 10) workflowJob is deprecated
+Processing DSL script Job_Runner.groovy
+Warning: (Job_Runner.groovy, line 7) workflowJob is deprecated
+Processing DSL script Load_Cartridge_List.groovy
+Warning: (Load_Cartridge_List.groovy, line 78) relativeTargetDir is deprecated
+Processing DSL script Load_Platform_Extension.groovy
+Processing DSL script Load_Platform_Extension_Collections.groovy
+Warning: (Load_Platform_Extension_Collections.groovy, line 6) workflowJob is deprecated
+Processing DSL script Setup_Custom_Cartridge_Library.groovy
+Processing DSL script Setup_Gerrit.groovy
+Warning: (Setup_Gerrit.groovy, line 65) relativeTargetDir is deprecated
+Processing DSL script Setup_Pluggable_Library.groovy
+Processing DSL script Generate_Workspace.groovy
+Existing items:
+    GeneratedJob{name='/Platform_Management'}
+    GeneratedJob{name='/Platform_Management/Generate_Example_Workspace'}
+    GeneratedJob{name='/Platform_Management/Job_Runner'}
+    GeneratedJob{name='/Platform_Management/Load_Cartridge_List'}
+    GeneratedJob{name='/Platform_Management/Load_Platform_Extension'}
+    GeneratedJob{name='/Platform_Management/Load_Platform_Extension_Collection'}
+    GeneratedJob{name='/Platform_Management/Setup_Custom_Cartridge_Library'}
+    GeneratedJob{name='/Platform_Management/Setup_Gerrit'}
+    GeneratedJob{name='/Platform_Management/Setup_Pluggable_Library'}
+    GeneratedJob{name='/Workspace_Management'}
+    GeneratedJob{name='/Workspace_Management/Generate_Workspace'}
+[Boolean condition] checking [true] against [^(1|y|yes|t|true|on|run)$] (origin token: ${GENERATE_EXAMPLE_WORKSPACE})
+Run condition [Boolean condition] enabling perform for step [Trigger/call builds on other projects]
+Waiting for the completion of [8mha:////4PAp/sh4DfGk3fBN8NW/0cMwa/p9GD21zztuAsqNJ/fNAAAAph+LCAAAAAAAAP9b85aBtbiIQSajNKU4P08vOT+vOD8nVc+jsiC1KCczL9svvyTVzHb1RttJBUeZGJg8GdhyUvPSSzJ8GJhLi3JKGIR8shLLEvVzEvPS9YNLijLz0q0rihik0IxzhtAgwxgggJGJgaGiAMhQKGHQ0M/KT9IPyEksScsvyo33TcxLTE/NTc0rAYt75SfFB5Xm5aUW6QMAD3JVNK0AAAA=[0mPlatform Management » Job_Runner
+[8mha:////4EDmk0QnE3/bkspjAXOnmn78WdgKePJYHempr/RvsJOoAAAAqB+LCAAAAAAAAP9b85aBtbiIQSajNKU4P08vOT+vOD8nVc+jsiC1KCczL9svvyTVzHb1RttJBUeZGJg8GdhyUvPSSzJ8GJhLi3JKGIR8shLLEvVzEvPS9YNLijLz0q0rihik0IxzhtAgwxgggJGJgaGiAMhQLmHQ0s/KT9IPyEksScsvyo33TcxLTE/NTc0rAYt75SfFB5Xm5aUW6RvpAwAeApYwrwAAAA==[0mPlatform Management » Job_Runner #2 completed. Result was SUCCESS
+Waiting for the completion of [8mha:////4Kc0jYgSbVFGabTwMWy2DvozNN1kXzI0FO534/i8VfwEAAAAtR+LCAAAAAAAAP9djDsKwkAURZ8RXYCluIaMlQiSSkSFKIKFZXjG5+QzeTPMTCRuw21o4yJcjnvw13mae7jFuT2h4ywMsvrgNIepZqcVhYuzIatyLtfa0yi63qOLeQQQLKGriKXPYmjXVnnoxQWeUChkKbbe5iwnjYX+X276208MfrQCgMa8ZehhLAq9FxuF/qhtlayQUVJF7L//nJgsekpmDVZGUbLTtnQGUxIvNd3pcL0AAAA=[0mPlatform Management » Generate_Example_Workspace
+[8mha:////4ClhW7H9FglrtF/DkQzt2ACJC3nFceQlf3rwWbPYqZ2DAAAAtx+LCAAAAAAAAP9djDsKwkAURZ8RXYCluIYMKFgoqURUiCJYWIZnfOY3eTPMTCRuw21o4yJcjnvwk87T3MMtzv0FHWtgkFZHq9iPFVslyV9eNBmZcbFRjsbB7RFc9dMDbwVdSZy4NIR2ZaSDXpjjGYVETsTOmYyTaW2g/5ebNfuNQUPLA6j1R0YOJiJXB7GV6E7KlNEaGRMqid3vXxCTQUfRvMZSS4r2yhRWY0xiKN7SSu6OvwAAAA==[0mPlatform Management » Generate_Example_Workspace #2 completed. Result was SUCCESS
+Build step 'Conditional step (single)' changed build result to SUCCESS
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 7723 killed;
+[ssh-agent] Stopped.
+Finished: SUCCESS

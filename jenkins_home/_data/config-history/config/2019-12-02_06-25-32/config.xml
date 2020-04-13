@@ -1,0 +1,119 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors/>
+  <version>2.107.3</version>
+  <installState>
+    <isSetupComplete>true</isSetupComplete>
+    <name>RUNNING</name>
+  </installState>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+    <denyAnonymousReadAccess>false</denyAnonymousReadAccess>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.20">
+    <disableMailAddressResolver>false</disableMailAddressResolver>
+    <configurations class="singleton-list">
+      <jenkins.security.plugins.ldap.LDAPConfiguration>
+        <server>ldap:389</server>
+        <rootDN>dc=ldap,dc=example,dc=com</rootDN>
+        <inhibitInferRootDN>false</inhibitInferRootDN>
+        <userSearchBase>ou=people</userSearchBase>
+        <userSearch>uid={0}</userSearch>
+        <groupSearchBase>ou=groups</groupSearchBase>
+        <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy">
+          <filter></filter>
+        </groupMembershipStrategy>
+        <managerDN>cn=admin,dc=ldap,dc=example,dc=com</managerDN>
+        <managerPasswordSecret>{AQAAABAAAAAgAtxYJRX96iKif3Rzp+lmE7JqT1eV9HYQ9j+RrE5sXkIX47i7EUOk8pYW2usjm5Pr}</managerPasswordSecret>
+        <displayNameAttributeName>displayName</displayNameAttributeName>
+        <mailAddressAttributeName>mail</mailAddressAttributeName>
+        <ignoreIfUnavailable>false</ignoreIfUnavailable>
+      </jenkins.security.plugins.ldap.LDAPConfiguration>
+    </configurations>
+    <userIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive"/>
+    <groupIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive" reference="../userIdStrategy"/>
+    <disableRolePrefixing>false</disableRolePrefixing>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${ITEM_ROOTDIR}/workspace</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>all</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+    <org.jenkinsci.plugins.environmentdashboard.EnvDashboardView plugin="environment-dashboard@1.1.7">
+      <owner class="hudson" reference="../../.."/>
+      <name>Environment Dashboard</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <envOrder></envOrder>
+      <compOrder>Petclinic Web App, OWASP ZAP/Selenium Integration Tests</compOrder>
+      <deployHistory>10</deployHistory>
+    </org.jenkinsci.plugins.environmentdashboard.EnvDashboardView>
+  </views>
+  <primaryView>all</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <disabledAgentProtocols>
+    <string>JNLP-connect</string>
+  </disabledAgentProtocols>
+  <label></label>
+  <nodeProperties/>
+  <globalNodeProperties>
+    <hudson.slaves.EnvironmentVariablesNodeProperty>
+      <envVars serialization="custom">
+        <unserializable-parents/>
+        <tree-map>
+          <default>
+            <comparator class="hudson.util.CaseInsensitiveComparator"/>
+          </default>
+          <int>16</int>
+          <string>ADOP_ACL_ENABLED</string>
+          <string>true</string>
+          <string>ADOP_LDAP_ENABLED</string>
+          <string>true</string>
+          <string>ADOP_PLATFORM_MANAGEMENT_VERSION</string>
+          <string>69b37adbd7109ec996ab9785ea4935d0fb2a303e</string>
+          <string>AWS_DEFAULT_REGION</string>
+          <string>ap-south-1</string>
+          <string>AWS_INSTANCE_TYPE</string>
+          <string>t2.large</string>
+          <string>AWS_KEYPAIR</string>
+          <string>key2</string>
+          <string>AWS_SUBNET_ID</string>
+          <string>default</string>
+          <string>AWS_VPC_ID</string>
+          <string>vpc-6caea904</string>
+          <string>CARTRIDGE_SOURCES</string>
+          <string>https://raw.githubusercontent.com/Accenture/adop-cartridges/master/cartridges.yml</string>
+          <string>DOCKER_CERT_PATH</string>
+          <string>//root/.docker/</string>
+          <string>DOCKER_HOST</string>
+          <string>tcp://13.126.65.32:2376</string>
+          <string>DOCKER_NETWORK_NAME</string>
+          <string>local_network</string>
+          <string>DOCKER_TLS_VERIFY</string>
+          <string>1</string>
+          <string>LDAP_IS_MODIFIABLE</string>
+          <string>true</string>
+          <string>PLUGGABLE_SCM_PROVIDER_PATH</string>
+          <string>/var/jenkins_home/userContent/job_dsl_additional_classpath/</string>
+          <string>PLUGGABLE_SCM_PROVIDER_PROPERTIES_PATH</string>
+          <string>/var/jenkins_home/userContent/datastore/pluggable/scm</string>
+        </tree-map>
+      </envVars>
+    </hudson.slaves.EnvironmentVariablesNodeProperty>
+  </globalNodeProperties>
+</hudson>

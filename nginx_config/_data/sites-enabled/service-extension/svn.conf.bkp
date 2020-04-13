@@ -1,0 +1,4 @@
+location ^~ /svn {
+      proxy_pass  http://svn-server:80/svn;
+
+}

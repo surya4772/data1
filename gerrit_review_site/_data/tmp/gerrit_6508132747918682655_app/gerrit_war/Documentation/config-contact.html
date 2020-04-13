@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="Asciidoctor 0.1.4">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerrit Code Review - Contact Information</title>
+<style>
+body {
+  margin: 1em auto;
+  width: 900px;
+}
+
+#toctitle {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6, #toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+
+p {
+  margin: 0.5em 0 0.5em 0;
+}
+li p {
+  margin: 0.2em 0 0.2em 0;
+}
+
+.listingblock > .content {
+  border: 2px solid silver;
+  background: #ebebeb;
+  margin-left: 2em;
+  color: darkgreen;
+  padding: 2px;
+  overflow: auto;
+}
+
+.listingblock > .content pre {
+  background: none;
+  border: 0 solid silver;
+  padding: 0 0 0 0;
+}
+
+dl dt {
+  margin-top: 1em;
+}
+
+table.tableblock {
+  border-collapse: collapse;
+}
+
+table.tableblock,
+th.tableblock,
+td.tableblock {
+  border: 1px solid #EEE;
+}
+</style>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', prettyPrint)</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Gerrit Code Review - Contact Information</h1>
+<span id="revnumber">version v2.10.6</span>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_setup">Setup</a></li>
+<li><a href="#_contact_store_protocol">Contact Store Protocol</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_data_format">Data Format</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>To help ensure contributor privacy, but still support gathering of
+contributor agreements as necessary, Gerrit encrypts all offline
+contact information gathered from users.  This data is shipped to
+another server, typically at a different location, to make it more
+difficult for an attacker to obtain.</p>
+</div>
+<div class="paragraph">
+<p>This feature is optional.  If the crypto APIs aren&#8217;t installed
+and the <code>contactstore.url</code> setting in <code>gerrit.config</code> is not set,
+Gerrit will not collect contact information from users.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup">Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ensure Bouncy Castle Crypto API is available in the web application&#8217;s
+CLASSPATH (e.g. in <code>'JETTY_HOME'/lib/plus</code> for Jetty).  Gerrit needs
+both <code>bcprov-jdk\*-*.jar</code> and <code>bcpg-jdk\*-*.jar</code> to be provided
+for the contact encryption to work.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.bouncycastle.org/latest_releases.html">Bouncy Castle Crypto API</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ensure a proper JCE policy file is installed.  By default most
+JRE installations forbid the use of a strong key, resulting in
+SecurityException messages when trying to encrypt the contact data.
+You need to obtain a strong JCE policy file and install it by hand.
+Look for the <em>Unlimited Strength Jurisdiction Policy</em> download.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://java.sun.com/javase/downloads/index.jsp">Java SE Downloads</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Create a public/private key pair for contact data handling.
+Generate the keys on a protected system, where the resulting
+private key is unlikely to fall into the wrong hands.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>gpg --gen-key</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Select to use a <code>DSA and Elgamal</code> key type, as the public key will
+be used for data encryption.</p>
+</div>
+<div class="paragraph">
+<p>The information chosen for name, email and comment fields can be
+anything reasonable which would identify the contact store of this
+Gerrit instance.  It is probably a good idea to not use a real
+person&#8217;s name here, but instead some sort of organizational role.
+The actual values chosen don&#8217;t matter later, and are only to help
+document the purpose of the key.</p>
+</div>
+<div class="paragraph">
+<p>Choose a fairly long expiration period, such as 20 years.  For most
+Gerrit instances, contact data will be written once, and rarely,
+if ever, read back.</p>
+</div>
+<div class="paragraph">
+<p>Export the public key for Gerrit to use during encryption.  The
+public key must be stored in a file called <code>contact_information.pub</code>
+and reside inside of the <code>site_config</code> directory.  Armoring it
+during export makes it easier to transport between systems, as
+you can easily copy-and-paste the text.  Gerrit can read both the
+armored and unarmored formats.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>gpg --export --armor KEYEMAIL &gt;$site_path/etc/contact_information.pub</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Consider storing the private key with some sort of key escrow
+service within your organization.  Without the private key it
+is impossible to recover contact records.</p>
+</div>
+<div class="paragraph">
+<p>Install a contact store implementation somewhere to receive
+the contact records.  To be really paranoid, Gerrit always
+ships the data to another HTTP server, preferably over HTTPS.
+Existing open-source server implementations can be found in the
+gerrit-contactstore project.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://code.google.com/p/gerrit/source/checkout?repo=contactstore">gerrit-contactstore</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Configure <code>'$site_path'/etc/gerrit.config</code> with the contact store&#8217;s
+URL (in <code>contactstore.url</code>), and if needed, APPSEC value (in
+<code>contactstore.appsec</code>):</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>git config --file $site_path/etc/gerrit.config appsec.url https://...
+git config --file $site_path/etc/gerrit.config appsec.appsec sekret</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contact_store_protocol">Contact Store Protocol</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To implement a new contact store, the following details are useful.</p>
+</div>
+<div class="paragraph">
+<p>Gerrit connects to the contact store by sending a standard
+<code>application/x-www-form-urlencoded</code> within an HTTP POST request
+sent to the store URL (the exact URL that is in contactstore.url)
+with the following form fields in the body:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>APPSEC</p>
+<div class="paragraph">
+<p>A shared secret "password" that should be known only to Gerrit
+and the contact store.  The contact store should test this value to
+deter spamming of the contact store by outside parties.  Gerrit reads
+this from contactstore.appsec.</p>
+</div>
+</li>
+<li>
+<p>account_id</p>
+<div class="paragraph">
+<p>Unique account_id value from the Gerrit database for the account
+the contact information belongs to.  Base 10 integer.</p>
+</div>
+</li>
+<li>
+<p>email</p>
+<div class="paragraph">
+<p>Preferred email address of the account.  May facilitate lookups in
+the contact store at a future date.  May be omitted or the empty
+string if the user hasn&#8217;t chosen a preferred email.</p>
+</div>
+</li>
+<li>
+<p>filed</p>
+<div class="paragraph">
+<p>Seconds since the UNIX epoch of when the contact information
+was filed.  May be omitted or the empty string if Gerrit
+doesn&#8217;t think the supplied contact information is valid enough.</p>
+</div>
+</li>
+<li>
+<p>data</p>
+<div class="paragraph">
+<p>Encrypted account data as an armored ASCII blob.  This is usually
+several KB of text data as a single string, with embedded newlines
+to break the lines at about 70-75 characters per line.  Data can
+be decoded using GnuPG with the correct private key.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Upon successful store, the contact store application should respond
+with HTTP status code <code>200</code> and a body consisting only of <code>OK</code>
+(or <code>OK\n</code>).  Any other response code or body is considered to be
+a failure by Gerrit.</p>
+</div>
+<div class="paragraph">
+<p>Using <code>https://</code> for the store URL is <strong>highly</strong> encouraged, as it
+prevents man-in-the-middle attacks from reading the shared secret
+APPSEC token, or messing with the data field.</p>
+</div>
+<div class="sect2">
+<h3 id="_data_format">Data Format</h3>
+<div class="paragraph">
+<p>Once decrypted the <code>data</code> field looks something like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Account-Id: 1001240
+Date: 2009-02-23 20:32:32.852 UTC
+Full-Name: John Doe
+Preferred-Email: jdoe@example.com
+Identity: jd15@some-isp.com
+Identity: jdoe@example.com &lt;http://jdoe.blogger.com/&gt;
+Address:
+	123 Any Street
+	Any Town, Somewhere
+Country: USA
+Phone-Number: +1 (555) 555-1212
+Fax-Number: 555.1200</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The fields are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Account-Id</code></p>
+<div class="paragraph">
+<p>Value of the <code>account_id</code> field in the metadata database.  This is
+a unique key for this account, and links all data records to it.</p>
+</div>
+</li>
+<li>
+<p><code>Date</code></p>
+<div class="paragraph">
+<p>Date and time of when this contact record was submitted by the user.
+Written in an ISO formatted date/time string (<code>YYYY-MM-DD hh:mm:ss</code>),
+in the UTC timezone.</p>
+</div>
+</li>
+<li>
+<p><code>Full-Name</code></p>
+<div class="paragraph">
+<p>The <code>full_name</code> field of the account record when the user submitted
+the contact information.  This should be the user&#8217;s given name and
+family name.</p>
+</div>
+</li>
+<li>
+<p><code>Preferred-Email</code></p>
+<div class="paragraph">
+<p>The <code>preferred_email</code> field of the account record when the user
+submitted the contact information.  This should be one of the emails
+listed in the <code>Identity</code> field.</p>
+</div>
+</li>
+<li>
+<p><code>Identity</code></p>
+<div class="paragraph">
+<p>This field occurs once for each <code>account_external_id</code> record
+in the database for this account.  The email address is listed,
+and if the user is using OpenID authentication, the OpenID claimed
+identity follows in brackets (<code>&lt;...&gt;</code>).  Identity lines without an
+OpenID identity are usually created by sending an email containing
+a unique hyperlink that the user must visit to setup the identity.</p>
+</div>
+</li>
+<li>
+<p><code>Address</code></p>
+<div class="paragraph">
+<p>Free form text, as entered by the user.  This should describe some
+location that physical documents could be sent to, but it is not
+verified, so users can enter pretty much anything here.  Each line
+is prefixed with a single TAB character, but is otherwise exactly
+as entered.</p>
+</div>
+</li>
+<li>
+<p><code>Country</code></p>
+<div class="paragraph">
+<p>Free form text, as entered by the user.  This should be some sort
+of country name or ISO country abbreviation, but it is not verified,
+so it can be pretty much anything.</p>
+</div>
+</li>
+<li>
+<p><code>Phone-Number</code>, <code>Fax-Number</code></p>
+<div class="paragraph">
+<p>Free form text, as entered by the user.  The format here can be
+anything, and as the example shows, may not even be consistent in
+the same record.</p>
+</div>
+</li>
+</ul>
+</div>
+<hr style="
+  height: 2px;
+  color: silver;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+">
+<div class="paragraph">
+<p>Part of <a href="index.html">Gerrit Code Review</a></p>
+</div>
+<div style="position:absolute; right:20px; top:20px;">
+<input type="text" id="docSearch" size="70" />
+<button type="button" id="searchBox">Search</button>
+<script type="text/javascript">
+var f = function() {
+  window.location = '../#/Documentation/' +
+    encodeURIComponent(document.getElementById("docSearch").value);
+}
+document.getElementById("searchBox").onclick = f;
+document.getElementById("docSearch").onkeypress = function(e) {
+  if (13 == (e.keyCode ? e.keyCode : e.which)) {
+    f();
+  }
+}
+</script>
+</div>
+<script type="text/javascript">
+    decorate(document.getElementsByTagName('h1'));
+    decorate(document.getElementsByTagName('h2'));
+    decorate(document.getElementsByTagName('h3'));
+    decorate(document.getElementsByTagName('h4'));
+
+    var divs = document.getElementsByTagName('div');
+    var arr = new Array();
+    var excluded = getExcludedIds();
+    for(var i = 0; i < divs.length; i++) {
+      var d = divs[i];
+      var id = d.getAttribute('id');
+      if (id != null && !(id in excluded)) {
+        arr[arr.length] = d;
+      }
+    }
+    decorate(arr);
+
+    var anchors = document.getElementsByTagName('a');
+    arr = new Array();
+    for(var i = 0; i < anchors.length; i++) {
+      var a = anchors[i];
+      // if the anchor has no id there is no target to
+      // which we can link
+      if (a.getAttribute('id') != null) {
+        // if the anchor is empty there is no content which
+        // can receive the mouseover event, an empty anchor
+        // applies to the element that follows, move the
+        // element that follows into the anchor so that there
+        // is content which can receive the mouseover event
+        if (a.firstChild == null) {
+          var next = a.nextSibling;
+          if (next != null) {
+            next.parentNode.removeChild(next);
+            a.appendChild(next);
+          }
+        }
+        arr[arr.length] = a;
+      }
+    }
+    decorate(arr);
+
+    function decorate(e) {
+      for(var i = 0; i < e.length; i++) {
+        e[i].onmouseover = function (evt) {
+          var element = this;
+          // do nothing if the link icon is currently showing
+          var a = element.firstChild;
+          if (a != null && a instanceof Element
+              && a.getAttribute('id') == 'LINK') {
+            return;
+          }
+
+          // if there is no id there is no target to link to
+          var id = element.getAttribute('id');
+          if (id == null) {
+            return;
+          }
+
+          // create and show a link icon that links to this element
+          a = document.createElement('a');
+          a.setAttribute('id', 'LINK');
+          a.setAttribute('href', '#' + id);
+          a.setAttribute('style', 'position: absolute;'
+              + ' left: ' + (element.offsetLeft - 16 - 2 * 4) + 'px;'
+              + ' padding-left: 4px; padding-right: 4px; padding-top:4px;');
+          var img = document.createElement('img');
+          img.setAttribute('src', 'images/link.png');
+          img.setAttribute('style', 'background-color: #FFFFFF;');
+          a.appendChild(img);
+          element.insertBefore(a, element.firstChild);
+
+          // remove the link icon when the mouse is moved away,
+          // but keep it shown if the mouse is over the element, the link or the icon
+          hide = function(evt) {
+            if (document.elementFromPoint(evt.clientX, evt.clientY) != element
+                && document.elementFromPoint(evt.clientX, evt.clientY) != a
+                && document.elementFromPoint(evt.clientX, evt.clientY) != img
+                && element.contains(a)) {
+              element.removeChild(a);
+            }
+          }
+          element.onmouseout = hide;
+          a.onmouseout = hide;
+          img.onmouseout = hide;
+        }
+      }
+    }
+
+    function getExcludedIds() {
+      var excluded = {};
+      excluded['header'] = true;
+      excluded['toc'] = true;
+      excluded['toctitle'] = true;
+      excluded['content'] = true;
+      excluded['preamble'] = true;
+      excluded['footer'] = true;
+      excluded['footer-text'] = true;
+      return excluded;
+    }
+</script>
+
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version v2.10.6<br>
+</div>
+</div>
+</body>
+</html>

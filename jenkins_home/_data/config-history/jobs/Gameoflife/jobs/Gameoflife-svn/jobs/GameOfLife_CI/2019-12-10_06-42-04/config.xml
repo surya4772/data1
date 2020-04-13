@@ -1,0 +1,54 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.21">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.2.9"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.2.9">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.28">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.53">
+    <script>pipeline{
+    agent { label &apos;master&apos; }
+    stages{
+        stage(&apos;Svn Checkout&apos;){
+            steps{
+                script{
+                    checkout([$class: &apos;SubversionSCM&apos;, additionalCredentials: [], excludedCommitMessages: &apos;&apos;, excludedRegions: &apos;&apos;, excludedRevprop: &apos;&apos;, excludedUsers: &apos;&apos;, filterChangelog: false, ignoreDirPropChanges: false, includedRegions: &apos;&apos;, locations: [[cancelProcessOnExternalsFail: true, credentialsId: &apos;svn&apos;, depthOption: &apos;infinity&apos;, ignoreExternalsOption: true, local: &apos;.&apos;, remote: &apos;http://52.66.103.232/svn/gameoflife&apos;]], quietOperation: true, workspaceUpdater: [$class: &apos;UpdateUpdater&apos;]])
+                }
+            }
+        }
+        
+        stage(&apos;Maven Execution&apos;){
+            steps{
+                script{
+                    withMaven(jdk: &apos;jdk8&apos;, maven: &apos;Maven&apos;) {
+                        sh &apos;mvn clean install&apos;   
+                    }
+                }
+            }
+        }
+        
+        stage(&apos;Nexus Upload&apos;){
+            steps{
+                script{
+                    nexusArtifactUploader artifacts: [[artifactId: &apos;gameoflife&apos;, classifier: &apos;&apos;, file: &apos;target/gameoflife-0.0.1.war&apos;, type: &apos;war&apos;]], credentialsId: &apos;nexus&apos;, groupId: &apos;be.cegeka&apos;, nexusUrl: &apos;52.66.103.232/nexus&apos;, nexusVersion: &apos;nexus3&apos;, protocol: &apos;http&apos;, repository: &apos;releases&apos;, version: &apos;0.0.1&apos;
+                }
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

@@ -1,0 +1,58 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.21">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.2.9"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.2.9">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.28">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.53">
+    <script>pipeline{
+    agent{ label &apos;master&apos; }
+    stages{
+        stage(&apos;Gitlab Checkout &apos;){
+            steps{
+                script{
+                    cleanWs()
+                    checkout([$class: &apos;GitSCM&apos;, branches: [[name: &apos;*/master&apos;]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: &apos;GitLab&apos;, url: &apos;http://3.6.38.166/gitlab/admin1/ansible-playbook.git&apos;]]])
+                }
+            }
+        }
+        
+        stage(&apos;Nexus Download&apos;) {
+            steps{
+                script{
+                    withCredentials([usernamePassword(credentialsId: &apos;Nexus&apos;, passwordVariable: &apos;PASS&apos;, usernameVariable: &apos;USER&apos;)]){
+                        sh &apos;wget --user $USER --password $PASS http://3.6.38.166/nexus/repository/maven-releases/be/cegeka/gameoflife/0.0.1/gameoflife-0.0.1.war&apos;
+                    }
+                }
+            }
+        }
+        
+        stage(&apos;Ansible Deploy&apos;){
+            steps{
+                script{
+                    sh &apos;&apos;&apos;
+                    chmod 400 key2.pem
+                    ansible-playbook -i host deploy.yml --extra-vars &quot;workspace=$WORKSPACE&quot;
+                    &apos;&apos;&apos;
+                }
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

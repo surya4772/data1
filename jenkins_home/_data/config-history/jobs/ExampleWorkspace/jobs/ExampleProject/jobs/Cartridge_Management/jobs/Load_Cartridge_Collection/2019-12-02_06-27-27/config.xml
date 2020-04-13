@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><flow-definition>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>COLLECTION_URL</name>
+                    <defaultValue/>
+                    <description>URL to a JSON file defining your cartridge collection.</description>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <com.sonyericsson.rebuild.RebuildSettings>
+            <autoRebuild>false</autoRebuild>
+            <rebuildDisabled>false</rebuildDisabled>
+        </com.sonyericsson.rebuild.RebuildSettings>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <triggers/>
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition">
+        <script>node {
+
+    sh("wget ${COLLECTION_URL} -O collection.json")
+
+    println "Reading in values from file..."
+    cartridges = parseJSON(readFile('collection.json'))
+
+    println(cartridges);
+    println "Obtained values locally...";
+
+    cartridgeCount = cartridges.size()
+    println "Number of cartridges: ${cartridgeCount}"
+
+    def projectWorkspace =  "ExampleWorkspace/ExampleProject"
+    println "Project workspace: ${projectWorkspace}"
+
+    // For loop iterating over the data map obtained from the provided JSON file
+    for (int i = 0; i &lt; cartridgeCount; i++) {
+        def cartridge = cartridges.get(i);
+
+        println("Loading cartridge inside folder: " + cartridge.folder)
+        println("Cartridge URL: " + cartridge.url)
+
+        build job: projectWorkspace+'/Cartridge_Management/Load_Cartridge', parameters: [[$class: 'StringParameterValue', name: 'CARTRIDGE_FOLDER', value: cartridge.folder], [$class: 'StringParameterValue', name: 'FOLDER_DISPLAY_NAME', value: cartridge.display_name], [$class: 'StringParameterValue', name: 'FOLDER_DESCRIPTION', value: cartridge.desc], [$class: 'StringParameterValue', name: 'CARTRIDGE_CLONE_URL', value: cartridge.url]]
+    }
+
+}
+
+@NonCPS
+    def parseJSON(text) {
+    def slurper = new groovy.json.JsonSlurper();
+    Map data = slurper.parseText(text)
+    slurper = null
+
+    def cartridges = []
+    for ( i = 0 ; i &lt; data.cartridges.size(); i++ ) {
+        String url = data.cartridges[i].cartridge.url
+        String desc = data.cartridges[i].folder.description
+        String folder = data.cartridges[i].folder.name
+        String display_name = data.cartridges[i].folder.display_name
+
+        cartridges[i] = [
+            'url' : url,
+            'desc' : desc,
+            'folder' : folder,
+            'display_name' : display_name
+        ]
+    }
+
+    data = null
+
+    return cartridges
+}
+            </script>
+        <sandbox>true</sandbox>
+    </definition>
+</flow-definition>

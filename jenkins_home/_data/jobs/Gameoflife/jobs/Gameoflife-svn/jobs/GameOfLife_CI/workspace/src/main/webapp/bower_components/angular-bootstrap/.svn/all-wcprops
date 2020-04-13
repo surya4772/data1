@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap
+END
+package.json
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/package.json
+END
+ui-bootstrap.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/ui-bootstrap.js
+END
+index.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/index.js
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/.gitignore
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/README.md
+END
+ui-bootstrap-tpls.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js
+END
+ui-bootstrap-tpls.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/ui-bootstrap-tpls.js
+END
+.bower.json
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/.bower.json
+END
+ui-bootstrap-csp.css
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/ui-bootstrap-csp.css
+END
+ui-bootstrap.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/ui-bootstrap.min.js
+END
+.npmignore
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/.npmignore
+END
+bower.json
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-bootstrap/bower.json
+END

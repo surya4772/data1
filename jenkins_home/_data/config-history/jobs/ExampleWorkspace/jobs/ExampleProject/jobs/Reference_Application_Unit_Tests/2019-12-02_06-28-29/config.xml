@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description>This job runs unit tests on Java Spring reference application.</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>B</name>
+                    <defaultValue/>
+                    <description>Parent build number</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>PARENT_BUILD</name>
+                    <defaultValue>Reference_Application_Build</defaultValue>
+                    <description>Parent build name</description>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <scm class="hudson.scm.NullSCM"/>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.plugins.copyartifact.CopyArtifact>
+            <project>Reference_Application_Build</project>
+            <filter/>
+            <target/>
+            <doNotFingerprintArtifacts>false</doNotFingerprintArtifacts>
+            <selector class="hudson.plugins.copyartifact.SpecificBuildSelector">
+                <buildNumber>${B}</buildNumber>
+            </selector>
+        </hudson.plugins.copyartifact.CopyArtifact>
+        <hudson.tasks.Maven>
+            <targets>clean test</targets>
+            <mavenName>ADOP Maven</mavenName>
+            <jvmOptions/>
+            <usePrivateRepository>false</usePrivateRepository>
+        </hudson.tasks.Maven>
+    </builders>
+    <publishers>
+        <hudson.tasks.ArtifactArchiver>
+            <artifacts>**/*</artifacts>
+            <allowEmptyArchive>false</allowEmptyArchive>
+            <defaultExcludes>true</defaultExcludes>
+            <fingerprint>false</fingerprint>
+            <onlyIfSuccessful>false</onlyIfSuccessful>
+        </hudson.tasks.ArtifactArchiver>
+        <hudson.plugins.parameterizedtrigger.BuildTrigger>
+            <configs>
+                <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+                    <projects>ExampleWorkspace/ExampleProject/Reference_Application_Code_Analysis</projects>
+                    <condition>UNSTABLE_OR_BETTER</condition>
+                    <triggerWithNoParameters>false</triggerWithNoParameters>
+                    <configs>
+                        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                            <properties>B=${B}
+PARENT_BUILD=${PARENT_BUILD}
+UTB=${BUILD_NUMBER}</properties>
+                        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                    </configs>
+                </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+            </configs>
+        </hudson.plugins.parameterizedtrigger.BuildTrigger>
+    </publishers>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <EnvInjectPasswordWrapper>
+            <injectGlobalPasswords>true</injectGlobalPasswords>
+            <passwordEntries/>
+        </EnvInjectPasswordWrapper>
+        <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+        <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+            <user>adop-jenkins-master</user>
+        </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    </buildWrappers>
+    <assignedNode>java8</assignedNode>
+</project>

@@ -1,0 +1,85 @@
+2020.04.13 07:09:44 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2020.04.13 07:09:47 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2020.04.13 07:09:49 INFO  web[][o.e.p.PluginsService] no modules loaded
+2020.04.13 07:09:49 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2020.04.13 07:09:49 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2020.04.13 07:09:49 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2020.04.13 07:09:49 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2020.04.13 07:09:54 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2020.04.13 07:09:54 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.7.2.37468 / e3ae3ad6546d35ab9eb7c244352a58eea0a2f124
+2020.04.13 07:09:54 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2020.04.13 07:09:59 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Build Breaker / 1.1 / 86110f67a03bc54b348f8fbfd5890bffd91274fe
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin CSS / 2.1 / d747d4892114374746611bcd83d04d51d5f9a9a9
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Checkstyle / 4.8 / 
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Findbugs / 3.7.0 / 
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Groovy / 1.4 / d291fa099e9c95d8aa2bf26e30102e4be72b3178
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin JavaScript / 2.16.0.2922 / 5a8bcaf41ffe1378b347e73a00e03466dfa69d79
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin LDAP / 1.4 / 18ba3a13ba4c6c07e6b0ad77940a52734159c27e
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Motion Chart / 1.7 / e9c4a5c95c75564b3c3b5a887b63ef50fc59a156
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PMD / 2.4.1 / 2f30e0a7177041a4fb9f7ecefdb301e2bfc15903
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Pitest / 0.9 / 0c011514ce025e5524fdcaa0c917eacf9d40f312
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarC# / 6.5.0.3766 / 6011a1e9fb002edb044ae3092d92bcfb7d9d8a2d
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJava / 5.1.1.13214 / 815a76171aeed933a909453f668a3202d592d9b4
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarPHP / 2.11.0.2485 / 741861a29e5f9a26c6c99c06268facb6c4f4a882
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarPython / 1.8.0.1496 / 3fe3bc4d0273a5721ea2fb368dc45b1bb82fede3
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarQube :: Plugins :: SCM :: Git / 1.3.0.869 / 4da53e3f9e55f4f2e5796625cb0c5768ed152079
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarQube :: Plugins :: SCM :: SVN / 1.6.0.860 / 2111fdbd1dddda4ad6d4ed6486fd0b18c1010d3b
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarTS / 1.1.0.1079 / 042c9e65239a47d92d305f9767f730b3cc1e5ed3
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Tab Metrics / 1.4.1 / f575baba797d28be52a4fed5ee23159dd2e4a83a
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Timeline / 1.4 / 5dbb36d5db80475315f3f39ac3ec506ef92a9d6a
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Web / 2.5.0.476 / 636872f5d37fa7a440fe07d08d504e1a881225e5
+2020.04.13 07:09:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin XML / 1.4.1 / d2c0388961fcbe78ac597ca3fb3e262d3e733988
+2020.04.13 07:10:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@2b508972 [pattern=UrlPattern{inclusions=[/api/system/migrate_db/*, ...], exclusions=[/api/properties*, ...]}]
+2020.04.13 07:10:02 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2020.04.13 07:10:06 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2020.04.13 07:10:09 INFO  web[][o.s.s.s.LogServerId] Server ID: AW7FRxMcHZvLtA793kCC
+2020.04.13 07:10:09 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Project Motion Chart' (project_motion_chart) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2020.04.13 07:10:09 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Filter Motion Chart' (filter_motion_chart) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2020.04.13 07:10:09 WARN  web[][o.s.s.u.DeprecatedViews] Page 'Metrics' (metricsTab) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2020.04.13 07:10:09 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Advanced Timeline Chart' (advanced_timeline) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2020.04.13 07:10:09 INFO  web[][org.sonar.INFO] Security realm: LDAP
+2020.04.13 07:10:09 INFO  web[][o.s.p.l.LdapSettingsManager] User mapping: LdapUserMapping{baseDn=ou=people,dc=ldap,dc=example,dc=com, request=(&(objectClass=inetOrgPerson)(uid={0})), realNameAttribute=displayName, emailAttribute=mail}
+2020.04.13 07:10:09 INFO  web[][o.s.p.l.LdapSettingsManager] Group mapping: LdapGroupMapping{baseDn=ou=groups,dc=ldap,dc=example,dc=com, idAttribute=cn, requiredUserAttributes=[dn], request=(&(objectClass=groupOfUniqueNames)(uniqueMember={0}))}
+2020.04.13 07:10:09 INFO  web[][o.s.p.l.LdapContextFactory] Test LDAP connection on ldap://ldap:389: OK
+2020.04.13 07:10:09 INFO  web[][org.sonar.INFO] Security realm started
+2020.04.13 07:10:10 INFO  web[][o.s.s.t.TelemetryDaemon] Sharing of SonarQube statistics is enabled.
+2020.04.13 07:10:10 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2020.04.13 07:10:10 INFO  web[][o.s.s.s.GeneratePluginIndex] Generate scanner plugin index
+2020.04.13 07:10:10 INFO  web[][o.s.s.s.RegisterPlugins] Register plugins
+2020.04.13 07:10:11 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2020.04.13 07:10:11 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2020.04.13 07:10:25 INFO  web[][o.s.s.q.BuiltInQProfileRepositoryImpl] Load quality profiles
+2020.04.13 07:10:27 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
+2020.04.13 07:10:27 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile cs/Sonar way
+2020.04.13 07:10:28 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile css/SonarQube Way
+2020.04.13 07:10:28 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile java/FindBugs
+2020.04.13 07:10:30 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile java/FindBugs + FB-Contrib
+2020.04.13 07:10:33 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile java/FindBugs Security Audit
+2020.04.13 07:10:33 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile java/FindBugs Security Minimal
+2020.04.13 07:10:34 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile java/Sonar way
+2020.04.13 07:10:34 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile web/Sonar way
+2020.04.13 07:10:34 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile flex/Sonar way
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile xml/Sonar way
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile jsp/FindBugs Security JSP
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile php/Sonar way
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile php/PSR-2
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile php/Drupal
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile js/Sonar way
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile py/Sonar way
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile grvy/Sonar way
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile ts/Sonar way
+2020.04.13 07:10:35 INFO  web[][o.s.s.q.RegisterQualityProfiles] Update profile ts/Sonar way recommended
+2020.04.13 07:10:36 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2020.04.13 07:10:36 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@5acd5455 [pattern=UrlPattern{inclusions=[/api/measures/component/*, ...], exclusions=[/api/properties*, ...]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@6c0c92ef [pattern=UrlPattern{inclusions=[/api/properties/*], exclusions=[]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceReroutingFilter@725c4762 [pattern=UrlPattern{inclusions=[/api/components/bulk_update_key, ...], exclusions=[]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@42fe1522 [pattern=UrlPattern{inclusions=[/sessions/init/*], exclusions=[]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@263c4baf [pattern=UrlPattern{inclusions=[/oauth2/callback/*], exclusions=[]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@1754df9d [pattern=UrlPattern{inclusions=[/api/authentication/login], exclusions=[]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@3ebd449e [pattern=UrlPattern{inclusions=[/api/authentication/logout], exclusions=[]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@26f45e6b [pattern=UrlPattern{inclusions=[/api/authentication/validate], exclusions=[]}]
+2020.04.13 07:10:36 INFO  web[][o.s.s.p.Platform] WebServer is operational

@@ -1,0 +1,52 @@
+Started by user [8mha:////4DnklqZ3UXiUKxo+R2fxZYS3gCTrm4aBUyBmLGs0b6mNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZu/dLi1CL9xJTczDwAEmIUecAAAAA=[0mAdmin User
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] node
+Running on [8mha:////4IpUL76Inv85u0oD3kLw01+UpqW7/5TBe5hRE114sjG2AAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Svn Checkout)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] checkout
+Updating http://52.66.103.232/svn/gameoflife at revision '2019-12-10T06:23:02.112 +0000' --quiet
+Using sole credentials admin/****** (svn) in realm ‘<http://52.66.103.232:80> Forbidden’
+At revision 2
+
+No changes for http://52.66.103.232/svn/gameoflife since the previous build
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Maven Execution)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] sh
+[workspace] Running shell script
++ ls -la
+total 15036
+drwxr-xr-x 8 jenkins jenkins     4096 Dec 10 06:22 .
+drwxr-xr-x 5 jenkins jenkins     4096 Dec 10 06:23 ..
+drwxr-xr-x 6 jenkins jenkins     4096 Dec 10 06:23 .svn
+-rw-r--r-- 1 jenkins jenkins  3359203 Dec 10 06:22 Cegeka - workshop Game of Life.pdf
+-rw-r--r-- 1 jenkins jenkins 11951341 Dec 10 06:22 Cegeka - workshop Game of Life.pptx
+-rw-r--r-- 1 jenkins jenkins    10731 Dec 10 06:22 Gruntfile.js
+-rw-r--r-- 1 jenkins jenkins      471 Dec 10 06:22 README.md
+-rw-r--r-- 1 jenkins jenkins      725 Dec 10 06:22 bower.json
+drwxr-xr-x 3 jenkins jenkins     4096 Dec 10 06:21 branches
+-rwxr-xr-x 1 jenkins jenkins     7058 Dec 10 06:22 mvnw
+-rw-r--r-- 1 jenkins jenkins     5006 Dec 10 06:22 mvnw.cmd
+-rw-r--r-- 1 jenkins jenkins     1885 Dec 10 06:22 package.json
+-rw-r--r-- 1 jenkins jenkins     4891 Dec 10 06:22 pom.xml
+drwxr-xr-x 5 jenkins jenkins     4096 Dec 10 06:22 src
+drwxr-xr-x 3 jenkins jenkins     4096 Dec 10 06:22 tags
+drwxr-xr-x 3 jenkins jenkins     4096 Dec 10 06:22 tekstje_vtk
+drwxr-xr-x 3 jenkins jenkins     4096 Dec 10 06:22 trunk
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // node
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] End of Pipeline
+Finished: SUCCESS

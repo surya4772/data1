@@ -1,0 +1,623 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects
+END
+css-scrollbars.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-scrollbars.js
+END
+forms-placeholder.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/forms-placeholder.js
+END
+a-download.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/a-download.js
+END
+css-overflow-scrolling.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-overflow-scrolling.js
+END
+exif-orientation.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/exif-orientation.js
+END
+es5-strictmode.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/es5-strictmode.js
+END
+script-defer.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/script-defer.js
+END
+cookies.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/cookies.js
+END
+css-vminunit.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-vminunit.js
+END
+file-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/file-api.js
+END
+json.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/json.js
+END
+workers-blobworkers.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/workers-blobworkers.js
+END
+css-backgroundposition-shorthand.js
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-backgroundposition-shorthand.js
+END
+dart.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/dart.js
+END
+elem-output.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/elem-output.js
+END
+css-backgroundsizecover.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-backgroundsizecover.js
+END
+ie8compat.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/ie8compat.js
+END
+iframe-sandbox.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/iframe-sandbox.js
+END
+css-positionsticky.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-positionsticky.js
+END
+elem-ruby.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/elem-ruby.js
+END
+audio-audiodata-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/audio-audiodata-api.js
+END
+network-eventsource.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/network-eventsource.js
+END
+css-regions.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-regions.js
+END
+pointerlock-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/pointerlock-api.js
+END
+css-remunit.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-remunit.js
+END
+canvas-todataurl-type.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/canvas-todataurl-type.js
+END
+svg-filters.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/svg-filters.js
+END
+vibration.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/vibration.js
+END
+css-filters.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-filters.js
+END
+contextmenu.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/contextmenu.js
+END
+css-supports.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-supports.js
+END
+cors.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/cors.js
+END
+css-pointerevents.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-pointerevents.js
+END
+notification.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/notification.js
+END
+forms-speechinput.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/forms-speechinput.js
+END
+elem-progress-meter.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/elem-progress-meter.js
+END
+url-data-uri.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/url-data-uri.js
+END
+battery-level.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/battery-level.js
+END
+getusermedia.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/getusermedia.js
+END
+css-vhunit.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-vhunit.js
+END
+css-calc.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-calc.js
+END
+iframe-srcdoc.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/iframe-srcdoc.js
+END
+css-vmaxunit.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-vmaxunit.js
+END
+lists-reversed.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/lists-reversed.js
+END
+script-async.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/script-async.js
+END
+requestanimationframe.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/requestanimationframe.js
+END
+forms-validation.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/forms-validation.js
+END
+css-mask.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-mask.js
+END
+css-backgroundrepeat.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-backgroundrepeat.js
+END
+img-apng.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/img-apng.js
+END
+css-userselect.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-userselect.js
+END
+forms-fileinput.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/forms-fileinput.js
+END
+performance.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/performance.js
+END
+css-vwunit.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-vwunit.js
+END
+elem-track.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/elem-track.js
+END
+style-scoped.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/style-scoped.js
+END
+dom-classlist.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/dom-classlist.js
+END
+elem-time.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/elem-time.js
+END
+dom-createElement-attrs.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/dom-createElement-attrs.js
+END
+css-objectfit.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-objectfit.js
+END
+webgl-extensions.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/webgl-extensions.js
+END
+audio-webaudio-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/audio-webaudio-api.js
+END
+img-webp.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/img-webp.js
+END
+quota-management-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/quota-management-api.js
+END
+websockets-binary.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/websockets-binary.js
+END
+iframe-seamless.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/iframe-seamless.js
+END
+css-boxsizing.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-boxsizing.js
+END
+web-intents.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/web-intents.js
+END
+dataview-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/dataview-api.js
+END
+file-filesystem.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/file-filesystem.js
+END
+battery-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/battery-api.js
+END
+workers-sharedworkers.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/workers-sharedworkers.js
+END
+css-hyphens.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-hyphens.js
+END
+css-displaytable.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-displaytable.js
+END
+userdata.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/userdata.js
+END
+window-framed.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/window-framed.js
+END
+workers-dataworkers.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/workers-dataworkers.js
+END
+custom-protocol-handler.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/custom-protocol-handler.js
+END
+network-xhr2.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/network-xhr2.js
+END
+css-backgroundposition-xy.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-backgroundposition-xy.js
+END
+dom-dataset.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/dom-dataset.js
+END
+css-mediaqueries.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-mediaqueries.js
+END
+contentsecuritypolicy.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/contentsecuritypolicy.js
+END
+blob-constructor.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/blob-constructor.js
+END
+fullscreen-api.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/fullscreen-api.js
+END
+mathml.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/mathml.js
+END
+elem-datalist.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/elem-datalist.js
+END
+emoji.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/emoji.js
+END
+elem-details.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/elem-details.js
+END
+dom-microdata.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/dom-microdata.js
+END
+gamepad.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/gamepad.js
+END
+css-subpixelfont.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-subpixelfont.js
+END
+css-cubicbezierrange.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-cubicbezierrange.js
+END
+css-resize.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-resize.js
+END
+contenteditable.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/contenteditable.js
+END
+network-connection.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/network-connection.js
+END
+unicode.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/unicode.js
+END
+css-lastchild.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-lastchild.js
+END
+css-shapes.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-shapes.js
+END
+event-deviceorientation-motion.js
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/event-deviceorientation-motion.js
+END
+forms-inputnumber-l10n.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/forms-inputnumber-l10n.js
+END
+forms-formattribute.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/forms-formattribute.js
+END
+css-displayrunin.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/modernizr/feature-detects/css-displayrunin.js
+END

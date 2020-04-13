@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: be.cegeka.status.StatusControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.609 sec - in be.cegeka.status.StatusControllerIntegrationTest

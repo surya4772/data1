@@ -1,0 +1,6 @@
+2019-12-11_07:55:51.76906 time="2019-12-11T07:55:51Z" level=info msg="Starting Gitaly" version="Gitaly, version 0.43.0, built 20171021.231657"
+2019-12-11_07:55:51.76976 time="2019-12-11T07:55:51Z" level=warning msg="git path not configured. Using default path resolution" resolvedPath=/opt/gitlab/embedded/bin/git
+2019-12-11_07:55:58.28907 time="2019-12-11T07:55:58Z" level=info msg="listening on unix socket" address=/var/opt/gitlab/gitaly/gitaly.socket
+2019-12-11_07:55:58.39272 time="2019-12-11T07:55:58Z" level=warning msg=spawned supervisor.args="[bundle exec bin/gitaly-ruby 386 /tmp/gitaly-ruby954385026/socket]" supervisor.name=gitaly-ruby supervisor.pid=488
+2019-12-11_10:03:16.45218 time="2019-12-11T10:03:16Z" level=warning msg=exited error="signal: killed" supervisor.args="[bundle exec bin/gitaly-ruby 386 /tmp/gitaly-ruby954385026/socket]" supervisor.name=gitaly-ruby
+2019-12-11_10:03:16.45238 time="2019-12-11T10:03:16Z" level=fatal msg="shutting down" error="received signal \"terminated\""

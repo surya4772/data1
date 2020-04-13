@@ -1,0 +1,6 @@
+be/cegeka/status/StatusController.class
+be/cegeka/gameoflife/GameOfLifeController.class
+be/cegeka/fizzbuzz/FizzBuzzService.class
+be/cegeka/GameoflifeApplication.class
+be/cegeka/config/StaticResourcesProductionFilter.class
+be/cegeka/config/WebConfigurer.class

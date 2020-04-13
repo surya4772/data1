@@ -1,0 +1,21 @@
+Uploading artifact gameoflife-0.0.1.war started....
+GroupId: be.cegeka
+ArtifactId: gameoflife
+Classifier: 
+Type: war
+Version: 0.0.1
+File: gameoflife-0.0.1.war
+Repository:maven-releases
+Uploading: http://3.6.38.166/nexus/repository/maven-releases/be/cegeka/gameoflife/0.0.1/gameoflife-0.0.1.war
+10 % completed (2.4 MB / 24 MB).
+20 % completed (4.9 MB / 24 MB).
+30 % completed (7.3 MB / 24 MB).
+40 % completed (9.7 MB / 24 MB).
+50 % completed (12 MB / 24 MB).
+60 % completed (15 MB / 24 MB).
+70 % completed (17 MB / 24 MB).
+80 % completed (19 MB / 24 MB).
+90 % completed (22 MB / 24 MB).
+100 % completed (24 MB / 24 MB).
+Uploaded: http://3.6.38.166/nexus/repository/maven-releases/be/cegeka/gameoflife/0.0.1/gameoflife-0.0.1.war (24 MB at 27 MB/s)
+Uploading artifact gameoflife-0.0.1.war completed.

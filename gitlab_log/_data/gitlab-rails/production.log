@@ -1,0 +1,199 @@
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:20:00 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 305ms (Views: 295.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:21:04 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 129ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:22:04 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 89ms (Views: 84.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:23:05 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:24:05 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 303ms (Views: 293.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:25:09 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 129ms (Views: 124.4ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:26:09 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 91ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:27:09 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 87ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:28:10 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 109ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:29:10 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 100ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:30:11 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 93ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:31:11 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 88ms (Views: 83.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:32:11 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 129ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:33:12 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 87ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:34:12 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 87ms (Views: 82.0ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:35:13 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 129ms (Views: 124.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:36:13 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 99ms (Views: 94.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:37:14 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 87ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:38:14 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 87ms (Views: 81.8ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:39:14 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 83ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:40:15 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 85ms (Views: 80.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:41:15 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 88ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:42:16 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 105ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:43:16 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 88ms (Views: 83.4ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:44:16 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 124ms (Views: 118.6ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:45:17 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 101ms (Views: 95.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:46:17 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 82ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:47:18 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 130ms (Views: 125.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:48:18 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 294ms (Views: 289.4ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:49:19 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 85ms (Views: 79.3ms | ActiveRecord: 0.0ms)
+Scheduling removal of build artifacts
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:50:19 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 84ms (Views: 79.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:51:20 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 335ms (Views: 330.0ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:52:20 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 123ms (Views: 115.0ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:53:21 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 85ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:54:21 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 87ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:55:22 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 80ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:56:22 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 99ms (Views: 93.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:57:23 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 83ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:58:23 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 123ms (Views: 118.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 07:59:23 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 93ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+StuckCiJobsWorker: Cleaning stuck builds
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:00:24 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 87ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:01:24 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 108ms (Views: 103.8ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:02:25 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 331ms (Views: 322.1ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:03:28 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 85ms (Views: 80.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:04:29 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 91ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:05:30 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 84ms (Views: 79.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:06:34 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 112ms (Views: 107.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:07:34 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 91ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:08:35 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 121ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:09:35 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 89ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:10:35 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 91ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:11:36 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 143ms (Views: 135.0ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:12:36 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 121ms (Views: 115.6ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/" for 172.18.0.16 at 2020-04-13 08:13:20 +0000
+Processing by RootController#index as HTML
+Redirected to http://52.66.196.122/gitlab/users/sign_in
+Filter chain halted as :redirect_unlogged_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+Started GET "/gitlab/users/sign_in" for 172.18.0.16 at 2020-04-13 08:13:20 +0000
+Processing by SessionsController#new as HTML
+Completed 200 OK in 387ms (Views: 302.7ms | ActiveRecord: 4.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:13:37 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 124ms (Views: 116.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:14:37 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 83ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:15:38 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 297ms (Views: 291.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:16:38 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 89ms (Views: 83.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:17:39 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 237ms (Views: 230.0ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:18:40 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 332ms (Views: 322.5ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:19:43 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 92ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:20:44 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 154ms (Views: 144.9ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:21:44 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 88ms (Views: 83.2ms | ActiveRecord: 0.0ms)
+Started GET "/gitlab/help" for 127.0.0.1 at 2020-04-13 08:22:45 +0000
+Processing by HelpController#index as */*
+Completed 200 OK in 83ms (Views: 77.8ms | ActiveRecord: 0.0ms)

@@ -1,0 +1,138 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>Platform_Management/Generate_Example_Workspace</upstreamProject>
+            <upstreamUrl>job/Platform_Management/job/Generate_Example_Workspace/</upstreamUrl>
+            <upstreamBuild>1</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Load_Platform</upstreamProject>
+                <upstreamUrl>job/Load_Platform/</upstreamUrl>
+                <upstreamBuild>1</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-RemoteCause>
+                    <addr>127.0.0.1</addr>
+                  </hudson.model.Cause_-RemoteCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamNodeAction plugin="pipeline-build-step@2.7">
+      <upstreamNodeId>5</upstreamNodeId>
+      <upstreamRunId>Platform_Management/Generate_Example_Workspace#1</upstreamRunId>
+    </org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamNodeAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>WORKSPACE_NAME</name>
+          <description>The name of the project to be generated.</description>
+          <value>ExampleWorkspace</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>VIEWER_USERS</name>
+          <description>The list of users&apos; email addresses that should be setup initially as viewers. They will have read-only access to all non-admin jobs within the project.</description>
+          <value>ExampleWorkspaceViewer</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>DEVELOPER_USERS</name>
+          <description>The list of users&apos; email addresses that should be setup initially as developers. They will have full access to all non-admin jobs within the project.</description>
+          <value>ExampleWorkspaceDeveloper</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>ADMIN_USERS</name>
+          <description>The list of users&apos; email addresses that should be setup initially as admin. They will have full access to all jobs within the project.</description>
+          <value>ExampleWorkspaceAdmin</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>WORKSPACE_NAME</string>
+        <string>ADMIN_USERS</string>
+        <string>DEVELOPER_USERS</string>
+        <string>VIEWER_USERS</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <org.jenkinsci.plugins.envinject.EnvInjectPluginAction plugin="envinject@2.1.5"/>
+    <hudson.plugins.git.util.BuildData plugin="git@3.9.0">
+      <buildsByBranchName>
+        <entry>
+          <string>detached</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.7.2">
+              <sha1>69b37adbd7109ec996ab9785ea4935d0fb2a303e</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>detached</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>1</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>ssh://jenkins@gerrit:29418/platform-management</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.9.0">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>detached</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/workspace/Workspace_Management/Generate_Workspace</ws>
+    </hudson.plugins.git.GitTagAction>
+    <hudson.scm.SCMRevisionState_-None/>
+    <javaposse.jobdsl.plugin.actions.GeneratedJobsBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set">
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>ExampleWorkspace</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>ExampleWorkspace/Project_Management</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>ExampleWorkspace/Project_Management/Generate_Project</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+      </modifiedObjects>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+    </javaposse.jobdsl.plugin.actions.GeneratedJobsBuildAction>
+    <javaposse.jobdsl.plugin.actions.GeneratedViewsBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set"/>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+    </javaposse.jobdsl.plugin.actions.GeneratedViewsBuildAction>
+    <javaposse.jobdsl.plugin.actions.GeneratedConfigFilesBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set"/>
+    </javaposse.jobdsl.plugin.actions.GeneratedConfigFilesBuildAction>
+    <javaposse.jobdsl.plugin.actions.GeneratedUserContentsBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set"/>
+    </javaposse.jobdsl.plugin.actions.GeneratedUserContentsBuildAction>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.28"/>
+  </actions>
+  <queueId>9</queueId>
+  <timestamp>1575268023776</timestamp>
+  <startTime>1575268023779</startTime>
+  <result>SUCCESS</result>
+  <duration>9327</duration>
+  <charset>US-ASCII</charset>
+  <keepLog>false</keepLog>
+  <builtOn>Swarm_Slave-1d0ae21b</builtOn>
+  <workspace>/workspace/Workspace_Management/Generate_Workspace</workspace>
+  <hudsonVersion>2.107.3</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@3.9.0">
+    <authorOrCommitter>false</authorOrCommitter>
+  </scm>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

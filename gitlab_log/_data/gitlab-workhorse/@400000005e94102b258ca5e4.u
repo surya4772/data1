@@ -1,0 +1,10 @@
+2020-01-09_09:06:57.04465 2020/01/09 09:06:57 Starting gitlab-workhorse v3.2.0-20171021.231641
+2020-01-09_09:06:57.05184 2020/01/09 09:06:57 keywatcher: starting process loop
+2020-01-09_09:06:57.05292 2020/01/09 09:06:57 redis: dialing "unix", "/var/opt/gitlab/redis/redis.socket"
+2020-01-09_09:07:18.53942 2020/01/09 09:07:18 error: GET "/gitlab/help": badgateway: failed after 0s: dial unix /var/opt/gitlab/gitlab-rails/sockets/gitlab.socket: connect: connection refused
+2020-01-09_09:07:18.54001 localhost @ - - [2020-01-09 09:07:18.535711205 +0000 UTC] "GET /gitlab/help HTTP/1.1" 502 2916 "" "curl/7.53.0" 0.004192
+2020-01-09_09:08:24.40636 localhost @ - - [2020-01-09 09:08:18.9245347 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 5.481631
+2020-01-09_09:09:27.95402 localhost @ - - [2020-01-09 09:09:24.774586418 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.179325
+2020-01-09_09:10:28.38019 localhost @ - - [2020-01-09 09:10:28.266427112 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.113696
+2020-01-09_09:11:28.79774 localhost @ - - [2020-01-09 09:11:28.678464966 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.119215
+2020-01-09_09:12:32.28258 localhost @ - - [2020-01-09 09:12:29.093866908 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.188590

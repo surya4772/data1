@@ -1,0 +1,87 @@
+Started by upstream project "[8mha:////4K2NPbuNaP5RsWtWw0rKlI/fmg+5xLMdPR3zJl4JU/98AAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy5EgYN/az8JP2AnMSStPyi3HjfxLzE9NTc1LwSsLhXflJ8UGleXmqRPgAHzL8G3QAAAA==[0mPlatform_Management/Job_Runner" build number [8mha:////4FOFpz+AlbZQf0qT8XLs/48pL22/GwAE1W8pd7H2gjn0AAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBk39rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuFd+UnxQaV5eapG+EQADN6Tc3gAAAA==[0m2
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4EAbZSGxHL2x6Aoerj8PsKJp138uHkKLF9aIHMH5Ay2vAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9IwAM+B7JyQAAAA==[0m2
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+Building on master in workspace /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Exec ssh-agent (binary ssh-agent on a remote machine)
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-bgGlOaxkRaPR/agent.8060
+SSH_AGENT_PID=8063
+[ssh-agent] Started.
+$ ssh-add /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace@tmp/private_key_4856978417588232490.key
+Identity added: /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace@tmp/private_key_4856978417588232490.key (/var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace@tmp/private_key_4856978417588232490.key)
+[ssh-agent] Using credentials jenkins (ADOP Jenkins Master)
+Cloning the remote Git repository
+Cloning repository ssh://jenkins@gerrit:29418/platform-management
+ > git init /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse 69b37adbd7109ec996ab9785ea4935d0fb2a303e^{commit} # timeout=10
+Checking out Revision 69b37adbd7109ec996ab9785ea4935d0fb2a303e (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 69b37adbd7109ec996ab9785ea4935d0fb2a303e
+Commit message: "Merge pull request #52 from RobertNorthard/feature/custom-cartridge-properties"
+ > git rev-list --no-walk 69b37adbd7109ec996ab9785ea4935d0fb2a303e # timeout=10
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+DC=dc=ldap,dc=example,dc=com
+
+[EnvInject] - Variables injected successfully.
+[workspace] $ /bin/bash -ex /tmp/jenkins4937211484099882651.sh
++ cd /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace
++ git clone ssh://jenkins@gerrit:29418/All-Projects
+Cloning into 'All-Projects'...
+Total 8 (delta 2), reused 6 (delta 2)
+Note: checking out 'd8f5febf7c644ccbc1b8422b5ae8096a299150c9'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
++ cd /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/All-Projects
++ git fetch origin refs/meta/config:refs/remotes/origin/meta/config
+From ssh://gerrit:29418/All-Projects
+ * [new ref]         refs/meta/config -> origin/meta/config
++ git checkout meta/config
+Switched to a new branch 'meta/config'
+Branch meta/config set up to track remote branch meta/config from origin.
++ cp /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management/gerrit/project.config .
+++ cat /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management/gerrit/groups
++ grep -q 'ldap:cn=administrators,ou=groups,###DC###	ldap/administrators' groups
++ perl -p -i -e 's/###([^#]+)###/defined $ENV{$1} ? $ENV{$1} : $&/eg'
++ cat /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management/gerrit/groups.tokenised
+++ git status --porcelain
+++ wc -l
++ '[' 1 -gt 0 ']'
++ git add project.config groups
++ git commit -m 'Applying ADOP Gerrit ACL'
+[meta/config 4ef8504] Applying ADOP Gerrit ACL
+ 1 file changed, 1 insertion(+)
++ git push origin meta/config:meta/config
+remote: remote: Processing changes: refs: 1remote: Processing changes: refs: 1, done            
+To ssh://gerrit:29418/All-Projects
+   d8f5feb..4ef8504  meta/config -> refs/meta/config
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 8063 killed;
+[ssh-agent] Stopped.
+Finished: SUCCESS

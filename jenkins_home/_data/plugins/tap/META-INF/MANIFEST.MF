@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: kinow
+Build-Jdk: 1.8.0_161
+Extension-Name: tap
+Specification-Title: This plugin publishes TAP test results.
+Specification-Vendor: Jenkins
+Implementation-Vendor: Jenkins
+Implementation-Title: tap
+Implementation-Version: 2.2.1
+Group-Id: org.tap4j
+Short-Name: tap
+Long-Name: Jenkins TAP Plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/TAP+Plugin
+Plugin-Version: 2.2.1
+Hudson-Version: 1.642.3
+Jenkins-Version: 1.642.3
+Plugin-Dependencies: junit:1.6,matrix-project:1.4
+Plugin-Developers: Bruno P. Kinoshita:kinow:brunodepaulak@yahoo.com.br
+

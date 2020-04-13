@@ -1,0 +1,60 @@
+Started by upstream project "[8mha:////4CHaMlluoqH3kKOBuV1SdcrIudX/r2okbf/T9qWe92N5AAAAxh+LCAAAAAAAAP9dTTsKwkAUfEb0AJZi4wXczkZSBUEhiiBiGZ7JY/PZ7Fs2q+g1vIY2HsLjeAeDAdFMM8PMMHN/Qa+yME6PScV6ErOuWNFkxQmpxcWQVZku1uwIGnQ8gLOFUav/V536t4d/NU8PvCX0FWnp0hC6R6scDMIcTygUaim2zmZazuq5YWsuaLj9a2oRONiJnA9ifsbSKNqzLSqDMf2aG8s5xe5jBWjrn0RStEKNkkrSTRAyJtE3FW+jBA+kCgEAAA==[0mExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge" build number [8mha:////4Jqg8fBpGmUMs4Bs0xOaKXuZgp5vdkKObkeGPFhzRGt+AAAAyB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwShjD9rPwkfdeKxNyCnNTw/KLs4oLE5FRkwYCi/KzU5BKwkHNiEdCelPTUeN/EvMT01NzUPIiET35iSjxcVt8IAFtyqHwLAQAA[0m2
+originally caused by:
+ Started by upstream project "[8mha:////4EaXCkjbrXnAYUPi5a3lu+JCfCXniNssbI6Yy1YmhmYlAAAAwB+LCAAAAAAAAP9djT0KwkAUhJ8RPYCl2HiBbCeCpBJRIRHBwjI8zTN/m7fLZiPxGl5DGw/hcbyDwVRmmhmGj5nnBwalgWlSRaVi96y4VJLcQEUkNzdNRqac75QlaNVzAGoDkw7/h868x8u767cDzhaGkji2iQ/9ykgLIz/DKwqJHIuDNSnHi2Zu3Jlbtt791U1wLcxFpk5iL9FelCnCABljKojtr18Tk0FL4arGQksKj8rkpcYziS8nSVLg7QAAAA==[0mPlatform_Management/Generate_Example_Workspace" build number [8mha:////4HcFNlfUjeWH8AURyYh/Uvjotjq60xLgum3XH3qukxYMAAAAwR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBkv9rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuHtqXmpRYklqvGtFYm5BTmp8eH5RdnFBYnKqvhEAk0Uzvu4AAAA=[0m2
+ originally caused by:
+  Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4EAbZSGxHL2x6Aoerj8PsKJp138uHkKLF9aIHMH5Ay2vAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9IwAM+B7JyQAAAA==[0m2
+  originally caused by:
+   Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+[EnvInject] - Preparing an environment for the build.
+[EnvInject] - Keeping Jenkins system variables.
+[EnvInject] - Keeping Jenkins build variables.
+[EnvInject] - Injecting as environment variables the properties content 
+WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject
+
+[EnvInject] - Variables injected successfully.
+[EnvInject] - Injecting contributions.
+Building remotely on [8mha:////4KbE300gNUO3ZpoKisBJG38kk6LFXTY/b4Hxh7C/u+bFAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgY5/eT83ILSktQi/eDyxKLc+OCcxLJUXcMUg8RUI8MkAIxBA83TAAAA[0mSwarm_Slave-1d0ae21b (swarm java8 ldap aws docker) in workspace /workspace/ExampleWorkspace/ExampleProject/Create_Environment
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Exec ssh-agent (binary ssh-agent on a remote machine)
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-KwbTz4lrsa0W/agent.2150
+SSH_AGENT_PID=2152
+[ssh-agent] Started.
+$ ssh-add /workspace/ExampleWorkspace/ExampleProject/Create_Environment@tmp/private_key_6244893065152929282.key
+Identity added: /workspace/ExampleWorkspace/ExampleProject/Create_Environment@tmp/private_key_6244893065152929282.key (/workspace/ExampleWorkspace/ExampleProject/Create_Environment@tmp/private_key_6244893065152929282.key)
+[ssh-agent] Using credentials jenkins (ADOP Jenkins Master)
+Cloning the remote Git repository
+Cloning repository ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template
+ > git init /workspace/ExampleWorkspace/ExampleProject/Create_Environment # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision a4576f7971f493f36b04b5678b26c67eba64fade (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a4576f7971f493f36b04b5678b26c67eba64fade
+Commit message: "Merge pull request #8 from anton-kasperovich/hotfix/tomcat_version_8_0_50"
+ > git rev-list --no-walk a4576f7971f493f36b04b5678b26c67eba64fade # timeout=10
+[EnvInject] - Inject global passwords.
+[Create_Environment] $ /bin/sh -xe /tmp/jenkins2221111743886758028.sh
++ set +x
+CI, tomcat.conf
+ExampleWorkspace_ExampleProject_CI is up-to-date
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 2152 killed;
+[ssh-agent] Stopped.
+Finished: SUCCESS

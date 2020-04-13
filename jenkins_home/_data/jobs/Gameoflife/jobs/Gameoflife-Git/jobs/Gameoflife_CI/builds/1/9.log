@@ -1,0 +1,20 @@
+Cloning the remote Git repository
+Cloning repository http://52.66.103.232/gitlab/admin1/gameoflife.git
+ > git init /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-Git/jobs/Gameoflife_CI/workspace # timeout=10
+Fetching upstream changes from http://52.66.103.232/gitlab/admin1/gameoflife.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials svn
+ > git fetch --tags --progress http://52.66.103.232/gitlab/admin1/gameoflife.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url http://52.66.103.232/gitlab/admin1/gameoflife.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://52.66.103.232/gitlab/admin1/gameoflife.git # timeout=10
+Fetching upstream changes from http://52.66.103.232/gitlab/admin1/gameoflife.git
+using GIT_ASKPASS to set credentials svn
+ > git fetch --tags --progress http://52.66.103.232/gitlab/admin1/gameoflife.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 9cb256f487c5508478beb6a8c087e69730078adb (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 9cb256f487c5508478beb6a8c087e69730078adb
+Commit message: "Update pom.xml"
+First time build. Skipping changelog.

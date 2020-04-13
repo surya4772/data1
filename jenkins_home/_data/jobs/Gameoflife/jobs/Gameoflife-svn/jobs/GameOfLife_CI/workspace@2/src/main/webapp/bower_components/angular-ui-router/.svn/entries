@@ -1,0 +1,115 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components/angular-ui-router
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+.bower.json
+file
+
+
+
+
+2019-12-19T10:10:44.422000Z
+9a349071c36f89e402263e74a42b25af
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+CHANGELOG.md
+file
+
+
+
+
+2019-12-19T10:10:44.422000Z
+5fb1d6a4ac4cbbc8288459ee38f3f479
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+CONTRIBUTING.md
+file
+
+
+
+
+2019-12-19T10:10:44.422000Z
+7b49e14b08df38515fa0346dcfbb008c
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+LICENSE
+file
+
+
+
+
+2019-12-19T10:10:44.422000Z
+0c60999654724b0f4904c609a35ae12a
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+README.md
+file
+
+
+
+
+2019-12-19T10:10:44.422000Z
+1a99a10605b115102c66fd18eb2bf67b
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+api
+dir
+
+bower.json
+file
+
+
+
+
+2019-12-19T10:10:44.422000Z
+1b384abb421e71f25677379fec870b97
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+release
+dir
+
+src
+dir
+

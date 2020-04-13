@@ -1,0 +1,54 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/test/java/be/cegeka/status
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+StatusControllerIntegrationTest.java
+file
+
+
+
+
+2019-12-19T10:10:45.714000Z
+b5867f759f75bbc66fcba2ba37749361
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+StatusControllerTest.java
+file
+
+
+
+
+2019-12-19T10:10:45.714000Z
+bb3dd04e2cb41ccc2f9aed5d6cf6121a
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

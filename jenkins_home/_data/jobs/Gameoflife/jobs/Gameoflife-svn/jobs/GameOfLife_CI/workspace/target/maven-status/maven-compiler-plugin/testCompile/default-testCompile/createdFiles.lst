@@ -1,0 +1,5 @@
+be/cegeka/status/StatusControllerIntegrationTest.class
+be/cegeka/gameoflife/GameOfLifeControllerIntegrationTest.class
+be/cegeka/GameoflifeApplicationTests.class
+be/cegeka/fizzbuzz/FizzBuzzServiceTest.class
+be/cegeka/status/StatusControllerTest.class

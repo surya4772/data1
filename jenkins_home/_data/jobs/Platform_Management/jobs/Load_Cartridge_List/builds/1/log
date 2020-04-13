@@ -1,0 +1,303 @@
+Started by upstream project "[8mha:////4K2NPbuNaP5RsWtWw0rKlI/fmg+5xLMdPR3zJl4JU/98AAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy5EgYN/az8JP2AnMSStPyi3HjfxLzE9NTc1LwSsLhXflJ8UGleXmqRPgAHzL8G3QAAAA==[0mPlatform_Management/Job_Runner" build number [8mha:////4EfhqRvG9kxCiZ75G8pGEKDjzwgE0H7l3meuanUeYHjgAAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBk39rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuFd+UnxQaV5eapG+IQC5Zq1F3gAAAA==[0m1
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4HNf1EQz5dBAQzPep4EPwVxUh+aI9SUKMKYfL49/nuO6AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9QwC2qRdQyQAAAA==[0m1
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+Building on master in workspace /var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace
+[WS-CLEANUP] Deleting project workspace...
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Exec ssh-agent (binary ssh-agent on a remote machine)
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-HO6NdC0VHB9g/agent.3185
+SSH_AGENT_PID=3188
+[ssh-agent] Started.
+$ ssh-add /var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace@tmp/private_key_5806571134581023015.key
+Identity added: /var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace@tmp/private_key_5806571134581023015.key (/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace@tmp/private_key_5806571134581023015.key)
+[ssh-agent] Using credentials jenkins (ADOP Jenkins Master)
+Cloning the remote Git repository
+Cloning repository ssh://jenkins@gerrit:29418/platform-management
+ > git init /var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse 69b37adbd7109ec996ab9785ea4935d0fb2a303e^{commit} # timeout=10
+Checking out Revision 69b37adbd7109ec996ab9785ea4935d0fb2a303e (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 69b37adbd7109ec996ab9785ea4935d0fb2a303e
+Commit message: "Merge pull request #52 from RobertNorthard/feature/custom-cartridge-properties"
+First time build. Skipping changelog.
+[workspace] $ /bin/bash -ex /tmp/jenkins2079351578695265986.sh
++ echo -e '#!/bin/sh
+exec ssh -o StrictHostKeyChecking=no $@
+'
++ chmod +x /var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/custom_ssh
++ export GIT_SSH=/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/custom_ssh
++ GIT_SSH=/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/custom_ssh
++ mkdir /var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ cd /var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ read repo_url
++ '[' '!' -z https://github.com/Accenture/adop-cartridge-java.git ']'
+++ echo https://github.com/Accenture/adop-cartridge-java.git
+++ rev
+++ cut -d/ -f1
+++ rev
+++ sed 's#.git$##g'
++ repo_name=adop-cartridge-java
++ target_repo_name=cartridges/adop-cartridge-java
++ repo_exists=0
+++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit ls-projects --type code
++ list_of_repos='All-Users
+platform-management'
++ for repo in ${list_of_repos}
++ '[' All-Users = cartridges/adop-cartridge-java ']'
++ for repo in ${list_of_repos}
++ '[' platform-management = cartridges/adop-cartridge-java ']'
++ '[' 0 -eq 0 ']'
++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit create-project --parent All-Projects cartridges/adop-cartridge-java
++ git clone ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-java
+Cloning into 'adop-cartridge-java'...
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+
++ cd adop-cartridge-java
++ git remote add source https://github.com/Accenture/adop-cartridge-java.git
++ git fetch source
+From https://github.com/Accenture/adop-cartridge-java
+ * [new branch]      master     -> source/master
++ git push origin '+refs/remotes/source/*:refs/heads/*'
+remote: remote: Processing changes: refs: 1remote: Processing changes: refs: 1, done            
+To ssh://gerrit:29418/cartridges/adop-cartridge-java
+ * [new branch]      source/master -> master
++ cd -
+/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ read repo_url
++ '[' '!' -z https://github.com/Accenture/adop-cartridge-cartridge-dev.git ']'
+++ echo https://github.com/Accenture/adop-cartridge-cartridge-dev.git
+++ rev
+++ cut -d/ -f1
+++ rev
+++ sed 's#.git$##g'
++ repo_name=adop-cartridge-cartridge-dev
++ target_repo_name=cartridges/adop-cartridge-cartridge-dev
++ repo_exists=0
+++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit ls-projects --type code
++ list_of_repos='All-Users
+cartridges/adop-cartridge-java
+platform-management'
++ for repo in ${list_of_repos}
++ '[' All-Users = cartridges/adop-cartridge-cartridge-dev ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-java = cartridges/adop-cartridge-cartridge-dev ']'
++ for repo in ${list_of_repos}
++ '[' platform-management = cartridges/adop-cartridge-cartridge-dev ']'
++ '[' 0 -eq 0 ']'
++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit create-project --parent All-Projects cartridges/adop-cartridge-cartridge-dev
++ git clone ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-cartridge-dev
+Cloning into 'adop-cartridge-cartridge-dev'...
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+
++ cd adop-cartridge-cartridge-dev
++ git remote add source https://github.com/Accenture/adop-cartridge-cartridge-dev.git
++ git fetch source
+From https://github.com/Accenture/adop-cartridge-cartridge-dev
+ * [new branch]      master     -> source/master
++ git push origin '+refs/remotes/source/*:refs/heads/*'
+remote: remote: Processing changes: refs: 1remote: Processing changes: refs: 1remote: Processing changes: refs: 1, done            
+To ssh://gerrit:29418/cartridges/adop-cartridge-cartridge-dev
+ * [new branch]      source/master -> master
++ cd -
+/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ read repo_url
++ '[' '!' -z https://github.com/Accenture/adop-cartridge-chef.git ']'
+++ echo https://github.com/Accenture/adop-cartridge-chef.git
+++ rev
+++ cut -d/ -f1
+++ sed 's#.git$##g'
+++ rev
++ repo_name=adop-cartridge-chef
++ target_repo_name=cartridges/adop-cartridge-chef
++ repo_exists=0
+++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit ls-projects --type code
++ list_of_repos='All-Users
+cartridges/adop-cartridge-cartridge-dev
+cartridges/adop-cartridge-java
+platform-management'
++ for repo in ${list_of_repos}
++ '[' All-Users = cartridges/adop-cartridge-chef ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-cartridge-dev = cartridges/adop-cartridge-chef ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-java = cartridges/adop-cartridge-chef ']'
++ for repo in ${list_of_repos}
++ '[' platform-management = cartridges/adop-cartridge-chef ']'
++ '[' 0 -eq 0 ']'
++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit create-project --parent All-Projects cartridges/adop-cartridge-chef
++ git clone ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-chef
+Cloning into 'adop-cartridge-chef'...
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+
++ cd adop-cartridge-chef
++ git remote add source https://github.com/Accenture/adop-cartridge-chef.git
++ git fetch source
+From https://github.com/Accenture/adop-cartridge-chef
+ * [new branch]      master     -> source/master
++ git push origin '+refs/remotes/source/*:refs/heads/*'
+remote: remote: Processing changes: refs: 1remote: Processing changes: refs: 1remote: Processing changes: refs: 1, done            
+To ssh://gerrit:29418/cartridges/adop-cartridge-chef
+ * [new branch]      source/master -> master
++ cd -
+/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ read repo_url
++ '[' '!' -z https://github.com/Accenture/adop-cartridge-docker.git ']'
+++ echo https://github.com/Accenture/adop-cartridge-docker.git
+++ rev
+++ cut -d/ -f1
+++ rev
+++ sed 's#.git$##g'
++ repo_name=adop-cartridge-docker
++ target_repo_name=cartridges/adop-cartridge-docker
++ repo_exists=0
+++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit ls-projects --type code
++ list_of_repos='All-Users
+cartridges/adop-cartridge-cartridge-dev
+cartridges/adop-cartridge-chef
+cartridges/adop-cartridge-java
+platform-management'
++ for repo in ${list_of_repos}
++ '[' All-Users = cartridges/adop-cartridge-docker ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-cartridge-dev = cartridges/adop-cartridge-docker ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-chef = cartridges/adop-cartridge-docker ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-java = cartridges/adop-cartridge-docker ']'
++ for repo in ${list_of_repos}
++ '[' platform-management = cartridges/adop-cartridge-docker ']'
++ '[' 0 -eq 0 ']'
++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit create-project --parent All-Projects cartridges/adop-cartridge-docker
++ git clone ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-docker
+Cloning into 'adop-cartridge-docker'...
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+
++ cd adop-cartridge-docker
++ git remote add source https://github.com/Accenture/adop-cartridge-docker.git
++ git fetch source
+From https://github.com/Accenture/adop-cartridge-docker
+ * [new branch]      master     -> source/master
++ git push origin '+refs/remotes/source/*:refs/heads/*'
+remote: remote: Processing changes: refs: 1remote: Processing changes: refs: 1, done            
+To ssh://gerrit:29418/cartridges/adop-cartridge-docker
+ * [new branch]      source/master -> master
++ cd -
+/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ read repo_url
++ '[' '!' -z https://github.com/kramos/adop-cartridge-aspnet-linux.git ']'
+++ echo https://github.com/kramos/adop-cartridge-aspnet-linux.git
+++ rev
+++ cut -d/ -f1
+++ rev
+++ sed 's#.git$##g'
++ repo_name=adop-cartridge-aspnet-linux
++ target_repo_name=cartridges/adop-cartridge-aspnet-linux
++ repo_exists=0
+++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit ls-projects --type code
++ list_of_repos='All-Users
+cartridges/adop-cartridge-cartridge-dev
+cartridges/adop-cartridge-chef
+cartridges/adop-cartridge-docker
+cartridges/adop-cartridge-java
+platform-management'
++ for repo in ${list_of_repos}
++ '[' All-Users = cartridges/adop-cartridge-aspnet-linux ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-cartridge-dev = cartridges/adop-cartridge-aspnet-linux ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-chef = cartridges/adop-cartridge-aspnet-linux ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-docker = cartridges/adop-cartridge-aspnet-linux ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-java = cartridges/adop-cartridge-aspnet-linux ']'
++ for repo in ${list_of_repos}
++ '[' platform-management = cartridges/adop-cartridge-aspnet-linux ']'
++ '[' 0 -eq 0 ']'
++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit create-project --parent All-Projects cartridges/adop-cartridge-aspnet-linux
++ git clone ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-aspnet-linux
+Cloning into 'adop-cartridge-aspnet-linux'...
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+
++ cd adop-cartridge-aspnet-linux
++ git remote add source https://github.com/kramos/adop-cartridge-aspnet-linux.git
++ git fetch source
+From https://github.com/kramos/adop-cartridge-aspnet-linux
+ * [new branch]      master     -> source/master
++ git push origin '+refs/remotes/source/*:refs/heads/*'
+remote: remote: Processing changes: refs: 1remote: Processing changes: refs: 1, done            
+To ssh://gerrit:29418/cartridges/adop-cartridge-aspnet-linux
+ * [new branch]      source/master -> master
++ cd -
+/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ read repo_url
++ '[' '!' -z https://github.com/kramos/adop-cartridge-flyway.git ']'
+++ echo https://github.com/kramos/adop-cartridge-flyway.git
+++ rev
+++ cut -d/ -f1
+++ rev
+++ sed 's#.git$##g'
++ repo_name=adop-cartridge-flyway
++ target_repo_name=cartridges/adop-cartridge-flyway
++ repo_exists=0
+++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit ls-projects --type code
++ list_of_repos='All-Users
+cartridges/adop-cartridge-aspnet-linux
+cartridges/adop-cartridge-cartridge-dev
+cartridges/adop-cartridge-chef
+cartridges/adop-cartridge-docker
+cartridges/adop-cartridge-java
+platform-management'
++ for repo in ${list_of_repos}
++ '[' All-Users = cartridges/adop-cartridge-flyway ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-aspnet-linux = cartridges/adop-cartridge-flyway ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-cartridge-dev = cartridges/adop-cartridge-flyway ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-chef = cartridges/adop-cartridge-flyway ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-docker = cartridges/adop-cartridge-flyway ']'
++ for repo in ${list_of_repos}
++ '[' cartridges/adop-cartridge-java = cartridges/adop-cartridge-flyway ']'
++ for repo in ${list_of_repos}
++ '[' platform-management = cartridges/adop-cartridge-flyway ']'
++ '[' 0 -eq 0 ']'
++ ssh -n -o StrictHostKeyChecking=no -p 29418 gerrit gerrit create-project --parent All-Projects cartridges/adop-cartridge-flyway
++ git clone ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-flyway
+Cloning into 'adop-cartridge-flyway'...
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+
++ cd adop-cartridge-flyway
++ git remote add source https://github.com/kramos/adop-cartridge-flyway.git
++ git fetch source
+From https://github.com/kramos/adop-cartridge-flyway
+ * [new branch]      develop    -> source/develop
+ * [new branch]      master     -> source/master
++ git push origin '+refs/remotes/source/*:refs/heads/*'
+remote: remote: Processing changes: refs: 2remote: Processing changes: refs: 2, done            
+To ssh://gerrit:29418/cartridges/adop-cartridge-flyway
+ * [new branch]      source/develop -> develop
+ * [new branch]      source/master -> master
++ cd -
+/var/jenkins_home/jobs/Platform_Management/jobs/Load_Cartridge_List/workspace/tmp
++ read repo_url
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 3188 killed;
+[ssh-agent] Stopped.
+Finished: SUCCESS

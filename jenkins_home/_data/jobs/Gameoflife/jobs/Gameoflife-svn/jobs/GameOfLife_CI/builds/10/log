@@ -1,0 +1,150 @@
+Started by user [8mha:////4DnklqZ3UXiUKxo+R2fxZYS3gCTrm4aBUyBmLGs0b6mNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZu/dLi1CL9xJTczDwAEmIUecAAAAA=[0mAdmin User
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] node
+Running on [8mha:////4IpUL76Inv85u0oD3kLw01+UpqW7/5TBe5hRE114sjG2AAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Svn Checkout)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] checkout
+Updating http://52.66.103.232/svn/gameoflife at revision '2019-12-10T07:17:39.438 +0000' --quiet
+Using sole credentials admin/****** (svn) in realm ‘<http://52.66.103.232:80> Forbidden’
+At revision 2
+
+No changes for http://52.66.103.232/svn/gameoflife since the previous build
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Maven Execution)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] withMaven
+[withMaven] Options: []
+[withMaven] Available options: 
+[withMaven] using JDK installation jdk8
+[withMaven] using Maven installation 'Maven'
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] sh
+[workspace] Running shell script
++ mvn clean install
+----- withMaven Wrapper script -----
+Picked up JAVA_TOOL_OPTIONS: -Dmaven.ext.class.path="/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/withMaven4f308b35/pipeline-maven-spy.jar" -Dorg.jenkinsci.plugins.pipeline.maven.reportsFolder="/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/withMaven4f308b35" 
+Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 13:51:28+0000)
+Maven home: /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven
+Java version: 1.8.0_221, vendor: Oracle Corporation
+Java home: /var/jenkins_home/tools/hudson.model.JDK/jdk8/jre
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "4.4.0-1099-aws", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building gameoflife 0.0.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ gameoflife ---
+[INFO] Deleting /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gameoflife ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 2 resources
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ gameoflife ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target/classes
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gameoflife ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ gameoflife ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target/test-classes
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ gameoflife ---
+[INFO] Surefire report directory: /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -Dmaven.ext.class.path="/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/withMaven4f308b35/pipeline-maven-spy.jar" -Dorg.jenkinsci.plugins.pipeline.maven.reportsFolder="/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/withMaven4f308b35" 
+Running be.cegeka.status.StatusControllerIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.792 sec - in be.cegeka.status.StatusControllerIntegrationTest
+Running be.cegeka.status.StatusControllerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in be.cegeka.status.StatusControllerTest
+Running be.cegeka.gameoflife.GameOfLifeControllerIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec - in be.cegeka.gameoflife.GameOfLifeControllerIntegrationTest
+Running be.cegeka.fizzbuzz.FizzBuzzServiceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in be.cegeka.fizzbuzz.FizzBuzzServiceTest
+Running be.cegeka.GameoflifeApplicationTests
+
+  _______      ___      .___  ___.  _______      ______    _______     __       __   _______  _______
+ /  _____|    /   \     |   \/   | |   ____|    /  __  \  |   ____|   |  |     |  | |   ____||   ____|
+|  |  __     /  ^  \    |  \  /  | |  |__      |  |  |  | |  |__      |  |     |  | |  |__   |  |__
+|  | |_ |   /  /_\  \   |  |\/|  | |   __|     |  |  |  | |   __|     |  |     |  | |   __|  |   __|
+|  |__| |  /  _____  \  |  |  |  | |  |____    |  `--'  | |  |        |  `----.|  | |  |     |  |____
+ \______| /__/     \__\ |__|  |__| |_______|    \______/  |__|        |_______||__| |__|     |_______|
+
+[INFO] be.cegeka.GameoflifeApplicationTests - Starting GameoflifeApplicationTests on 99d2ca51e6d3 with PID 8759 (/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target/test-classes started by jenkins in /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace)
+[DEBUG] be.cegeka.GameoflifeApplicationTests - Running with Spring Boot v1.3.0.RELEASE, Spring v4.2.3.RELEASE
+[INFO] be.cegeka.GameoflifeApplicationTests - No profiles are active
+[INFO] be.cegeka.GameoflifeApplicationTests - Started GameoflifeApplicationTests in 0.797 seconds (JVM running for 4.403)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.826 sec - in be.cegeka.GameoflifeApplicationTests
+
+Results :
+
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-war-plugin:2.5:war (default-war) @ gameoflife ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [gameoflife] in [/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target/gameoflife-0.0.1]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/src/main/webapp]
+[INFO] Webapp assembled in [300 msecs]
+[INFO] Building war: /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target/gameoflife-0.0.1.war
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- spring-boot-maven-plugin:1.3.0.RELEASE:repackage (default) @ gameoflife ---
+[INFO] 
+[8mha:////4EncEGxAP9fd5eYU28kBvvUyV2myMg+8S1yx4wBe/f3MAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ gameoflife ---
+[INFO] Installing /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/target/gameoflife-0.0.1.war to /var/jenkins_home/.m2/repository/be/cegeka/gameoflife/0.0.1/gameoflife-0.0.1.war
+[INFO] Installing /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/pom.xml to /var/jenkins_home/.m2/repository/be/cegeka/gameoflife/0.0.1/gameoflife-0.0.1.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.948s
+[INFO] Finished at: Tue Dec 10 07:17:52 UTC 2019
+[INFO] Final Memory: 34M/313M
+[INFO] ------------------------------------------------------------------------
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // withMaven
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Sonarqube analysis)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] tool
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] sh
+[workspace] Running shell script
++ -Dsonar.languages=java -Dsonar.projectKey=Game -Dsonar.projectName=Gameoflife -Dsonar.projectVersion=0.0.1 -Dsonar.sources=src
+/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/durable-be58766a/script.sh: 2: /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/durable-be58766a/script.sh: -Dsonar.languages=java: not found
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // script
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Nexus Upload)
+Stage 'Nexus Upload' skipped due to earlier failure(s)
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // node
+[8mha:////4NkueKVYrgQrVcme9p6ewnhxzUEBG1YkEi3hkrg5RNLVAAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 127
+Finished: FAILURE

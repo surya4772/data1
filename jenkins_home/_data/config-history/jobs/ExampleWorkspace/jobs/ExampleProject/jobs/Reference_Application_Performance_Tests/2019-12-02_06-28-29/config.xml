@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description>This job run the Jmeter test for the java reference application</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>B</name>
+                    <defaultValue/>
+                    <description>Parent build number</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>PARENT_BUILD</name>
+                    <defaultValue>Reference_Application_Regression_Tests</defaultValue>
+                    <description>Parent build name</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>ENVIRONMENT_NAME</name>
+                    <defaultValue>CI</defaultValue>
+                    <description>Name of the environment.</description>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject
+JMETER_TESTDIR=jmeter-test</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <scm class="hudson.scm.NullSCM"/>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.plugins.copyartifact.CopyArtifact>
+            <project>Reference_Application_Build</project>
+            <filter/>
+            <target>${JMETER_TESTDIR}</target>
+            <doNotFingerprintArtifacts>false</doNotFingerprintArtifacts>
+            <selector class="hudson.plugins.copyartifact.SpecificBuildSelector">
+                <buildNumber>${B}</buildNumber>
+            </selector>
+        </hudson.plugins.copyartifact.CopyArtifact>
+        <hudson.tasks.Shell>
+            <command>export SERVICE_NAME="$(echo ${PROJECT_NAME} | tr '/' '_')_${ENVIRONMENT_NAME}"
+if [ -e ../apache-jmeter-2.13.tgz ]; then
+	cp ../apache-jmeter-2.13.tgz $JMETER_TESTDIR
+else
+	wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-2.13.tgz
+    cp apache-jmeter-2.13.tgz ../
+    mv apache-jmeter-2.13.tgz $JMETER_TESTDIR
+fi
+cd $JMETER_TESTDIR
+tar -xf apache-jmeter-2.13.tgz
+echo 'Changing user defined parameters for jmx file'
+sed -i 's/PETCLINIC_HOST_VALUE/'"${SERVICE_NAME}"'/g' src/test/jmeter/petclinic_test_plan.jmx
+sed -i 's/PETCLINIC_PORT_VALUE/8080/g' src/test/jmeter/petclinic_test_plan.jmx
+sed -i 's/CONTEXT_WEB_VALUE/petclinic/g' src/test/jmeter/petclinic_test_plan.jmx
+sed -i 's/HTTPSampler.path"&gt;&lt;/HTTPSampler.path"&gt;petclinic&lt;/g' src/test/jmeter/petclinic_test_plan.jmx
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Ant>
+            <targets/>
+            <antName>ADOP Ant</antName>
+            <buildFile>${WORKSPACE}/$JMETER_TESTDIR/apache-jmeter-2.13/extras/build.xml</buildFile>
+            <properties>testpath=$WORKSPACE/$JMETER_TESTDIR/src/test/jmeter
+test=petclinic_test_plan</properties>
+        </hudson.tasks.Ant>
+        <hudson.tasks.Shell>
+            <command>mv $JMETER_TESTDIR/src/test/gatling/* .
+export SERVICE_NAME="$(echo ${PROJECT_NAME} | tr '/' '_')_${ENVIRONMENT_NAME}"
+CONTAINER_IP=$(docker inspect --format '{{ .NetworkSettings.Networks.'"$DOCKER_NETWORK_NAME"'.IPAddress }}' ${SERVICE_NAME})
+sed -i "s/###TOKEN_VALID_URL###/http:\/\/${CONTAINER_IP}:8080/g" ${WORKSPACE}/src/test/scala/default/RecordedSimulation.scala
+sed -i "s/###TOKEN_RESPONSE_TIME###/10000/g" ${WORKSPACE}/src/test/scala/default/RecordedSimulation.scala
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Maven>
+            <targets>gatling:execute</targets>
+            <mavenName>ADOP Maven</mavenName>
+            <jvmOptions/>
+            <usePrivateRepository>false</usePrivateRepository>
+        </hudson.tasks.Maven>
+    </builders>
+    <publishers>
+        <htmlpublisher.HtmlPublisher>
+            <reportTargets>
+                <htmlpublisher.HtmlPublisherTarget>
+                    <reportName>Jmeter Report</reportName>
+                    <reportDir>$WORKSPACE/$JMETER_TESTDIR/src/test/jmeter</reportDir>
+                    <reportFiles>petclinic_test_plan.html</reportFiles>
+                    <keepAll>false</keepAll>
+                    <allowMissing>false</allowMissing>
+                    <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+                </htmlpublisher.HtmlPublisherTarget>
+            </reportTargets>
+        </htmlpublisher.HtmlPublisher>
+        <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+            <downstreamProjectNames>ExampleWorkspace/ExampleProject/Reference_Application_Deploy_ProdA</downstreamProjectNames>
+            <configs>
+                <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                    <properties>B=${B}
+PARENT_BUILD=${PARENT_BUILD}</properties>
+                </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+            </configs>
+        </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+        <io.gatling.jenkins.GatlingPublisher>
+            <enabled>true</enabled>
+        </io.gatling.jenkins.GatlingPublisher>
+    </publishers>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <EnvInjectPasswordWrapper>
+            <injectGlobalPasswords>true</injectGlobalPasswords>
+            <passwordEntries/>
+        </EnvInjectPasswordWrapper>
+        <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+        <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+            <user>adop-jenkins-master</user>
+        </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    </buildWrappers>
+    <assignedNode>docker</assignedNode>
+</project>

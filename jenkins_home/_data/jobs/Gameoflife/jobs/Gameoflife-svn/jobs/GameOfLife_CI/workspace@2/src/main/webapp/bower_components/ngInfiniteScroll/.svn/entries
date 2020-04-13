@@ -1,0 +1,99 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components/ngInfiniteScroll
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+.bower.json
+file
+
+
+
+
+2019-12-19T10:10:45.298000Z
+ebe57aeca66b940f999f4c4810fc930e
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+LICENSE
+file
+
+
+
+
+2019-12-19T10:10:45.298000Z
+c8c8887c21c0a5470c8a5f78ed6d9893
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+README.md
+file
+
+
+
+
+2019-12-19T10:10:45.298000Z
+1ec1a0a2fa2e8ab5fbffe78b395e927c
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+bower.json
+file
+
+
+
+
+2019-12-19T10:10:45.298000Z
+8405c2af1a838caa775ae6559ede0f7b
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+build
+dir
+
+package.json
+file
+
+
+
+
+2019-12-19T10:10:45.298000Z
+fe4bb53e5df733dc3dc899613086b329
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+src
+dir
+

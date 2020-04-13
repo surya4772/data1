@@ -1,0 +1,134 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components/bootstrap
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+.bower.json
+file
+
+
+
+
+2019-12-19T10:09:42.500000Z
+375e207260020f96b8749d98638b04b8
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+Gruntfile.js
+file
+
+
+
+
+2019-12-19T10:09:42.500000Z
+ba9c4ddb08b741e94c18051fe36007fb
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+LICENSE
+file
+
+
+
+
+2019-12-19T10:09:42.500000Z
+86047de20b327af606bc29b1174c4b14
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+README.md
+file
+
+
+
+
+2019-12-19T10:09:42.500000Z
+e2a36adc8724c629eeaa7633748aae6f
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+bower.json
+file
+
+
+
+
+2019-12-19T10:09:42.500000Z
+f084f7f988ae12286f4560111d996a48
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+dist
+dir
+
+fonts
+dir
+
+grunt
+dir
+
+js
+dir
+
+less
+dir
+
+package.js
+file
+
+
+
+
+2019-12-19T10:09:42.500000Z
+f4a2abe93b91cf26c0f7cf044849c53d
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+package.json
+file
+
+
+
+
+2019-12-19T10:09:42.500000Z
+f512e3f8de4d3c8347cfd42644683475
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

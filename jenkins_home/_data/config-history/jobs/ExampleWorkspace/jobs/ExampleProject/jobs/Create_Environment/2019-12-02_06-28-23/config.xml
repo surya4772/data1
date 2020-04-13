@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description>This job creates the environment to deploy the java application.
+Note : If you running this job for the first time then please keep the environment name to default value.
+The reference application deploy job is expecting the default environment to be available.</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.ChoiceParameterDefinition>
+                    <choices class="java.util.Arrays$ArrayList">
+                        <a class="string-array">
+                            <string>DEV</string>
+                            <string>PROD</string>
+                        </a>
+                    </choices>
+                    <name>ENVIRONMENT_TYPE</name>
+                    <description>Create Environment for development(named: CI) or production (named: PRODA and PRODB)</description>
+                </hudson.model.ChoiceParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>set +x
+function createDockerContainer() {
+	echo $1, $2
+    export ENVIRONMENT_NAME=$1
+    export SERVICE_NAME="$(echo ${PROJECT_NAME} | tr '/' '_')_${ENVIRONMENT_NAME}"
+    docker-compose -p ${SERVICE_NAME} up -d
+    ## Add nginx configuration
+    sed -i "s/###TOMCAT_SERVICE_NAME###/${SERVICE_NAME}/" $2
+    docker cp $2 proxy:/etc/nginx/sites-enabled/${SERVICE_NAME}.conf
+}
+
+if [ "$ENVIRONMENT_TYPE" == "DEV" ]; then
+ 	createDockerContainer "CI" tomcat.conf
+elif [ "$ENVIRONMENT_TYPE" == "PROD" ]; then
+	##Creating 2 environment PRODA and PRODB, with a upstream ngix configuration in prod-tomcat.conf
+    mv tomcat.conf tomcatA.conf &amp;&amp;cp tomcatA.conf tomcatB.conf
+    createDockerContainer "PRODA" "tomcatA.conf"
+    createDockerContainer "PRODB" "tomcatB.conf"
+
+	SERVICE_NAME_PRODA="$(echo ${PROJECT_NAME} | tr '/' '_')_PRODA"
+    SERVICE_NAME_PRODB="$(echo ${PROJECT_NAME} | tr '/' '_')_PRODB"
+    TOMCAT_1_IP=$( docker inspect --format '{{ .NetworkSettings.Networks.'"$DOCKER_NETWORK_NAME"'.IPAddress }}' ${SERVICE_NAME_PRODA} )
+    TOMCAT_2_IP=$( docker inspect --format '{{ .NetworkSettings.Networks.'"$DOCKER_NETWORK_NAME"'.IPAddress }}' ${SERVICE_NAME_PRODB} )
+    PROJECT_KEY_PROD="$(echo ${PROJECT_NAME} | tr '/' '_')_PROD"
+    TOKEN_UPSTREAM_NAME="###TOKEN_UPSTREAM_NAME###"
+    TOKEN_NAMESPACE="###TOKEN_NAMESPACE###"
+    TOKEN_TOMCAT_1_IP="###TOKEN_TOMCAT_1_IP###"
+    TOKEN_TOMCAT_1_PORT="###TOKEN_TOMCAT_1_PORT###"
+    TOKEN_TOMCAT_2_IP="###TOKEN_TOMCAT_2_IP###"
+    TOKEN_TOMCAT_2_PORT="###TOKEN_TOMCAT_2_PORT###"
+
+    sed -i "s/${TOKEN_UPSTREAM_NAME}/${PROJECT_KEY_PROD}/g" prod-tomcat.conf
+    sed -i "s/${TOKEN_NAMESPACE}/${PROJECT_KEY_PROD}/g" prod-tomcat.conf
+    sed -i "s/${TOKEN_TOMCAT_1_IP}/${TOMCAT_1_IP}/g" prod-tomcat.conf
+    sed -i "s/${TOKEN_TOMCAT_1_PORT}/8080/g" prod-tomcat.conf
+    sed -i "s/${TOKEN_TOMCAT_2_IP}/${TOMCAT_2_IP}/g" prod-tomcat.conf
+    sed -i "s/${TOKEN_TOMCAT_2_PORT}/8080/g" prod-tomcat.conf
+    docker cp prod-tomcat.conf proxy:/etc/nginx/sites-enabled/${PROJECT_KEY_PROD}.conf
+fi
+## Reload nginx
+docker exec proxy /usr/sbin/nginx -s reload
+set -x</command>
+        </hudson.tasks.Shell>
+    </builders>
+    <publishers>
+        <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+            <downstreamProjectNames>ExampleWorkspace/ExampleProject/Destroy_Environment</downstreamProjectNames>
+            <configs>
+                <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
+            </configs>
+        </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+    </publishers>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <EnvInjectPasswordWrapper>
+            <injectGlobalPasswords>true</injectGlobalPasswords>
+            <passwordEntries/>
+        </EnvInjectPasswordWrapper>
+        <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+        <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+            <user>adop-jenkins-master</user>
+        </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    </buildWrappers>
+    <assignedNode>docker</assignedNode>
+    <scm class="hudson.plugins.git.GitSCM">
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <url>ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template</url>
+                <credentialsId>adop-jenkins-master</credentialsId>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>*/master</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <configVersion>2</configVersion>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <authorOrCommitter>false</authorOrCommitter>
+        <clean>false</clean>
+        <wipeOutWorkspace>false</wipeOutWorkspace>
+        <pruneBranches>false</pruneBranches>
+        <remotePoll>false</remotePoll>
+        <ignoreNotifyCommit>false</ignoreNotifyCommit>
+        <gitTool>Default</gitTool>
+        <skipTag>true</skipTag>
+    </scm>
+</project>

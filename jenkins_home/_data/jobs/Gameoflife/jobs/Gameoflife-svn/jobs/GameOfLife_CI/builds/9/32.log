@@ -1,0 +1,3 @@
+[workspace] Running shell script
++ -Dsonar.languages=java -Dsonar.projectKey=Game -Dsonar.projectName=Gameoflife -Dsonar.projectVersion=0.0.1 -Dsonar.sources=src
+/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/durable-d05cee76/script.sh: 2: /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace@tmp/durable-d05cee76/script.sh: -Dsonar.languages=java: not found

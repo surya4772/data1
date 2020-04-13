@@ -1,0 +1,160 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+Cegeka - workshop Game of Life.pdf
+file
+
+
+
+
+2019-12-19T10:10:47.110000Z
+406562e4d239f4b78616ee5a00940d4f
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+Cegeka - workshop Game of Life.pptx
+file
+
+
+
+
+2019-12-19T10:10:47.118000Z
+d4d37b89cbcc3574e2dfccb52975e16c
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+Gruntfile.js
+file
+
+
+
+
+2019-12-19T10:10:47.122000Z
+2e9ca0b7c19429f94afa1d8eb4b663e2
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+README.md
+file
+
+
+
+
+2019-12-19T10:10:47.122000Z
+568d167a7f9bd7026cb7eff5e8fa9f54
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+bower.json
+file
+
+
+
+
+2019-12-19T10:10:47.122000Z
+09bcaf11c4ad75edbb2e1a33162d60f7
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+branches
+dir
+
+mvnw
+file
+
+
+
+
+2019-12-19T10:10:47.122000Z
+bb26d918d2a3cd5b35b5a1d08556a741
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+mvnw.cmd
+file
+
+
+
+
+2019-12-19T10:10:47.122000Z
+828889fc387048c269cb47d49f818dc5
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+package.json
+file
+
+
+
+
+2019-12-19T10:10:47.122000Z
+80635408c04117e367579351c45e5c06
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+pom.xml
+file
+
+
+
+
+2019-12-19T10:10:47.122000Z
+8421da6eaed2f4f680c60093f472a8ce
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+src
+dir
+
+tags
+dir
+
+tekstje_vtk
+dir
+
+trunk
+dir
+

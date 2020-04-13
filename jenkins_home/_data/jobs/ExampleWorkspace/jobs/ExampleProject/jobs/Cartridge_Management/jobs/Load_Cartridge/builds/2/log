@@ -1,0 +1,175 @@
+Started by upstream project "[8mha:////4EaXCkjbrXnAYUPi5a3lu+JCfCXniNssbI6Yy1YmhmYlAAAAwB+LCAAAAAAAAP9djT0KwkAUhJ8RPYCl2HiBbCeCpBJRIRHBwjI8zTN/m7fLZiPxGl5DGw/hcbyDwVRmmhmGj5nnBwalgWlSRaVi96y4VJLcQEUkNzdNRqac75QlaNVzAGoDkw7/h868x8u767cDzhaGkji2iQ/9ykgLIz/DKwqJHIuDNSnHi2Zu3Jlbtt791U1wLcxFpk5iL9FelCnCABljKojtr18Tk0FL4arGQksKj8rkpcYziS8nSVLg7QAAAA==[0mPlatform_Management/Generate_Example_Workspace" build number [8mha:////4HcFNlfUjeWH8AURyYh/Uvjotjq60xLgum3XH3qukxYMAAAAwR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBkv9rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuHtqXmpRYklqvGtFYm5BTmp8eH5RdnFBYnKqvhEAk0Uzvu4AAAA=[0m2
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4EAbZSGxHL2x6Aoerj8PsKJp138uHkKLF9aIHMH5Ay2vAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9IwAM+B7JyQAAAA==[0m2
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+[EnvInject] - Preparing an environment for the build.
+[EnvInject] - Keeping Jenkins system variables.
+[EnvInject] - Keeping Jenkins build variables.
+[EnvInject] - Injecting as environment variables the properties content 
+WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject
+
+[EnvInject] - Variables injected successfully.
+[EnvInject] - Injecting contributions.
+Building remotely on [8mha:////4KbE300gNUO3ZpoKisBJG38kk6LFXTY/b4Hxh7C/u+bFAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgY5/eT83ILSktQi/eDyxKLc+OCcxLJUXcMUg8RUI8MkAIxBA83TAAAA[0mSwarm_Slave-1d0ae21b (swarm java8 ldap aws docker) in workspace /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository ssh://jenkins@gerrit:29418/platform-management
+ > git init /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse 69b37adbd7109ec996ab9785ea4935d0fb2a303e^{commit} # timeout=10
+Checking out Revision 69b37adbd7109ec996ab9785ea4935d0fb2a303e (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 69b37adbd7109ec996ab9785ea4935d0fb2a303e
+Commit message: "Merge pull request #52 from RobertNorthard/feature/custom-cartridge-properties"
+First time build. Skipping changelog.
+Run condition [Execute Shell] enabling prebuild for step [BuilderChain]
+[EnvInject] - Inject global passwords.
+[EnvInject] - Mask passwords that will be passed as build parameters.
+[copy-to-slave] Copying '**/**', excluding nothing, from 'file:/var/jenkins_home/userContent/' on the master to 'file:/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/' on 'Swarm_Slave-1d0ae21b'.
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Evaluating the Groovy script content
+[Load_Cartridge] $ /bin/bash -ex /tmp/jenkins8271832095394534172.sh
++ mkdir /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/tmp
+++ echo http://13.126.65.32/gerrit/ - ssh '(adop-gerrit-ssh)'
+++ cut -d '(' -f2
+++ cut -d ')' -f1
++ echo SCM_PROVIDER_ID=adop-gerrit-ssh
++ '[' -z ']'
++ echo 'SCM_NAMESPACE not specified, setting to PROJECT_NAME...'
+SCM_NAMESPACE not specified, setting to PROJECT_NAME...
++ '[' -z ']'
++ SCM_NAMESPACE=ExampleWorkspace/ExampleProject
+++ echo ExampleWorkspace/ExampleProject
+++ cut -d '(' -f2
+++ cut -d ')' -f1
++ echo SCM_NAMESPACE=ExampleWorkspace/ExampleProject
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path '/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/cartridge.properties'
+[EnvInject] - Variables injected successfully.
+[Load_Cartridge] $ /bin/bash -ex /tmp/jenkins2225522254868562701.sh
++ echo -e '#!/bin/sh
+exec ssh -i **** -o StrictHostKeyChecking=no $@
+'
++ chmod +x /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/custom_ssh
++ export GIT_SSH=/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/custom_ssh
++ GIT_SSH=/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/custom_ssh
++ echo 'INFO: cloning ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-java.git'
+INFO: cloning ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-java.git
++ set +x
+Cloning into 'cartridge'...
+Total 291 (delta 98), reused 291 (delta 98)
++++ find -name metadata.cartridge
++++ head -1
+++ dirname ./cartridge/metadata.cartridge
++ export CART_HOME=./cartridge
++ CART_HOME=./cartridge
++ echo CART_HOME=./cartridge
++ echo GIT_SSH=/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/custom_ssh
++ '[' -d /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/./cartridge/infra ']'
++ '[' -d /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/./cartridge/jenkins/jobs ']'
++ cd /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/./cartridge/jenkins/jobs
++ '[' -f generate.sh ']'
++ source generate.sh
+++ export TOKEN_WORKSPACE_FOLDER_NAME=ExampleWorkspace
+++ TOKEN_WORKSPACE_FOLDER_NAME=ExampleWorkspace
++++ echo ExampleWorkspace/ExampleProject
++++ cut -d/ -f2
+++ export TOKEN_PROJECT_FOLDER_NAME=ExampleProject
+++ TOKEN_PROJECT_FOLDER_NAME=ExampleProject
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path '/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/carthome.properties'
+[EnvInject] - Variables injected successfully.
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path '/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/scm_provider.properties'
+[EnvInject] - Variables injected successfully.
+Script returned: []
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties content 
+PLUGGABLE_SCM_PROVIDER_PATH=/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/job_dsl_additional_classpath/
+PLUGGABLE_SCM_PROVIDER_PROPERTIES_PATH=/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/datastore/pluggable/scm
+
+[EnvInject] - Variables injected successfully.
+[Load_Cartridge] $ /tools/hudson.plugins.groovy.GroovyInstallation/ADOP_Groovy/bin/groovy -cp /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/job_dsl_additional_classpath /workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/hudson461993614513022656.groovy
+[INFO] - Finding SCM provider for SCM provider id: adop-gerrit-ssh
+[INFO] - Found properties datastore for SCM provider id: adop-gerrit-ssh
+[INFO] - SCM provider type: gerrit
+[INFO] - Inferring SCM provider.
+[INFO] - Using class pluggable.scm.gerrit.GerritSCMProviderFactory SCM provider for type: gerrit
+Custom SCM namespace specified...
+[INFO] - Found: ExampleWorkspace/ExampleProject/spring-petclinic
+[INFO] - Repository already exists, skipping create: : ExampleWorkspace/ExampleProject/spring-petclinic
+[INFO] - Found: ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests
+[INFO] - Repository already exists, skipping create: : ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests
+[INFO] - Found: ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template
+[INFO] - Repository already exists, skipping create: : ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path '/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/cartridge.properties'
+[EnvInject] - Variables injected successfully.
+[EnvInject] - Injecting as environment variables the properties content 
+PLUGGABLE_SCM_PROVIDER_PATH=/var/jenkins_home/userContent/job_dsl_additional_classpath/
+FOLDER_DISPLAY_NAME=
+WORKSPACE_NAME=ExampleWorkspace
+CARTRIDGE_FOLDER=
+PLUGGABLE_SCM_PROVIDER_PROPERTIES_PATH=/var/jenkins_home/userContent/datastore/pluggable/scm
+FOLDER_DESCRIPTION=
+PROJECT_NAME=ExampleWorkspace/ExampleProject
+
+[EnvInject] - Variables injected successfully.
+[Load_Cartridge] $ /bin/bash /tmp/CommandInterpreterCondition7019047046454132027.sh
+Folder name not specified, moving on...
+Run condition [Execute Shell] preventing perform for step [BuilderChain]
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path '/workspace/ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge/cartridge.properties'
+[EnvInject] - Variables injected successfully.
+Processing DSL script environment_provisioning.groovy
+[INFO] - Finding SCM provider for SCM provider id: adop-gerrit-ssh
+[INFO] - Found properties datastore for SCM provider id: adop-gerrit-ssh
+[INFO] - SCM provider type: gerrit
+[INFO] - Inferring SCM provider.
+[INFO] - Using class pluggable.scm.gerrit.GerritSCMProviderFactory SCM provider for type: gerrit
+Warning: (environment_provisioning.groovy, line 35) injectPasswords is deprecated
+Warning: (environment_provisioning.groovy, line 107) injectPasswords is deprecated
+Warning: (environment_provisioning.groovy, line 159) injectPasswords is deprecated
+Processing DSL script java_reference_application_jobs.groovy
+[INFO] - Finding SCM provider for SCM provider id: adop-gerrit-ssh
+[INFO] - Found properties datastore for SCM provider id: adop-gerrit-ssh
+[INFO] - SCM provider type: gerrit
+[INFO] - Inferring SCM provider.
+[INFO] - Using class pluggable.scm.gerrit.GerritSCMProviderFactory SCM provider for type: gerrit
+Warning: (java_reference_application_jobs.groovy, line 41) injectPasswords is deprecated
+Warning: (java_reference_application_jobs.groovy, line 80) injectPasswords is deprecated
+Warning: (java_reference_application_jobs.groovy, line 129) injectPasswords is deprecated
+Warning: (java_reference_application_jobs.groovy, line 178) injectPasswords is deprecated
+Warning: (java_reference_application_jobs.groovy, line 241) injectPasswords is deprecated
+Warning: (java_reference_application_jobs.groovy, line 344) injectPasswords is deprecated
+Warning: (java_reference_application_jobs.groovy, line 425) injectPasswords is deprecated
+Warning: (java_reference_application_jobs.groovy, line 483) injectPasswords is deprecated
+Added items:
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Create_Environment'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Destroy_Environment'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/List_Environment'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Build'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Unit_Tests'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Code_Analysis'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Deploy'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Regression_Tests'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Performance_Tests'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Deploy_ProdA'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Reference_Application_Deploy_ProdB'}
+Added views:
+    GeneratedView{name='ExampleWorkspace/ExampleProject/Environment_Provisioning'}
+    GeneratedView{name='ExampleWorkspace/ExampleProject/Java_Reference_Application'}
+Finished: SUCCESS

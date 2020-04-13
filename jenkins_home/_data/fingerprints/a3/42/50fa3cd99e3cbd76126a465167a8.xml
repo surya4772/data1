@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2019-12-19 10:25:27.119 UTC</timestamp>
+  <md5sum>a34250fa3cd99e3cbd76126a465167a8</md5sum>
+  <fileName>Credential id=Nexus name=ftdp-admin/****** (Nexus)</fileName>
+  <usages>
+    <entry>
+      <string>Gameoflife/Gameoflife-Git/GameOfLife_CD</string>
+      <ranges>1-2</ranges>
+    </entry>
+    <entry>
+      <string>Gameoflife/Gameoflife-svn/GameOfLife_CD</string>
+      <ranges>3-6</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

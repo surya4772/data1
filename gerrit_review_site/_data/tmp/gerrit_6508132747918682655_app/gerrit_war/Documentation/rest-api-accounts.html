@@ -1,0 +1,2748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="Asciidoctor 0.1.4">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerrit Code Review - /accounts/ REST API</title>
+<style>
+body {
+  margin: 1em auto;
+  width: 900px;
+}
+
+#toctitle {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6, #toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+
+p {
+  margin: 0.5em 0 0.5em 0;
+}
+li p {
+  margin: 0.2em 0 0.2em 0;
+}
+
+.listingblock > .content {
+  border: 2px solid silver;
+  background: #ebebeb;
+  margin-left: 2em;
+  color: darkgreen;
+  padding: 2px;
+  overflow: auto;
+}
+
+.listingblock > .content pre {
+  background: none;
+  border: 0 solid silver;
+  padding: 0 0 0 0;
+}
+
+dl dt {
+  margin-top: 1em;
+}
+
+table.tableblock {
+  border-collapse: collapse;
+}
+
+table.tableblock,
+th.tableblock,
+td.tableblock {
+  border: 1px solid #EEE;
+}
+</style>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', prettyPrint)</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Gerrit Code Review - /accounts/ REST API</h1>
+<span id="revnumber">version v2.10.6</span>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#account-endpoints">Account Endpoints</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#get-account">Get Account</a></li>
+<li><a href="#create-account">Create Account</a></li>
+<li><a href="#get-account-name">Get Account Name</a></li>
+<li><a href="#set-account-name">Set Account Name</a></li>
+<li><a href="#delete-account-name">Delete Account Name</a></li>
+<li><a href="#get-username">Get Username</a></li>
+<li><a href="#get-active">Get Active</a></li>
+<li><a href="#set-active">Set Active</a></li>
+<li><a href="#delete-active">Delete Active</a></li>
+<li><a href="#get-http-password">Get HTTP Password</a></li>
+<li><a href="#set-http-password">Set/Generate HTTP Password</a></li>
+<li><a href="#delete-http-password">Delete HTTP Password</a></li>
+<li><a href="#list-account-emails">List Account Emails</a></li>
+<li><a href="#get-account-email">Get Account Email</a></li>
+<li><a href="#create-account-email">Create Account Email</a></li>
+<li><a href="#delete-account-email">Delete Account Email</a></li>
+<li><a href="#set-preferred-email">Set Preferred Email</a></li>
+<li><a href="#list-ssh-keys">List SSH Keys</a></li>
+<li><a href="#get-ssh-key">Get SSH Key</a></li>
+<li><a href="#add-ssh-key">Add SSH Key</a></li>
+<li><a href="#delete-ssh-key">Delete SSH Key</a></li>
+<li><a href="#list-account-capabilities">List Account Capabilities</a></li>
+<li><a href="#check-account-capability">Check Account Capability</a></li>
+<li><a href="#list-groups">List Groups</a></li>
+<li><a href="#get-avatar">Get Avatar</a></li>
+<li><a href="#get-avatar-change-url">Get Avatar Change URL</a></li>
+<li><a href="#get-user-preferences">Get User Preferences</a></li>
+<li><a href="#set-user-preferences">Set User Preferences</a></li>
+<li><a href="#get-diff-preferences">Get Diff Preferences</a></li>
+<li><a href="#set-diff-preferences">Set Diff Preferences</a></li>
+<li><a href="#get-starred-changes">Get Starred Changes</a></li>
+<li><a href="#star-change">Star Change</a></li>
+<li><a href="#unstar-change">Unstar Change</a></li>
+</ul>
+</li>
+<li><a href="#ids">IDs</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#account-id">{account-id}</a></li>
+<li><a href="#capability-id">{capability-id}</a></li>
+<li><a href="#email-id">{email-id}</a></li>
+<li><a href="#username">{username}</a></li>
+<li><a href="#ssh-key-id">{ssh-key-id}</a></li>
+</ul>
+</li>
+<li><a href="#json-entities">JSON Entities</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#account-info">AccountInfo</a></li>
+<li><a href="#account-input">AccountInput</a></li>
+<li><a href="#account-name-input">AccountNameInput</a></li>
+<li><a href="#capability-info">CapabilityInfo</a></li>
+<li><a href="#preferences-info">PreferencesInfo</a></li>
+<li><a href="#preferences-input">PreferencesInput</a></li>
+<li><a href="#diff-preferences-info">DiffPreferencesInfo</a></li>
+<li><a href="#diff-preferences-input">DiffPreferencesInput</a></li>
+<li><a href="#email-info">EmailInfo</a></li>
+<li><a href="#email-input">EmailInput</a></li>
+<li><a href="#http-password-input">HttpPasswordInput</a></li>
+<li><a href="#query-limit-info">QueryLimitInfo</a></li>
+<li><a href="#ssh-key-info">SshKeyInfo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page describes the account related REST endpoints.
+Please also take note of the general information on the
+<a href="rest-api.html">REST API</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="account-endpoints">Account Endpoints</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="get-account">Get Account</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Returns an account as an <a href="#account-info">AccountInfo</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "_account_id": 1000096,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "username": "john"
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-account">Create Account</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#username">{username}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Creates a new account.</p>
+</div>
+<div class="paragraph">
+<p>In the request body additional data for the account can be provided as
+<a href="#account-input">AccountInput</a>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /accounts/john HTTP/1.0
+  Content-Type: application/json;charset=UTF-8
+
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "ssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw==",
+    "http_password": "19D9aIn7zePb",
+    "groups": [
+      "MyProject-Owners"
+    ]
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response a detailed <a href="#account-info">AccountInfo</a> entity is
+returned that describes the created account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 201 Created
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "_account_id": 1000195,
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-account-name">Get Account Name</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/name</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves the full name of an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self/name HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  "John Doe"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the account does not have a name an empty string is returned.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-account-name">Set Account Name</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/name</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets the full name of an account.</p>
+</div>
+<div class="paragraph">
+<p>The new account name must be provided in the request body inside
+an <a href="#account-name-input">AccountNameInput</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /accounts/self/name HTTP/1.0
+  Content-Type: application/json;charset=UTF-8
+
+  {
+    "name": "John F. Doe"
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response the new account name is returned.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  "John F. Doe"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the name was deleted the response is "<code>204 No Content</code>".</p>
+</div>
+<div class="paragraph">
+<p>Some realms may not allow to modify the account name. In this case the
+request is rejected with "<code>405 Method Not Allowed</code>".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-account-name">Delete Account Name</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>DELETE /accounts/<a href="#account-id">{account-id}</a>/name</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes the name of an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  DELETE /accounts/self/name HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-username">Get Username</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/username</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves the username of an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self/username HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  "john.doe"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the account does not have a username the response is <code>404 Not Found</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-active">Get Active</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/active</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Checks if an account is active.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/john.doe@example.com/active HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the account is active the string <code>ok</code> is returned.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+
+  ok</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the account is inactive the response is <code>204 No Content</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-active">Set Active</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/active</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets the account state to active.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /accounts/john.doe@example.com/active HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 201 Created</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the account was already active the response is <code>200 OK</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-active">Delete Active</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>DELETE /accounts/<a href="#account-id">{account-id}</a>/active</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets the account state to inactive.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  DELETE /accounts/john.doe@example.com/active HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the account was already inactive the response is <code>404 Not Found</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-http-password">Get HTTP Password</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/password.http</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves the HTTP password of an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/john.doe@example.com/password.http HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  "Qmxlc21ydCB1YmVyIGFsbGVzIGluIGRlciBXZWx0IQ"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the account does not have an HTTP password the response is <code>404 Not Found</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-http-password">Set/Generate HTTP Password</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/password.http</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets/Generates the HTTP password of an account.</p>
+</div>
+<div class="paragraph">
+<p>The options for setting/generating the HTTP password must be provided
+in the request body inside a <a href="#http-password-input">
+HttpPasswordInput</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /accounts/self/password.http HTTP/1.0
+  Content-Type: application/json;charset=UTF-8
+
+  {
+    "generate": true
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response the new HTTP password is returned.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  "ETxgpih8xrNs"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the HTTP password was deleted the response is "<code>204 No Content</code>".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-http-password">Delete HTTP Password</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>DELETE /accounts/<a href="#account-id">{account-id}</a>/password.http</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes the HTTP password of an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  DELETE /accounts/self/password.http HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-account-emails">List Account Emails</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/emails</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Returns the email addresses that are configured for the specified user.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self/emails HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response the email addresses of the user are returned as a list of
+<a href="#email-info">EmailInfo</a> entities.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  [
+    {
+      "email": "john.doe@example.com",
+      "preferred": true
+    },
+    {
+      "email": "j.doe@example.com"
+    }
+  ]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-account-email">Get Account Email</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/emails/<a href="#email-id">{email-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves an email address of a user.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self/emails/john.doe@example.com HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response an <a href="#email-info">EmailInfo</a> entity is returned that
+describes the email address.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "email": "john.doe@example.com",
+    "preferred": true
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-account-email">Create Account Email</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/emails/<a href="#email-id">{email-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Registers a new email address for the user. A verification email is
+sent with a link that needs to be visited to confirm the email address,
+unless <code>DEVELOPMENT_BECOME_ANY_ACCOUNT</code> is used as authentication type.
+For the development mode email addresses are directly added without
+confirmation. A Gerrit administrator may add an email address without
+confirmation by setting <code>no_confirmation</code> in the
+<a href="#email-input">EmailInput</a>.</p>
+</div>
+<div class="paragraph">
+<p>In the request body additional data for the email address can be
+provided as <a href="#email-input">EmailInput</a>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /accounts/self/emails/john.doe@example.com HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response the new email address is returned as
+<a href="#email-info">EmailInfo</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 201 Created
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "email": "john.doe@example.com",
+    "pending_confirmation": true
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-account-email">Delete Account Email</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>DELETE /accounts/<a href="#account-id">{account-id}</a>/emails/<a href="#email-id">{email-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes an email address of an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  DELETE /accounts/self/emails/john.doe@example.com HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-preferred-email">Set Preferred Email</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/emails/<a href="#email-id">{email-id}</a>/preferred</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets an email address as preferred email address for an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /accounts/self/emails/john.doe@example.com/preferred HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 201 Created</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the email address was already the preferred email address of the
+account the response is "<code>200 OK</code>".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-ssh-keys">List SSH Keys</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/sshkeys</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Returns the SSH keys of an account.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self/sshkeys HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response the SSH keys of the account are returned as a list of
+<a href="#ssh-key-info">SshKeyInfo</a> entities.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  [
+    {
+      "seq": 1,
+      "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw\u003d\u003d john.doe@example.com",
+      "encoded_key": "AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw\u003d\u003d",
+      "algorithm": "ssh-rsa",
+      "comment": "john.doe@example.com",
+      "valid": true
+    }
+  ]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-ssh-key">Get SSH Key</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/sshkeys/<a href="#ssh-key-id">{ssh-key-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves an SSH key of a user.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self/sshkeys/1 HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response an <a href="#ssh-key-info">SshKeyInfo</a> entity is returned that
+describes the SSH key.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "seq": 1,
+    "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw\u003d\u003d john.doe@example.com",
+    "encoded_key": "AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw\u003d\u003d",
+    "algorithm": "ssh-rsa",
+    "comment": "john.doe@example.com",
+    "valid": true
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-ssh-key">Add SSH Key</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>POST /accounts/<a href="#account-id">{account-id}</a>/sshkeys</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Adds an SSH key for a user.</p>
+</div>
+<div class="paragraph">
+<p>The SSH public key must be provided as raw content in the request body.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  POST /accounts/self/sshkeys HTTP/1.0
+  Content-Type: plain/text
+
+  AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw\u003d\u003d</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response an <a href="#ssh-key-info">SshKeyInfo</a> entity is returned that
+describes the new SSH key.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "seq": 2,
+    "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw\u003d\u003d john.doe@example.com",
+    "encoded_key": "AAAAB3NzaC1yc2EAAAABIwAAAQEA0T...YImydZAw\u003d\u003d",
+    "algorithm": "ssh-rsa",
+    "comment": "john.doe@example.com",
+    "valid": true
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-ssh-key">Delete SSH Key</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>DELETE /accounts/<a href="#account-id">{account-id}</a>/sshkeys/<a href="#ssh-key-id">{ssh-key-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes an SSH key of a user.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  DELETE /accounts/self/sshkeys/2 HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-account-capabilities">List Account Capabilities</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/capabilities</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Returns the global capabilities that are enabled for the specified
+user.</p>
+</div>
+<div class="paragraph">
+<p>If the global capabilities for the calling user should be listed,
+<code>self</code> can be used as account-id. This can be used by UI tools to
+discover if administrative features are available to the caller, so
+they can hide (or show) relevant UI actions.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /accounts/self/capabilities HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As response the global capabilities of the user are returned as a
+<a href="#capability-info">CapabilityInfo</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "queryLimit": {
+      "min": 0,
+      "max": 500
+    },
+    "emailReviewers": true
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Administrator that has authenticated with digest authentication:</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/capabilities HTTP/1.0
+  Authorization: Digest username="admin", realm="Gerrit Code Review", nonce="...</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "administrateServer": true,
+    "queryLimit": {
+      "min": 0,
+      "max": 500
+    },
+    "createAccount": true,
+    "createGroup": true,
+    "createProject": true,
+    "emailReviewers": true,
+    "killTask": true,
+    "viewCaches": true,
+    "flushCaches": true,
+    "viewConnections": true,
+    "viewPlugins": true,
+    "viewQueue": true,
+    "runGC": true
+  }</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Get your own capabilities</div>
+<div class="content">
+<a id="/accounts/self/capabilities" onmousedown="javascript:
+  var i = document.URL.lastIndexOf('/Documentation/');
+  var url = document.URL.substring(0, i) + '/accounts/self/capabilities';
+  document.getElementById('/accounts/self/capabilities').href = url;">
+    GET /accounts/self/capabilities HTTP/1.0
+</a>
+</div>
+</div>
+<div class="paragraph">
+<p>To filter the set of global capabilities the <code>q</code> parameter can be used.
+Filtering may decrease the response time by avoiding looking at every
+possible alternative for the caller.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/capabilities?q=createAccount&amp;q=createGroup HTTP/1.0
+  Authorization: Digest username="admin", realm="Gerrit Code Review", nonce="...</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "createAccount": true,
+    "createGroup": true
+  }</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Check if you can create groups</div>
+<div class="content">
+<a id="/accounts/self/capabilities?q=createGroup" onmousedown="javascript:
+  var i = document.URL.lastIndexOf('/Documentation/');
+  var url = document.URL.substring(0, i) + '/accounts/self/capabilities?q=createGroup';
+  document.getElementById('/accounts/self/capabilities?q=createGroup').href = url;">
+    GET /accounts/self/capabilities?q=createGroup HTTP/1.0
+</a>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="check-account-capability">Check Account Capability</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/capabilities/<a href="#capability-id">{capability-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Checks if a user has a certain global capability.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/capabilities/createGroup HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the user has the global capability the string <code>ok</code> is returned.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+
+  ok</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the user doesn&#8217;t have the global capability the response is
+<code>404 Not Found</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Check if you can create groups</div>
+<div class="content">
+<a id="/accounts/self/capabilities/createGroup" onmousedown="javascript:
+  var i = document.URL.lastIndexOf('/Documentation/');
+  var url = document.URL.substring(0, i) + '/accounts/self/capabilities/createGroup';
+  document.getElementById('/accounts/self/capabilities/createGroup').href = url;">
+    GET /accounts/self/capabilities/createGroup HTTP/1.0
+</a>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-groups">List Groups</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/groups/</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Lists all groups that contain the specified user as a member.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/groups/ HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As result a list of <a href="rest-api-groups.html#group-info">GroupInfo</a>
+entries is returned.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  [
+    {
+      "id": "global%3AAnonymous-Users",
+      "url": "#/admin/groups/uuid-global%3AAnonymous-Users",
+      "options": {
+      },
+      "description": "Any user, signed-in or not",
+      "group_id": 2,
+      "owner_id": "6a1e70e1a88782771a91808c8af9bbb7a9871389"
+    },
+    {
+      "id": "834ec36dd5e0ed21a2ff5d7e2255da082d63bbd7",
+      "url": "#/admin/groups/uuid-834ec36dd5e0ed21a2ff5d7e2255da082d63bbd7",
+      "options": {
+        "visible_to_all": true,
+      },
+      "group_id": 6,
+      "owner_id": "834ec36dd5e0ed21a2ff5d7e2255da082d63bbd7"
+    },
+    {
+      "id": "global%3ARegistered-Users",
+      "url": "#/admin/groups/uuid-global%3ARegistered-Users",
+      "options": {
+      },
+      "description": "Any signed-in user",
+      "group_id": 3,
+      "owner_id": "6a1e70e1a88782771a91808c8af9bbb7a9871389"
+    }
+  ]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">List all groups that contain you as a member</div>
+<div class="content">
+<a id="/accounts/self/groups/" onmousedown="javascript:
+  var i = document.URL.lastIndexOf('/Documentation/');
+  var url = document.URL.substring(0, i) + '/accounts/self/groups/';
+  document.getElementById('/accounts/self/groups/').href = url;">
+    GET /accounts/self/groups/ HTTP/1.0
+</a>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-avatar">Get Avatar</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/avatar</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves the avatar image of the user.</p>
+</div>
+<div class="paragraph">
+<p>With the <code>size</code> option (alias <code>s</code>) you can specify the preferred size
+in pixels (height and width).</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/john.doe@example.com/avatar?s=20 HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The response redirects to the URL of the avatar image.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 302 Found
+  Location: https://profiles/avatar/john_doe.jpeg?s=20x20</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-avatar-change-url">Get Avatar Change URL</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/avatar.change.url</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves the URL where the user can change the avatar image.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/avatar.change.url HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: text/plain;charset=UTF-8
+
+  https://profiles/pictures/john.doe</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-user-preferences">Get User Preferences</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/preferences</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves the user&#8217;s preferences.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/preferences HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As result the account preferences of the user are returned as a
+<a href="#preferences-info">PreferencesInfo</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "changes_per_page": 25,
+    "show_site_header": true,
+    "use_flash_clipboard": true,
+    "date_format": "STD",
+    "time_format": "HHMM_12",
+    "size_bar_in_change_table": true,
+    "review_category_strategy": "ABBREV",
+    "comment_visibility_strategy": "EXPAND_RECENT",
+    "diff_view": "SIDE_BY_SIDE",
+    "my": [
+      {
+        "url": "#/dashboard/self",
+        "name": "Changes"
+      },
+      {
+        "url": "#/q/is:draft",
+        "name": "Drafts"
+      },
+      {
+        "url": "#/q/has:draft",
+        "name": "Draft Comments"
+      },
+      {
+        "url": "#/q/is:watched+is:open",
+        "name": "Watched Changes"
+      },
+      {
+        "url": "#/q/is:starred",
+        "name": "Starred Changes"
+      },
+      {
+        "url": "#/groups/self",
+        "name": "Groups"
+      }
+    ]
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-user-preferences">Set User Preferences</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/preferences</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets the user&#8217;s preferences.</p>
+</div>
+<div class="paragraph">
+<p>The new preferences must be provided in the request body as a
+<a href="#preferences-input">PreferencesInput</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /a/accounts/self/preferences HTTP/1.0
+  Content-Type: application/json;charset=UTF-8
+
+  {
+    "changes_per_page": 50,
+    "show_site_header": true,
+    "use_flash_clipboard": true,
+    "date_format": "STD",
+    "time_format": "HHMM_12",
+    "size_bar_in_change_table": true,
+    "review_category_strategy": "NAME",
+    "comment_visibility_strategy": "EXPAND_RECENT",
+    "diff_view": "SIDE_BY_SIDE",
+    "my": [
+      {
+        "url": "#/dashboard/self",
+        "name": "Changes"
+      },
+      {
+        "url": "#/q/is:draft",
+        "name": "Drafts"
+      },
+      {
+        "url": "#/q/has:draft",
+        "name": "Draft Comments"
+      },
+      {
+        "url": "#/q/is:watched+is:open",
+        "name": "Watched Changes"
+      },
+      {
+        "url": "#/q/is:starred",
+        "name": "Starred Changes"
+      },
+      {
+        "url": "#/groups/self",
+        "name": "Groups"
+      }
+    ]
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As result the new preferences of the user are returned as a
+<a href="#preferences-info">PreferencesInfo</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "changes_per_page": 50,
+    "show_site_header": true,
+    "use_flash_clipboard": true,
+    "date_format": "STD",
+    "time_format": "HHMM_12",
+    "size_bar_in_change_table": true,
+    "review_category_strategy": "NAME",
+    "comment_visibility_strategy": "EXPAND_RECENT",
+    "diff_view": "SIDE_BY_SIDE",
+    "my": [
+      {
+        "url": "#/dashboard/self",
+        "name": "Changes"
+      },
+      {
+        "url": "#/q/is:draft",
+        "name": "Drafts"
+      },
+      {
+        "url": "#/q/has:draft",
+        "name": "Draft Comments"
+      },
+      {
+        "url": "#/q/is:watched+is:open",
+        "name": "Watched Changes"
+      },
+      {
+        "url": "#/q/is:starred",
+        "name": "Starred Changes"
+      },
+      {
+        "url": "#/groups/self",
+        "name": "Groups"
+      }
+    ]
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-diff-preferences">Get Diff Preferences</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/preferences.diff</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Retrieves the diff preferences of a user.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/preferences.diff HTTP/1.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As result the diff preferences of the user are returned as a
+<a href="#diff-preferences-info">DiffPreferencesInfo</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "context": 10,
+    "ignore_whitespace": "IGNORE_ALL_SPACE",
+    "intraline_difference": true,
+    "line_length": 100,
+    "show_tabs": true,
+    "show_whitespace_errors": true,
+    "syntax_highlighting": true,
+    "tab_size": 8
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-diff-preferences">Set Diff Preferences</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/preferences.diff</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets the diff preferences of a user.</p>
+</div>
+<div class="paragraph">
+<p>The new diff preferences must be provided in the request body as a
+<a href="#diff-preferences-input">DiffPreferencesInput</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/preferences.diff HTTP/1.0
+  Content-Type: application/json;charset=UTF-8
+
+  {
+    "context": 10,
+    "ignore_whitespace": "IGNORE_ALL_SPACE",
+    "intraline_difference": true,
+    "line_length": 100,
+    "show_line_endings": true,
+    "show_tabs": true,
+    "show_whitespace_errors": true,
+    "syntax_highlighting": true,
+    "tab_size": 8
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As result the new diff preferences of the user are returned as a
+<a href="#diff-preferences-info">DiffPreferencesInfo</a> entity.</p>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  {
+    "context": 10,
+    "ignore_whitespace": "IGNORE_ALL_SPACE",
+    "intraline_difference": true,
+    "line_length": 100,
+    "show_line_endings": true,
+    "show_tabs": true,
+    "show_whitespace_errors": true,
+    "syntax_highlighting": true,
+    "tab_size": 8
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get-starred-changes">Get Starred Changes</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>GET /accounts/<a href="#account-id">{account-id}</a>/starred.changes</em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Gets the changes starred by the identified user account. This
+URL endpoint is functionally identical to the changes query
+<code>GET /changes/?q=is:starred</code>. The result is a list of
+<a href="rest-api-changes.html#change-info">ChangeInfo</a> entities.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  GET /a/accounts/self/starred.changes</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json;charset=UTF-8
+
+  )]}'
+  [
+    {
+      "id": "myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9940",
+      "project": "myProject",
+      "branch": "master",
+      "change_id": "I8473b95934b5732ac55d26311a706c9c2bde9940",
+      "subject": "Implementing Feature X",
+      "status": "NEW",
+      "created": "2013-02-01 09:59:32.126000000",
+      "updated": "2013-02-21 11:16:36.775000000",
+      "mergeable": true,
+      "_sortkey": "0023412400000f7d",
+      "_number": 3965,
+      "owner": {
+        "name": "John Doe"
+      }
+    }
+  ]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="star-change">Star Change</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>PUT /accounts/<a href="#account-id">{account-id}</a>/starred.changes/<a href="rest-api-changes.html#change-id">{change-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Star a change. Starred changes are returned for the search query
+<code>is:starred</code> or <code>starredby:USER</code> and automatically notify the user
+whenever updates are made to the change.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  PUT /a/accounts/self/starred.changes/myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9940 HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unstar-change">Unstar Change</h3>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><em>DELETE /accounts/<a href="#account-id">{account-id}</a>/starred.changes/<a href="rest-api-changes#change-id">{change-id}</a></em></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Unstar a change. Removes the starred flag, stopping notifications.</p>
+</div>
+<div class="listingblock">
+<div class="title">Request</div>
+<div class="content">
+<pre>  DELETE /a/accounts/self/starred.changes/myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9940 HTTP/1.0</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Response</div>
+<div class="content">
+<pre>  HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ids">IDs</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="account-id">{account-id}</h3>
+<div class="paragraph">
+<p>Identifier that uniquely identifies one account.</p>
+</div>
+<div class="paragraph">
+<p>This can be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a string of the format "Full Name &lt;<a href="mailto:email@example.com">email@example.com</a>&gt;"</p>
+</li>
+<li>
+<p>just the email address ("email@example")</p>
+</li>
+<li>
+<p>a full name if it is unique ("Full Name")</p>
+</li>
+<li>
+<p>an account ID ("18419")</p>
+</li>
+<li>
+<p>a user name ("username")</p>
+</li>
+<li>
+<p><code>self</code> for the calling user</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="capability-id">{capability-id}</h3>
+<div class="paragraph">
+<p>Identifier of a global capability. Valid values are all field names of
+the <a href="#capability-info">CapabilityInfo</a> entity.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="email-id">{email-id}</h3>
+<div class="paragraph">
+<p>An email address, or <code>preferred</code> for the preferred email address of the
+user.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="username">{username}</h3>
+<div class="paragraph">
+<p>The user name.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ssh-key-id">{ssh-key-id}</h3>
+<div class="paragraph">
+<p>The sequence number of the SSH key.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="json-entities">JSON Entities</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="account-info">AccountInfo</h3>
+<div class="paragraph">
+<p>The <code>AccountInfo</code> entity contains information about an account.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>_account_id</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The numeric ID of the account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The full name of the user.<br>
+Only set if <a href="rest-api-changes.html#detailed-accounts">detailed
+account information</a> is requested.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address the user prefers to be contacted through.<br>
+Only set if <a href="rest-api-changes.html#detailed-accounts">detailed
+account information</a> is requested.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The username of the user.<br>
+Only set if <a href="rest-api-changes.html#detailed-accounts">detailed
+account information</a> is requested.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="account-input">AccountInput</h3>
+<div class="paragraph">
+<p>The <code>AccountInput</code> entity contains information for the creation of
+a new account.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:28%;">
+<col style="width:57%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The user name. If provided, must match the user name from the URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The full name of the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address of the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ssh_key</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The public SSH key of the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http_password</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP password of the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>groups</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of <a href="rest-api-groups.html#group-id">group IDs</a> that identify
+the groups to which the user should be added.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="account-name-input">AccountNameInput</h3>
+<div class="paragraph">
+<p>The <code>AccountNameInput</code> entity contains information for setting a name
+for an account.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:28%;">
+<col style="width:57%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The new full name of the account.<br>
+If not set or if set to an empty string, the account name is deleted.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="capability-info">CapabilityInfo</h3>
+<div class="paragraph">
+<p>The <code>CapabilityInfo</code> entity contains information about the global
+capabilities of a user.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessDatabase</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_accessDatabase">Access Database</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>administrateServer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_administrateServer">Administrate
+Server</a> capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>createAccount</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_createAccount">Create Account</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>createGroup</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_createGroup">Create Group</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>createProject</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_createProject">Create Project</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>emailReviewers</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_emailReviewers">Email Reviewers</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flushCaches</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_flushCaches">Flush Caches</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>killTask</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_kill">Kill Task</a> capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>priority</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>INTERACTIVE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the thread
+pool used by the user, see <a href="access-control.html#capability_priority">
+Priority</a> capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>queryLimit</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="access-control.html#capability_queryLimit">
+Query Limit</a> of the user as <a href="#query-limit-info">QueryLimitInfo</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>runAs</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_runAs">Run As</a> capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>runGC</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_runGC">Run Garbage Collection</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>streamEvents</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_streamEvents">Stream Events</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewAllAccounts</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_viewAllAccounts">View All Accounts</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewCaches</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_viewCaches">View Caches</a> capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewConnections</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_viewConnections">View Connections</a>
+capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewPlugins</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_viewPlugins">View Plugins</a> capability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewQueue</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the user has the
+<a href="access-control.html#capability_viewQueue">View Queue</a> capability.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="preferences-info">PreferencesInfo</h3>
+<div class="paragraph">
+<p>The <code>PreferencesInfo</code> entity contains information about a user&#8217;s preferences.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>changes_per_page</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of changes to show on each page.
+Allowed values are <code>10</code>, <code>25</code>, <code>50</code>, <code>100</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_site_header</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the site header should be shown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>use_flash_clipboard</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to use the flash clipboard widget.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>download_scheme</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of download URL the user prefers to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>download_command</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of download command the user prefers to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy_self_on_email</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to CC me on comments I write.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date_format</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format to display the date in.
+Allowed values are <code>STD</code>, <code>US</code>, <code>ISO</code>, <code>EURO</code>, <code>UK</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>time_format</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format to display the time in.
+Allowed values are <code>HHMM_12</code>, <code>HHMM_24</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reverse_patch_set_order</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to display the patch sets in reverse order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>relative_date_in_change_table</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to show relative dates in the changes table.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>size_bar_in_change_table</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to show the change sizes as colored bars in the change table.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>legacycid_in_change_table</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to show change number in the change table.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>review_category_strategy</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The strategy used to displayed info in the review category column.
+Allowed values are <code>NONE</code>, <code>NAME</code>, <code>EMAIL</code>, <code>USERNAME</code>, <code>ABBREV</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>comment_visibility_strategy</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The strategy used to display the comments.
+Allowed values are <code>COLLAPSE_ALL</code>, <code>EXPAND_MOST_RECENT</code>, <code>EXPAND_RECENT</code>, <code>EXPAND_ALL</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>diff_view</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of diff view to show.
+Allowed values are <code>SIDE_BY_SIDE</code>, <code>UNIFIED_DIFF</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>change_screen</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The change screen to use.
+Allowed values are <code>OLD_UI</code>, <code>CHANGE_SCREEN2</code>.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="preferences-input">PreferencesInput</h3>
+<div class="paragraph">
+<p>The <code>PreferencesInput</code> entity contains information for setting the
+user preferences. Fields which are not set will not be updated.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>changes_per_page</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of changes to show on each page.
+Allowed values are <code>10</code>, <code>25</code>, <code>50</code>, <code>100</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_site_header</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the site header should be shown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>use_flash_clipboard</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to use the flash clipboard widget.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>download_scheme</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of download URL the user prefers to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>download_command</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of download command the user prefers to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>copy_self_on_email</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to CC me on comments I write.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date_format</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format to display the date in.
+Allowed values are <code>STD</code>, <code>US</code>, <code>ISO</code>, <code>EURO</code>, <code>UK</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>time_format</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format to display the time in.
+Allowed values are <code>HHMM_12</code>, <code>HHMM_24</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reverse_patch_set_order</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to display the patch sets in reverse order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>relative_date_in_change_table</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to show relative dates in the changes table.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>size_bar_in_change_table</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to show the change sizes as colored bars in the change table.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>legacycid_in_change_table</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to show change number in the change table.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>review_category_strategy</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The strategy used to displayed info in the review category column.
+Allowed values are <code>NONE</code>, <code>NAME</code>, <code>EMAIL</code>, <code>USERNAME</code>, <code>ABBREV</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>comment_visibility_strategy</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The strategy used to display the comments.
+Allowed values are <code>COLLAPSE_ALL</code>, <code>EXPAND_MOST_RECENT</code>, <code>EXPAND_RECENT</code>, <code>EXPAND_ALL</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>diff_view</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of diff view to show.
+Allowed values are <code>SIDE_BY_SIDE</code>, <code>UNIFIED_DIFF</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>change_screen</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The change screen to use.
+Allowed values are <code>OLD_UI</code>, <code>CHANGE_SCREEN2</code>.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="diff-preferences-info">DiffPreferencesInfo</h3>
+<div class="paragraph">
+<p>The <code>DiffPreferencesInfo</code> entity contains information about the diff
+preferences of a user.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>context</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of lines of context when viewing a patch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>expand_all_comments</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether all inline comments should be automatically expanded.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ignore_whitespace</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether whitespace changes should be ignored and if yes, which
+whitespace changes should be ignored.<br>
+Allowed values are <code>IGNORE_NONE</code>, <code>IGNORE_SPACE_AT_EOL</code>,
+<code>IGNORE_SPACE_CHANGE</code>, <code>IGNORE_ALL_SPACE</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>intraline_difference</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether intraline differences should be highlighted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>line_length</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of characters that should be displayed in one line.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>manual_review</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the <em>Reviewed</em> flag should not be set automatically on a patch
+when it is viewed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>retain_header</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the header that is displayed above the patch (that either shows
+the commit message, the diff preferences, the patch sets or the files)
+should be retained on file switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_line_endings</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether Windows EOL/Cr-Lf should be displayed as <em>\r</em> in a dotted-line
+box.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_tabs</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether tabs should be shown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_whitespace_errors</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether whitespace errors should be shown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skip_deleted</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether deleted files should be skipped on file switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skip_uncommented</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether uncommented files should be skipped on file switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>syntax_highlighting</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether syntax highlighting should be enabled.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hide_top_menu</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If true the top menu header and site header is hidden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hide_line_numbers</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If true the line numbers are hidden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tab_size</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of spaces that should be used to display one tab.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="diff-preferences-input">DiffPreferencesInput</h3>
+<div class="paragraph">
+<p>The <code>DiffPreferencesInput</code> entity contains information for setting the
+diff preferences of a user. Fields which are not set will not be
+updated.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>context</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of lines of context when viewing a patch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>expand_all_comments</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether all inline comments should be automatically expanded.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ignore_whitespace</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether whitespace changes should be ignored and if yes, which
+whitespace changes should be ignored.<br>
+Allowed values are <code>IGNORE_NONE</code>, <code>IGNORE_SPACE_AT_EOL</code>,
+<code>IGNORE_SPACE_CHANGE</code>, <code>IGNORE_ALL_SPACE</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>intraline_difference</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether intraline differences should be highlighted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>line_length</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of characters that should be displayed in one line.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>manual_review</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the <em>Reviewed</em> flag should not be set automatically on a patch
+when it is viewed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>retain_header</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the header that is displayed above the patch (that either shows
+the commit message, the diff preferences, the patch sets or the files)
+should be retained on file switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_line_endings</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether Windows EOL/Cr-Lf should be displayed as <em>\r</em> in a dotted-line
+box.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_tabs</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether tabs should be shown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_whitespace_errors</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether whitespace errors should be shown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skip_deleted</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether deleted files should be skipped on file switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skip_uncommented</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether uncommented files should be skipped on file switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>syntax_highlighting</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether syntax highlighting should be enabled.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hide_top_menu</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if the top menu header and site header should be hidden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hide_line_numbers</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if the line numbers should be hidden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tab_size</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of spaces that should be used to display one tab.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="email-info">EmailInfo</h3>
+<div class="paragraph">
+<p>The <code>EmailInfo</code> entity contains information about an email address of a
+user.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>preferred</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether this is the preferred email address of the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pending_confirmation</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not set if <code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set true if the user must confirm control of the email address
+by following a verification link before Gerrit will permit use of
+this address.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="email-input">EmailInput</h3>
+<div class="paragraph">
+<p>The <code>EmailInput</code> entity contains information for registering a new
+email address.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address. If provided, must match the email address from the
+URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>preferred</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code> if not set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the new email address should become the preferred email address
+of the user (only supported if <code>no_confirmation</code> is set or if the
+authentication type is <code>DEVELOPMENT_BECOME_ANY_ACCOUNT</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>no_confirmation</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code> if not set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the email address should be added without confirmation. In this
+case no verification email is sent to the user.<br>
+Only Gerrit administrators are allowed to add email addresses without
+confirmation.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="http-password-input">HttpPasswordInput</h3>
+<div class="paragraph">
+<p>The <code>HttpPasswordInput</code> entity contains information for setting/generating
+an HTTP password.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code> if not set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether a new HTTP password should be generated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http_password</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The new HTTP password. Only Gerrit administrators may set the HTTP
+password directly.<br>
+If empty or not set and <code>generate</code> is false or not set, the HTTP
+password is deleted.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="query-limit-info">QueryLimitInfo</h3>
+<div class="paragraph">
+<p>The <code>QueryLimitInfo</code> entity contains information about the
+<a href="access-control.html#capability_queryLimit">Query Limit</a> of a user.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:85%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>min</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lower limit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>max</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upper limit.</p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div class="sect2">
+<h3 id="ssh-key-info">SshKeyInfo</h3>
+<div class="paragraph">
+<p>The <code>SshKeyInfo</code> entity contains information about an SSH key of a
+user.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:50%; ">
+<colgroup>
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:71%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-center valign-top"></th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>seq</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sequence number of the SSH key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ssh_public_key</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The complete public SSH key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>encoded_key</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The encoded key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>algorithm</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm of the SSH key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>comment</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The comment of the SSH key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>valid</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the SSH key is valid.</p></td>
+</tr>
+</tbody>
+</table>
+
+<hr style="
+  height: 2px;
+  color: silver;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+">
+<div class="paragraph">
+<p>Part of <a href="index.html">Gerrit Code Review</a></p>
+</div>
+<div style="position:absolute; right:20px; top:20px;">
+<input type="text" id="docSearch" size="70" />
+<button type="button" id="searchBox">Search</button>
+<script type="text/javascript">
+var f = function() {
+  window.location = '../#/Documentation/' +
+    encodeURIComponent(document.getElementById("docSearch").value);
+}
+document.getElementById("searchBox").onclick = f;
+document.getElementById("docSearch").onkeypress = function(e) {
+  if (13 == (e.keyCode ? e.keyCode : e.which)) {
+    f();
+  }
+}
+</script>
+</div>
+<script type="text/javascript">
+    decorate(document.getElementsByTagName('h1'));
+    decorate(document.getElementsByTagName('h2'));
+    decorate(document.getElementsByTagName('h3'));
+    decorate(document.getElementsByTagName('h4'));
+
+    var divs = document.getElementsByTagName('div');
+    var arr = new Array();
+    var excluded = getExcludedIds();
+    for(var i = 0; i < divs.length; i++) {
+      var d = divs[i];
+      var id = d.getAttribute('id');
+      if (id != null && !(id in excluded)) {
+        arr[arr.length] = d;
+      }
+    }
+    decorate(arr);
+
+    var anchors = document.getElementsByTagName('a');
+    arr = new Array();
+    for(var i = 0; i < anchors.length; i++) {
+      var a = anchors[i];
+      // if the anchor has no id there is no target to
+      // which we can link
+      if (a.getAttribute('id') != null) {
+        // if the anchor is empty there is no content which
+        // can receive the mouseover event, an empty anchor
+        // applies to the element that follows, move the
+        // element that follows into the anchor so that there
+        // is content which can receive the mouseover event
+        if (a.firstChild == null) {
+          var next = a.nextSibling;
+          if (next != null) {
+            next.parentNode.removeChild(next);
+            a.appendChild(next);
+          }
+        }
+        arr[arr.length] = a;
+      }
+    }
+    decorate(arr);
+
+    function decorate(e) {
+      for(var i = 0; i < e.length; i++) {
+        e[i].onmouseover = function (evt) {
+          var element = this;
+          // do nothing if the link icon is currently showing
+          var a = element.firstChild;
+          if (a != null && a instanceof Element
+              && a.getAttribute('id') == 'LINK') {
+            return;
+          }
+
+          // if there is no id there is no target to link to
+          var id = element.getAttribute('id');
+          if (id == null) {
+            return;
+          }
+
+          // create and show a link icon that links to this element
+          a = document.createElement('a');
+          a.setAttribute('id', 'LINK');
+          a.setAttribute('href', '#' + id);
+          a.setAttribute('style', 'position: absolute;'
+              + ' left: ' + (element.offsetLeft - 16 - 2 * 4) + 'px;'
+              + ' padding-left: 4px; padding-right: 4px; padding-top:4px;');
+          var img = document.createElement('img');
+          img.setAttribute('src', 'images/link.png');
+          img.setAttribute('style', 'background-color: #FFFFFF;');
+          a.appendChild(img);
+          element.insertBefore(a, element.firstChild);
+
+          // remove the link icon when the mouse is moved away,
+          // but keep it shown if the mouse is over the element, the link or the icon
+          hide = function(evt) {
+            if (document.elementFromPoint(evt.clientX, evt.clientY) != element
+                && document.elementFromPoint(evt.clientX, evt.clientY) != a
+                && document.elementFromPoint(evt.clientX, evt.clientY) != img
+                && element.contains(a)) {
+              element.removeChild(a);
+            }
+          }
+          element.onmouseout = hide;
+          a.onmouseout = hide;
+          img.onmouseout = hide;
+        }
+      }
+    }
+
+    function getExcludedIds() {
+      var excluded = {};
+      excluded['header'] = true;
+      excluded['toc'] = true;
+      excluded['toctitle'] = true;
+      excluded['content'] = true;
+      excluded['preamble'] = true;
+      excluded['footer'] = true;
+      excluded['footer-text'] = true;
+      return excluded;
+    }
+</script>
+
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version v2.10.6<br>
+</div>
+</div>
+</body>
+</html>

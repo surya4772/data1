@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: arnau
+Build-Jdk: 1.8.0_121
+Extension-Name: claim
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: claim
+Implementation-Version: 2.15
+Group-Id: org.jenkins-ci.plugins
+Short-Name: claim
+Long-Name: Jenkins Claim Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Claim+plugin
+Plugin-Version: 2.15
+Hudson-Version: 2.7.3
+Jenkins-Version: 2.7.3
+Plugin-Dependencies: build-failure-analyzer:1.19.0;resolution:=optiona
+ l,junit:1.20,mailer:1.20;resolution:=optional,matrix-project:1.12,scr
+ ipt-security:1.34
+Plugin-Developers: Christian BREMER:ki82:,Arnaud TAMAILLON:greybird:
+

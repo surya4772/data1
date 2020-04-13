@@ -1,0 +1,86 @@
+Started by upstream project "[8mha:////4K2NPbuNaP5RsWtWw0rKlI/fmg+5xLMdPR3zJl4JU/98AAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy5EgYN/az8JP2AnMSStPyi3HjfxLzE9NTc1LwSsLhXflJ8UGleXmqRPgAHzL8G3QAAAA==[0mPlatform_Management/Job_Runner" build number [8mha:////4EfhqRvG9kxCiZ75G8pGEKDjzwgE0H7l3meuanUeYHjgAAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBk39rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuFd+UnxQaV5eapG+IQC5Zq1F3gAAAA==[0m1
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4HNf1EQz5dBAQzPep4EPwVxUh+aI9SUKMKYfL49/nuO6AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9QwC2qRdQyQAAAA==[0m1
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+Building on master in workspace /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace
+[WS-CLEANUP] Deleting project workspace...
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Exec ssh-agent (binary ssh-agent on a remote machine)
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-rNJAY3Qiaktq/agent.3447
+SSH_AGENT_PID=3450
+[ssh-agent] Started.
+$ ssh-add /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace@tmp/private_key_470207439834864792.key
+Identity added: /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace@tmp/private_key_470207439834864792.key (/var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace@tmp/private_key_470207439834864792.key)
+[ssh-agent] Using credentials jenkins (ADOP Jenkins Master)
+Cloning the remote Git repository
+Cloning repository ssh://jenkins@gerrit:29418/platform-management
+ > git init /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse 69b37adbd7109ec996ab9785ea4935d0fb2a303e^{commit} # timeout=10
+Checking out Revision 69b37adbd7109ec996ab9785ea4935d0fb2a303e (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 69b37adbd7109ec996ab9785ea4935d0fb2a303e
+Commit message: "Merge pull request #52 from RobertNorthard/feature/custom-cartridge-properties"
+First time build. Skipping changelog.
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+DC=dc=ldap,dc=example,dc=com
+
+[EnvInject] - Variables injected successfully.
+[workspace] $ /bin/bash -ex /tmp/jenkins5477308222563705096.sh
++ cd /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace
++ git clone ssh://jenkins@gerrit:29418/All-Projects
+Cloning into 'All-Projects'...
+Total 4 (delta 0), reused 0 (delta 0)
+Note: checking out '03f3a77cb73b5756eb8b1897c22c64f108db603c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
++ cd /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/All-Projects
++ git fetch origin refs/meta/config:refs/remotes/origin/meta/config
+From ssh://gerrit:29418/All-Projects
+ * [new ref]         refs/meta/config -> origin/meta/config
++ git checkout meta/config
+Switched to a new branch 'meta/config'
+Branch meta/config set up to track remote branch meta/config from origin.
++ cp /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management/gerrit/project.config .
+++ cat /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management/gerrit/groups
++ grep -q 'ldap:cn=administrators,ou=groups,###DC###	ldap/administrators' groups
++ perl -p -i -e 's/###([^#]+)###/defined $ENV{$1} ? $ENV{$1} : $&/eg'
++ cat /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Gerrit/workspace/platform-management/gerrit/groups.tokenised
+++ git status --porcelain
+++ wc -l
++ '[' 2 -gt 0 ']'
++ git add project.config groups
++ git commit -m 'Applying ADOP Gerrit ACL'
+[meta/config d8f5feb] Applying ADOP Gerrit ACL
+ 2 files changed, 22 insertions(+), 19 deletions(-)
++ git push origin meta/config:meta/config
+remote: remote: Processing changes: refs: 1remote: Processing changes: refs: 1, done            
+To ssh://gerrit:29418/All-Projects
+   03f3a77..d8f5feb  meta/config -> refs/meta/config
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 3450 killed;
+[ssh-agent] Stopped.
+Finished: SUCCESS

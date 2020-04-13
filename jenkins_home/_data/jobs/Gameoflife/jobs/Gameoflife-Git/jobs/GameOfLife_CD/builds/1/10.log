@@ -1,0 +1,20 @@
+Cloning the remote Git repository
+Cloning repository http://3.6.38.166/gitlab/admin1/ansible-playbook.git
+ > git init /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-Git/jobs/GameOfLife_CD/workspace # timeout=10
+Fetching upstream changes from http://3.6.38.166/gitlab/admin1/ansible-playbook.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials svn
+ > git fetch --tags --progress http://3.6.38.166/gitlab/admin1/ansible-playbook.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url http://3.6.38.166/gitlab/admin1/ansible-playbook.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://3.6.38.166/gitlab/admin1/ansible-playbook.git # timeout=10
+Fetching upstream changes from http://3.6.38.166/gitlab/admin1/ansible-playbook.git
+using GIT_ASKPASS to set credentials svn
+ > git fetch --tags --progress http://3.6.38.166/gitlab/admin1/ansible-playbook.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 490a5bad09ced5e9503cae04ef59a6de48a64925 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 490a5bad09ced5e9503cae04ef59a6de48a64925
+Commit message: "Upload New File"
+First time build. Skipping changelog.

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description>This job runs regression tests on deployed java application</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>B</name>
+                    <defaultValue/>
+                    <description>Parent build number</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>PARENT_BUILD</name>
+                    <defaultValue>Reference_Application_Build</defaultValue>
+                    <description>Parent build name</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>ENVIRONMENT_NAME</name>
+                    <defaultValue>CI</defaultValue>
+                    <description>Name of the environment.</description>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>
+export SERVICE_NAME="$(echo ${PROJECT_NAME} | tr '/' '_')_${ENVIRONMENT_NAME}"
+echo "SERVICE_NAME=${SERVICE_NAME}" &gt; env.properties
+
+echo "Running automation tests"
+echo "Setting values for container, project and app names"
+CONTAINER_NAME="owasp_zap-"${SERVICE_NAME}${BUILD_NUMBER}
+APP_IP=$( docker inspect --format '{{ .NetworkSettings.Networks.'"$DOCKER_NETWORK_NAME"'.IPAddress }}' ${SERVICE_NAME} )
+APP_URL=http://${APP_IP}:8080/petclinic
+ZAP_PORT="9090"
+
+echo CONTAINER_NAME=$CONTAINER_NAME &gt;&gt; env.properties
+echo APP_URL=$APP_URL &gt;&gt; env.properties
+echo ZAP_PORT=$ZAP_PORT &gt;&gt; env.properties
+
+echo "Starting OWASP ZAP Intercepting Proxy"
+JOB_WORKSPACE_PATH="/var/lib/docker/volumes/jenkins_slave_home/_data/${PROJECT_NAME}/Reference_Application_Regression_Tests"
+#JOB_WORKSPACE_PATH="$(docker inspect --format '{{ .Mounts.Networks.'"$DOCKER_NETWORK_NAME"'.IPAddress }}' ${CONTAINER_NAME} )/${JOB_NAME}"
+echo JOB_WORKSPACE_PATH=$JOB_WORKSPACE_PATH &gt;&gt; env.properties
+mkdir -p ${JOB_WORKSPACE_PATH}/owasp_zap_proxy/test-results
+docker run -it -d --net=$DOCKER_NETWORK_NAME -v ${JOB_WORKSPACE_PATH}/owasp_zap_proxy/test-results/:/opt/zaproxy/test-results/ -e affinity:container==jenkins-slave --name ${CONTAINER_NAME} -P nhantd/owasp_zap start zap-test
+
+sleep 30s
+ZAP_IP=$( docker inspect --format '{{ .NetworkSettings.Networks.'"$DOCKER_NETWORK_NAME"'.IPAddress }}' ${CONTAINER_NAME} )
+echo "ZAP_IP =  $ZAP_IP"
+echo ZAP_IP=$ZAP_IP &gt;&gt; env.properties
+echo ZAP_ENABLED="true" &gt;&gt; env.properties
+echo "Running Selenium tests through maven."
+</command>
+        </hudson.tasks.Shell>
+        <EnvInjectBuilder>
+            <info>
+                <propertiesFilePath>env.properties</propertiesFilePath>
+            </info>
+        </EnvInjectBuilder>
+        <hudson.tasks.Maven>
+            <targets>clean -B test -DPETCLINIC_URL=${APP_URL} -DZAP_IP=${ZAP_IP} -DZAP_PORT=${ZAP_PORT} -DZAP_ENABLED=${ZAP_ENABLED}</targets>
+            <mavenName>ADOP Maven</mavenName>
+            <jvmOptions/>
+            <usePrivateRepository>false</usePrivateRepository>
+        </hudson.tasks.Maven>
+        <hudson.tasks.Shell>
+            <command>
+echo "Stopping OWASP ZAP Proxy and generating report."
+docker stop ${CONTAINER_NAME}
+docker rm ${CONTAINER_NAME}
+
+docker run -i --net=$DOCKER_NETWORK_NAME -v ${JOB_WORKSPACE_PATH}/owasp_zap_proxy/test-results/:/opt/zaproxy/test-results/ -e affinity:container==jenkins-slave --name ${CONTAINER_NAME} -P nhantd/owasp_zap stop zap-test
+docker cp ${CONTAINER_NAME}:/opt/zaproxy/test-results/zap-test-report.html .
+sleep 10s
+docker rm ${CONTAINER_NAME}
+</command>
+        </hudson.tasks.Shell>
+    </builders>
+    <publishers>
+        <net.masterthought.jenkins.CucumberReportPublisher plugin="cucumber-reports@0.1.0">
+            <jsonReportDirectory/>
+            <pluginUrlPath/>
+            <fileIncludePattern/>
+            <fileExcludePattern/>
+            <skippedFails>false</skippedFails>
+            <pendingFails>false</pendingFails>
+            <undefinedFails>false</undefinedFails>
+            <missingFails>false</missingFails>
+            <noFlashCharts>false</noFlashCharts>
+            <ignoreFailedTests>false</ignoreFailedTests>
+            <parallelTesting>false</parallelTesting>
+        </net.masterthought.jenkins.CucumberReportPublisher>
+        <hudson.plugins.parameterizedtrigger.BuildTrigger>
+            <configs>
+                <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+                    <projects>ExampleWorkspace/ExampleProject/Reference_Application_Performance_Tests</projects>
+                    <condition>UNSTABLE_OR_BETTER</condition>
+                    <triggerWithNoParameters>false</triggerWithNoParameters>
+                    <configs>
+                        <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                            <properties>B=${B}
+PARENT_BUILD=${PARENT_BUILD}
+ENVIRONMENT_NAME=${ENVIRONMENT_NAME}</properties>
+                        </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+                    </configs>
+                </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+            </configs>
+        </hudson.plugins.parameterizedtrigger.BuildTrigger>
+        <htmlpublisher.HtmlPublisher>
+            <reportTargets>
+                <htmlpublisher.HtmlPublisherTarget>
+                    <reportName>ZAP security test report</reportName>
+                    <reportDir>$WORKSPACE</reportDir>
+                    <reportFiles>zap-test-report.html</reportFiles>
+                    <keepAll>false</keepAll>
+                    <allowMissing>false</allowMissing>
+                    <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+                </htmlpublisher.HtmlPublisherTarget>
+            </reportTargets>
+        </htmlpublisher.HtmlPublisher>
+    </publishers>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <EnvInjectPasswordWrapper>
+            <injectGlobalPasswords>true</injectGlobalPasswords>
+            <passwordEntries/>
+        </EnvInjectPasswordWrapper>
+        <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+        <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+            <user>adop-jenkins-master</user>
+        </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    </buildWrappers>
+    <scm class="hudson.plugins.git.GitSCM">
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <url>ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests</url>
+                <credentialsId>adop-jenkins-master</credentialsId>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>*/master</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <configVersion>2</configVersion>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <authorOrCommitter>false</authorOrCommitter>
+        <clean>false</clean>
+        <wipeOutWorkspace>false</wipeOutWorkspace>
+        <pruneBranches>false</pruneBranches>
+        <remotePoll>false</remotePoll>
+        <ignoreNotifyCommit>false</ignoreNotifyCommit>
+        <gitTool>Default</gitTool>
+        <skipTag>true</skipTag>
+    </scm>
+    <assignedNode>java8</assignedNode>
+</project>

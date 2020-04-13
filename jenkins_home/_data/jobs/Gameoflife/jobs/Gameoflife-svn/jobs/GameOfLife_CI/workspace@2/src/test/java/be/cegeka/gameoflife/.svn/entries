@@ -1,0 +1,41 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/test/java/be/cegeka/gameoflife
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+GameOfLifeControllerIntegrationTest.java
+file
+
+
+
+
+2019-12-19T10:10:45.710000Z
+dd7f60acaac10813ee7d7028a12e9115
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

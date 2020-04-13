@@ -1,0 +1,54 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components/jquery/src/ajax/var
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+nonce.js
+file
+
+
+
+
+2019-12-19T10:10:44.710000Z
+c0fee61b182d6c03a455585f74b5e1bd
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+rquery.js
+file
+
+
+
+
+2019-12-19T10:10:44.710000Z
+86cc4813fe7ee092d0f25de3403c1811
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

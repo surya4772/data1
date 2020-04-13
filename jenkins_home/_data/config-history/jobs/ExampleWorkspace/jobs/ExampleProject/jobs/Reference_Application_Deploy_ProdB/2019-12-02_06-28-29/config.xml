@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description>This job deploys the java reference application to the ProdA environment</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>B</name>
+                    <defaultValue/>
+                    <description>Parent build number</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>PARENT_BUILD</name>
+                    <defaultValue>Reference_Application_Build</defaultValue>
+                    <description>Parent build name</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>ENVIRONMENT_NAME</name>
+                    <defaultValue>PRODB</defaultValue>
+                    <description>Name of the environment.</description>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <scm class="hudson.scm.NullSCM"/>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.plugins.copyartifact.CopyArtifact>
+            <project>Reference_Application_Build</project>
+            <filter>target/petclinic.war</filter>
+            <target/>
+            <doNotFingerprintArtifacts>false</doNotFingerprintArtifacts>
+            <selector class="hudson.plugins.copyartifact.SpecificBuildSelector">
+                <buildNumber>${B}</buildNumber>
+            </selector>
+        </hudson.plugins.copyartifact.CopyArtifact>
+        <hudson.tasks.Shell>
+            <command>export SERVICE_NAME="$(echo ${PROJECT_NAME} | tr '/' '_')_${ENVIRONMENT_NAME}"
+docker cp ${WORKSPACE}/target/petclinic.war  ${SERVICE_NAME}:/usr/local/tomcat/webapps/
+docker restart ${SERVICE_NAME}
+COUNT=1
+while ! curl -q http://${SERVICE_NAME}:8080/petclinic -o /dev/null
+do
+  if [ ${COUNT} -gt 10 ]; then
+    echo "Docker build failed even after ${COUNT}. Please investigate."
+    exit 1
+  fi
+  echo "Application is not up yet. Retrying ..Attempt (${COUNT})"
+  sleep 5
+  COUNT=$((COUNT+1))
+done
+echo "=.=.=.=.=.=.=.=.=.=.=.=."
+echo "=.=.=.=.=.=.=.=.=.=.=.=."
+echo "Environment URL (replace PUBLIC_IP with your public ip address where you access jenkins from) : http://${SERVICE_NAME}.PUBLIC_IP.xip.io/petclinic"
+echo "=.=.=.=.=.=.=.=.=.=.=.=."
+echo "=.=.=.=.=.=.=.=.=.=.=.=."
+set -x</command>
+        </hudson.tasks.Shell>
+    </builders>
+    <publishers/>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <EnvInjectPasswordWrapper>
+            <injectGlobalPasswords>true</injectGlobalPasswords>
+            <passwordEntries/>
+        </EnvInjectPasswordWrapper>
+        <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+        <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+            <user>adop-jenkins-master</user>
+        </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    </buildWrappers>
+    <assignedNode>docker</assignedNode>
+</project>

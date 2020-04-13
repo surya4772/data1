@@ -1,0 +1,272 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.21">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.plugins.jobConfigHistory.JobConfigBadgeAction plugin="jobConfigHistory@2.18">
+      <configDates>
+        <string>2019-12-10_07-17-35</string>
+        <string>2019-12-10_07-16-26</string>
+      </configDates>
+    </hudson.plugins.jobConfigHistory.JobConfigBadgeAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.9">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.ExecutionModelAction plugin="pipeline-model-definition@1.2.9">
+      <stagesUUID>030174f4-0863-471b-b8a3-788f3167384d</stagesUUID>
+      <stagesList>
+        <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStages plugin="pipeline-model-api@1.2.9">
+          <stages>
+            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+              <name>Svn Checkout</name>
+              <branches>
+                <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+                  <name>default</name>
+                  <steps>
+                    <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                      <name>script</name>
+                      <args class="org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTNamedArgumentList">
+                        <arguments class="linked-hash-map">
+                          <entry>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                              <key>scriptBlock</key>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                              <value class="string">checkout([$class: &apos;SubversionSCM&apos;, additionalCredentials: [], excludedCommitMessages: &apos;&apos;, excludedRegions: &apos;&apos;, excludedRevprop: &apos;&apos;, excludedUsers: &apos;&apos;, filterChangelog: false, ignoreDirPropChanges: false, includedRegions: &apos;&apos;, locations: [[cancelProcessOnExternalsFail: true, credentialsId: &apos;svn&apos;, depthOption: &apos;infinity&apos;, ignoreExternalsOption: true, local: &apos;.&apos;, remote: &apos;http://52.66.103.232/svn/gameoflife&apos;]], quietOperation: true, workspaceUpdater: [$class: &apos;UpdateUpdater&apos;]])</value>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                          </entry>
+                        </arguments>
+                      </args>
+                    </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                  </steps>
+                </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+              </branches>
+            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+              <name>Maven Execution</name>
+              <branches>
+                <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+                  <name>default</name>
+                  <steps>
+                    <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                      <name>script</name>
+                      <args class="org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTNamedArgumentList">
+                        <arguments class="linked-hash-map">
+                          <entry>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                              <key>scriptBlock</key>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                              <value class="string">withMaven(jdk: &apos;jdk8&apos;, maven: &apos;Maven&apos;) {
+                        sh &apos;mvn clean install&apos;   
+                    }</value>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                          </entry>
+                        </arguments>
+                      </args>
+                    </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                  </steps>
+                </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+              </branches>
+            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+              <name>Sonarqube analysis</name>
+              <branches>
+                <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+                  <name>default</name>
+                  <steps>
+                    <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                      <name>script</name>
+                      <args class="org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTNamedArgumentList">
+                        <arguments class="linked-hash-map">
+                          <entry>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                              <key>scriptBlock</key>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                              <value class="string">def sonar = tool name: &apos;SonarScanner&apos;, type: &apos;hudson.plugins.sonar.SonarRunnerInstallation&apos;
+                    sh &apos; $sonar -Dsonar.languages=java -Dsonar.projectKey=Game -Dsonar.projectName=Gameoflife -Dsonar.projectVersion=0.0.1 -Dsonar.sources=src&apos;</value>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                          </entry>
+                        </arguments>
+                      </args>
+                    </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                  </steps>
+                </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+              </branches>
+            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+              <name>Nexus Upload</name>
+              <branches>
+                <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+                  <name>default</name>
+                  <steps>
+                    <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                      <name>script</name>
+                      <args class="org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTNamedArgumentList">
+                        <arguments class="linked-hash-map">
+                          <entry>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                              <key>scriptBlock</key>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTKey>
+                            <org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                              <value class="string">nexusArtifactUploader artifacts: [[artifactId: &apos;gameoflife&apos;, classifier: &apos;&apos;, file: &apos;target/gameoflife-0.0.1.war&apos;, type: &apos;war&apos;]], credentialsId: &apos;Nexus&apos;, groupId: &apos;be.cegeka&apos;, nexusUrl: &apos;52.66.103.232/nexus&apos;, nexusVersion: &apos;nexus3&apos;, protocol: &apos;http&apos;, repository: &apos;maven-releases&apos;, version: &apos;0.0.1&apos;</value>
+                            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTValue_-ConstantValue>
+                          </entry>
+                        </arguments>
+                      </args>
+                    </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTScriptBlock>
+                  </steps>
+                </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTBranch>
+              </branches>
+            </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStage>
+          </stages>
+          <uuid>030174f4-0863-471b-b8a3-788f3167384d</uuid>
+        </org.jenkinsci.plugins.pipeline.modeldefinition.ast.ModelASTStages>
+      </stagesList>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.ExecutionModelAction>
+    <hudson.scm.SubversionTagAction plugin="subversion@2.10.5">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <hudson.scm.SubversionSCM_-SvnInfo>
+            <url>http://52.66.103.232/svn/gameoflife</url>
+            <revision>2</revision>
+          </hudson.scm.SubversionSCM_-SvnInfo>
+          <list/>
+        </entry>
+      </tags>
+    </hudson.scm.SubversionTagAction>
+    <org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState plugin="workflow-scm-step@2.6">
+      <revisionStates>
+        <entry>
+          <string>svn http://52.66.103.232/svn/gameoflife</string>
+          <hudson.scm.SVNRevisionState plugin="subversion@2.10.5">
+            <revisions>
+              <entry>
+                <string>http://52.66.103.232/svn/gameoflife</string>
+                <long>2</long>
+              </entry>
+            </revisions>
+          </hudson.scm.SVNRevisionState>
+        </entry>
+      </revisionStates>
+    </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.28"/>
+  </actions>
+  <queueId>19</queueId>
+  <timestamp>1575962259438</timestamp>
+  <startTime>1575962259442</startTime>
+  <result>FAILURE</result>
+  <duration>13739</duration>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>pipeline{
+    agent { label &apos;master&apos; }
+    stages{
+        stage(&apos;Svn Checkout&apos;){
+            steps{
+                script{
+                    checkout([$class: &apos;SubversionSCM&apos;, additionalCredentials: [], excludedCommitMessages: &apos;&apos;, excludedRegions: &apos;&apos;, excludedRevprop: &apos;&apos;, excludedUsers: &apos;&apos;, filterChangelog: false, ignoreDirPropChanges: false, includedRegions: &apos;&apos;, locations: [[cancelProcessOnExternalsFail: true, credentialsId: &apos;svn&apos;, depthOption: &apos;infinity&apos;, ignoreExternalsOption: true, local: &apos;.&apos;, remote: &apos;http://52.66.103.232/svn/gameoflife&apos;]], quietOperation: true, workspaceUpdater: [$class: &apos;UpdateUpdater&apos;]])
+                }
+            }
+        }
+        
+        stage(&apos;Maven Execution&apos;){
+            steps{
+                script{
+                    withMaven(jdk: &apos;jdk8&apos;, maven: &apos;Maven&apos;) {
+                        sh &apos;mvn clean install&apos;   
+                    }
+                }
+            }
+        }
+        
+        stage(&apos;Sonarqube analysis&apos;){
+            steps{
+                script{
+                    def sonar = tool name: &apos;SonarScanner&apos;, type: &apos;hudson.plugins.sonar.SonarRunnerInstallation&apos;
+                    sh &apos; $sonar -Dsonar.languages=java -Dsonar.projectKey=Game -Dsonar.projectName=Gameoflife -Dsonar.projectVersion=0.0.1 -Dsonar.sources=src&apos;
+                }
+            }
+        }
+        
+        stage(&apos;Nexus Upload&apos;){
+            steps{
+                script{
+                    nexusArtifactUploader artifacts: [[artifactId: &apos;gameoflife&apos;, classifier: &apos;&apos;, file: &apos;target/gameoflife-0.0.1.war&apos;, type: &apos;war&apos;]], credentialsId: &apos;Nexus&apos;, groupId: &apos;be.cegeka&apos;, nexusUrl: &apos;52.66.103.232/nexus&apos;, nexusVersion: &apos;nexus3&apos;, protocol: &apos;http&apos;, repository: &apos;maven-releases&apos;, version: &apos;0.0.1&apos;
+                }
+            }
+        }
+    }
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>177457481</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>120483500</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>644069403</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>19958790</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>128672252</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>43</iota>
+    <head>1:43</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList">
+    <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+      <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.10.5">
+        <locations>
+          <hudson.scm.SubversionSCM_-ModuleLocation>
+            <remote>http://52.66.103.232/svn/gameoflife</remote>
+            <credentialsId>svn</credentialsId>
+            <local>.</local>
+            <depthOption>infinity</depthOption>
+            <ignoreExternalsOption>true</ignoreExternalsOption>
+            <cancelProcessOnExternalsFail>true</cancelProcessOnExternalsFail>
+          </hudson.scm.SubversionSCM_-ModuleLocation>
+        </locations>
+        <additionalCredentials/>
+        <excludedRegions></excludedRegions>
+        <includedRegions></includedRegions>
+        <excludedUsers></excludedUsers>
+        <excludedRevprop></excludedRevprop>
+        <excludedCommitMessages></excludedCommitMessages>
+        <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+        <ignoreDirPropChanges>false</ignoreDirPropChanges>
+        <filterChangelog>false</filterChangelog>
+        <quietOperation>true</quietOperation>
+      </scm>
+      <node></node>
+      <workspace>/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace</workspace>
+      <changelogFile>/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/builds/10/changelog0.xml</changelogFile>
+      <pollingBaseline class="hudson.scm.SVNRevisionState" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SVNRevisionState"/>
+    </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+  </checkouts>
+</flow-build>

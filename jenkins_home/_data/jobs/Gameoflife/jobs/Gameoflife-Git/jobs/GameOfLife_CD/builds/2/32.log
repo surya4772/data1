@@ -1,0 +1,22 @@
+[workspace] Running shell script
++ chmod 400 key2.pem
++ ansible-playbook -i host deploy.yml --extra-vars workspace=/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-Git/jobs/GameOfLife_CD/workspace
+
+PLAY [dev] *********************************************************************
+
+TASK [Install Java] ************************************************************
+changed: [dev]
+ [WARNING]: Consider using yum module rather than running yum
+
+TASK [creating a directory] ****************************************************
+ok: [dev]
+
+TASK [copy war file] ***********************************************************
+changed: [dev]
+
+TASK [executing war] ***********************************************************
+changed: [dev]
+
+PLAY RECAP *********************************************************************
+dev                        : ok=4    changed=3    unreachable=0    failed=0   
+

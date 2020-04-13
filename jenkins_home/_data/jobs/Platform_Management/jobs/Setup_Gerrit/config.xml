@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties/>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>#!/bin/bash -ex
+
+# Fetch All-Projects 
+cd ${WORKSPACE}
+git clone ssh://jenkins@gerrit:29418/All-Projects
+cd ${WORKSPACE}/All-Projects
+git fetch origin refs/meta/config:refs/remotes/origin/meta/config
+git checkout meta/config
+
+# Apply changes
+cp ${WORKSPACE}/platform-management/gerrit/project.config .
+
+if ! grep -q "$(cat ${WORKSPACE}/platform-management/gerrit/groups)" groups
+then
+    perl -p -i -e 's/###([^#]+)###/defined $ENV{$1} ? $ENV{$1} : $&amp;/eg' &lt; "${WORKSPACE}/platform-management/gerrit/groups" 2&gt; /dev/null 1&gt; "${WORKSPACE}/platform-management/gerrit/groups.tokenised"
+    cat ${WORKSPACE}/platform-management/gerrit/groups.tokenised &gt;&gt; ${WORKSPACE}/All-Projects/groups
+else
+    echo "Groups already found, skipping"
+fi
+
+# Push
+if [ $(git status --porcelain | wc -l) -gt 0 ]; then
+    git add project.config groups
+    git commit -m "Applying ADOP Gerrit ACL"
+    git push origin meta/config:meta/config
+else
+    echo "Nothing to commit"
+fi</command>
+        </hudson.tasks.Shell>
+    </builders>
+    <publishers/>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+            <user>adop-jenkins-master</user>
+        </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+        <EnvInjectBuildWrapper>
+            <info>
+                <propertiesContent>DC=dc=ldap,dc=example,dc=com</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+        </EnvInjectBuildWrapper>
+    </buildWrappers>
+    <scm class="hudson.plugins.git.GitSCM">
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <name>origin</name>
+                <url>ssh://jenkins@gerrit:29418/platform-management</url>
+                <credentialsId>adop-jenkins-master</credentialsId>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>${ADOP_PLATFORM_MANAGEMENT_VERSION}</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <configVersion>2</configVersion>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <authorOrCommitter>false</authorOrCommitter>
+        <clean>false</clean>
+        <wipeOutWorkspace>false</wipeOutWorkspace>
+        <pruneBranches>false</pruneBranches>
+        <remotePoll>false</remotePoll>
+        <ignoreNotifyCommit>false</ignoreNotifyCommit>
+        <gitTool>Default</gitTool>
+        <relativeTargetDir>platform-management</relativeTargetDir>
+        <skipTag>true</skipTag>
+    </scm>
+</project>

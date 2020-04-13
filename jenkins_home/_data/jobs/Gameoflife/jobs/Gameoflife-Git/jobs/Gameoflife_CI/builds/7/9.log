@@ -1,0 +1,14 @@
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://52.66.103.232/gitlab/admin1/gameoflife.git # timeout=10
+Fetching upstream changes from http://52.66.103.232/gitlab/admin1/gameoflife.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials svn
+ > git fetch --tags --progress http://52.66.103.232/gitlab/admin1/gameoflife.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision df4b827000abefbed3a292487e05730b935f8dda (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f df4b827000abefbed3a292487e05730b935f8dda
+Commit message: "Update pom.xml"
+ > git rev-list --no-walk dc03c725202d75e4166d449839c3f84669be59e1 # timeout=10

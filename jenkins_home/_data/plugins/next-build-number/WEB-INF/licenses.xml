@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='next-build-number' version='1.5'><l:dependency name='Next Build Number Plugin' groupId='org.jenkins-ci.plugins' artifactId='next-build-number' version='1.5' url='https://wiki.jenkins-ci.org/display/JENKINS/Next+Build+Number+Plugin'><l:description>Sets the build number Jenkins will use for a job's next build</l:description><l:license name='MIT license' url=''/></l:dependency></l:dependencies>

@@ -1,0 +1,202 @@
+--- Copying files at Mon Dec  2 06:24:21 UTC 2019
+INSTALLED init.groovy.d/Environment_Dashboard.groovy
+INSTALLED init.groovy.d/adop_ant.groovy
+INSTALLED init.groovy.d/adop_general.groovy
+INSTALLED init.groovy.d/adop_sonar.groovy
+INSTALLED init.groovy.d/adop_nodejs.groovy
+INSTALLED init.groovy.d/role_based_auth.groovy
+INSTALLED init.groovy.d/adop_gerrit.groovy
+INSTALLED init.groovy.d/adop_slave_master_access_control.groovy
+INSTALLED init.groovy.d/adop_groovy.groovy
+INSTALLED init.groovy.d/adop_ldap.groovy
+INSTALLED init.groovy.d/cli-shutdown.groovy
+INSTALLED init.groovy.d/adop_jnlp_agent_protocols.groovy
+INSTALLED init.groovy.d/adop_maven.groovy
+INSTALLED init.groovy.d/tcp-slave-agent-port.groovy
+INSTALLED plugins/gerrit-trigger.jpi : 2.27.5
+INSTALLED plugins/docker-commons.jpi : 1.11
+INSTALLED plugins/maven-plugin.jpi : 3.1.2
+INSTALLED plugins/nodejs.jpi : 0.2.1
+INSTALLED plugins/apache-httpcomponents-client-4-api.jpi : 4.5.5-2.0
+INSTALLED plugins/pipeline-github-lib.jpi : 1.0
+INSTALLED plugins/mask-passwords.jpi : 2.11.0
+INSTALLED plugins/jquery-detached.jpi : 1.2.1
+INSTALLED plugins/parameterized-trigger.jpi : 2.35.2
+INSTALLED plugins/cloudbees-folder.jpi : 6.4
+INSTALLED plugins/matrix-auth.jpi : 2.2
+INSTALLED plugins/blueocean-display-url.jpi : 2.2.0
+INSTALLED plugins/git.jpi : 3.9.0
+INSTALLED plugins/mercurial.jpi : 2.3
+INSTALLED plugins/matrix-project.jpi : 1.13
+INSTALLED plugins/ssh-slaves.jpi : 1.26
+INSTALLED plugins/jsch.jpi : 0.1.54.2
+INSTALLED plugins/workflow-cps-global-lib.jpi : 2.9
+INSTALLED plugins/role-strategy.jpi : 2.7.0
+INSTALLED plugins/jenkinswalldisplay.jpi : 0.6.34
+INSTALLED plugins/workflow-job.jpi : 2.21
+INSTALLED plugins/github-organization-folder.jpi : 1.6
+INSTALLED plugins/email-ext.jpi : 2.62
+INSTALLED plugins/nested-view.jpi : 1.14
+INSTALLED plugins/analysis-collector.jpi : 1.52
+INSTALLED plugins/cucumber-reports.jpi : 3.16.0
+INSTALLED plugins/icon-shim.jpi : 2.0.3
+INSTALLED plugins/handy-uri-templates-2-api.jpi : 2.1.6-1.0
+INSTALLED plugins/pipeline-milestone-step.jpi : 1.3.1
+INSTALLED plugins/handlebars.jpi : 1.1.1
+INSTALLED plugins/repository-connector.jpi : 1.2.3
+INSTALLED plugins/dependency-queue-plugin.jpi : 1.1
+INSTALLED plugins/windows-slaves.jpi : 1.3.1
+INSTALLED plugins/command-launcher.jpi : 1.2
+INSTALLED plugins/translation.jpi : 1.16
+INSTALLED plugins/jdepend.jpi : 1.3.0
+INSTALLED plugins/rebuild.jpi : 1.28
+INSTALLED plugins/bouncycastle-api.jpi : 2.16.2
+INSTALLED plugins/junit-attachments.jpi : 1.5
+INSTALLED plugins/token-macro.jpi : 2.5
+INSTALLED plugins/blueocean.jpi : 1.6.2
+INSTALLED plugins/blueocean-core-js.jpi : 1.6.2
+INSTALLED plugins/monitoring.jpi : 1.72.0
+INSTALLED plugins/tasks.jpi : 4.52
+INSTALLED plugins/job-dsl.jpi : 1.48
+INSTALLED plugins/codescanner.jpi : 0.11
+INSTALLED plugins/blueocean-github-pipeline.jpi : 1.6.2
+INSTALLED plugins/subversion.jpi : 2.10.5
+INSTALLED plugins/blueocean-pipeline-api-impl.jpi : 1.6.2
+INSTALLED plugins/blueocean-dashboard.jpi : 1.6.2
+INSTALLED plugins/jenkins-design-language.jpi : 1.6.2
+INSTALLED plugins/nodelabelparameter.jpi : 1.7.2
+INSTALLED plugins/favorite.jpi : 2.3.2
+INSTALLED plugins/sonar.jpi : 2.7.1
+INSTALLED plugins/jira.jpi : 3.0.0
+INSTALLED plugins/depgraph-view.jpi : 0.13
+INSTALLED plugins/cucumber.jpi : 0.0.2
+INSTALLED plugins/pipeline-graph-analysis.jpi : 1.6
+INSTALLED plugins/jquery-ui.jpi : 1.0.2
+INSTALLED plugins/git-server.jpi : 1.7
+INSTALLED plugins/blueocean-pipeline-scm-api.jpi : 1.6.2
+INSTALLED plugins/antisamy-markup-formatter.jpi : 1.5
+INSTALLED plugins/htmlpublisher.jpi : 1.16
+INSTALLED plugins/pipeline-build-step.jpi : 2.7
+INSTALLED plugins/variant.jpi : 1.1
+INSTALLED plugins/jackson2-api.jpi : 2.8.11.3
+INSTALLED plugins/claim.jpi : 2.15
+INSTALLED plugins/ant.jpi : 1.8
+INSTALLED plugins/ruby-runtime.jpi : 0.12
+INSTALLED plugins/environment-dashboard.jpi : 1.1.7
+INSTALLED plugins/blueocean-rest.jpi : 1.6.2
+INSTALLED plugins/tap.jpi : 2.2.1
+INSTALLED plugins/build-name-setter.jpi : 1.6.9
+INSTALLED plugins/blueocean-autofavorite.jpi : 1.2.2
+INSTALLED plugins/mapdb-api.jpi : 1.0.9.0
+INSTALLED plugins/authentication-tokens.jpi : 1.3
+INSTALLED plugins/ansicolor.jpi : 0.5.2
+INSTALLED plugins/structs.jpi : 1.14
+INSTALLED plugins/blueocean-commons.jpi : 1.6.2
+INSTALLED plugins/ace-editor.jpi : 1.1
+INSTALLED plugins/deploy.jpi : 1.13
+INSTALLED plugins/sectioned-view.jpi : 1.24
+INSTALLED plugins/blueocean-rest-impl.jpi : 1.6.2
+INSTALLED plugins/ws-cleanup.jpi : 0.34
+INSTALLED plugins/next-build-number.jpi : 1.5
+INSTALLED plugins/blueocean-jwt.jpi : 1.6.2
+INSTALLED plugins/conditional-buildstep.jpi : 1.3.6
+INSTALLED plugins/pam-auth.jpi : 1.3
+INSTALLED plugins/blueocean-git-pipeline.jpi : 1.6.2
+INSTALLED plugins/github-oauth.jpi : 0.29
+INSTALLED plugins/copyartifact.jpi : 1.39.1
+INSTALLED plugins/pubsub-light.jpi : 1.12
+INSTALLED plugins/workflow-basic-steps.jpi : 2.7
+INSTALLED plugins/branch-api.jpi : 2.0.20
+INSTALLED plugins/workflow-support.jpi : 2.18
+INSTALLED plugins/workflow-multibranch.jpi : 2.18
+INSTALLED plugins/versionnumber.jpi : 1.9
+INSTALLED plugins/pipeline-model-api.jpi : 1.2.9
+INSTALLED plugins/plain-credentials.jpi : 1.4
+INSTALLED plugins/ssh-agent.jpi : 1.15
+INSTALLED plugins/blueocean-i18n.jpi : 1.6.2
+INSTALLED plugins/blueocean-pipeline-editor.jpi : 1.6.2
+INSTALLED plugins/ldap.jpi : 1.20
+INSTALLED plugins/workflow-api.jpi : 2.27
+INSTALLED plugins/pipeline-stage-tags-metadata.jpi : 1.2.9
+INSTALLED plugins/promoted-builds.jpi : 3.1
+INSTALLED plugins/dependency-check-jenkins-plugin.jpi : 3.1.2.1
+INSTALLED plugins/credentials-binding.jpi : 1.16
+INSTALLED plugins/build-pipeline-plugin.jpi : 1.5.8
+INSTALLED plugins/github-api.jpi : 1.90
+INSTALLED plugins/docker-build-step.jpi : 2.0
+INSTALLED plugins/analysis-core.jpi : 1.95
+INSTALLED plugins/script-security.jpi : 1.44
+INSTALLED plugins/ssh-credentials.jpi : 1.13
+INSTALLED plugins/javadoc.jpi : 1.4
+INSTALLED plugins/workflow-aggregator.jpi : 2.5
+INSTALLED plugins/blueocean-web.jpi : 1.6.2
+INSTALLED plugins/cvs.jpi : 2.14
+INSTALLED plugins/workflow-durable-task-step.jpi : 2.19
+INSTALLED plugins/github-branch-source.jpi : 2.3.4
+INSTALLED plugins/pipeline-stage-view.jpi : 2.10
+INSTALLED plugins/blueocean-bitbucket-pipeline.jpi : 1.6.2
+INSTALLED plugins/pipeline-stage-step.jpi : 2.3
+INSTALLED plugins/build-metrics.jpi : 1.3
+INSTALLED plugins/display-url-api.jpi : 2.2.0
+INSTALLED plugins/blueocean-personalization.jpi : 1.6.2
+INSTALLED plugins/jquery.jpi : 1.12.4-0
+INSTALLED plugins/pipeline-maven.jpi : 3.5.8
+INSTALLED plugins/swarm.jpi : 3.12
+INSTALLED plugins/thinBackup.jpi : 1.9
+INSTALLED plugins/extensible-choice-parameter.jpi : 1.5.0
+INSTALLED plugins/workflow-scm-step.jpi : 2.6
+INSTALLED plugins/workflow-remote-loader.jpi : 1.4
+INSTALLED plugins/workflow-step-api.jpi : 2.14
+INSTALLED plugins/resource-disposer.jpi : 0.8
+INSTALLED plugins/momentjs.jpi : 1.1.1
+INSTALLED plugins/sse-gateway.jpi : 1.15
+INSTALLED plugins/pipeline-input-step.jpi : 2.8
+INSTALLED plugins/git-client.jpi : 2.7.2
+INSTALLED plugins/global-build-stats.jpi : 1.5
+INSTALLED plugins/greenballs.jpi : 1.15
+INSTALLED plugins/pipeline-model-definition.jpi : 1.2.9
+INSTALLED plugins/config-file-provider.jpi : 2.18
+INSTALLED plugins/jslint.jpi : 0.8.2
+INSTALLED plugins/envinject.jpi : 2.1.5
+INSTALLED plugins/credentials.jpi : 2.1.16
+INSTALLED plugins/blueocean-events.jpi : 1.6.2
+INSTALLED plugins/docker-build-publish.jpi : 1.3.2
+INSTALLED plugins/groovy.jpi : 2.0
+INSTALLED plugins/pipeline-model-extensions.jpi : 1.2.9
+INSTALLED plugins/pipeline-rest-api.jpi : 2.10
+INSTALLED plugins/gatling.jpi : 1.2.2
+INSTALLED plugins/durable-task.jpi : 1.22
+INSTALLED plugins/workflow-cps.jpi : 2.53
+INSTALLED plugins/dashboard-view.jpi : 2.9.11
+INSTALLED plugins/cloudbees-bitbucket-branch-source.jpi : 2.2.11
+INSTALLED plugins/mailer.jpi : 1.21
+INSTALLED plugins/performance.jpi : 3.8
+INSTALLED plugins/github.jpi : 1.29.0
+INSTALLED plugins/timestamper.jpi : 1.8.10
+INSTALLED plugins/scm-api.jpi : 2.2.7
+INSTALLED plugins/copy-to-slave.jpi : 1.4.4
+INSTALLED plugins/simple-theme-plugin.jpi : 0.4
+INSTALLED plugins/jobConfigHistory.jpi : 2.18
+INSTALLED plugins/xunit.jpi : 1.104
+INSTALLED plugins/docker-workflow.jpi : 1.15.1
+INSTALLED plugins/blueocean-config.jpi : 1.6.2
+INSTALLED plugins/junit.jpi : 1.24
+INSTALLED plugins/pipeline-model-declarative-agent.jpi : 1.1.1
+INSTALLED plugins/blueocean-jira.jpi : 1.6.2
+INSTALLED plugins/run-condition.jpi : 1.0
+INSTALLED plugins/envinject-api.jpi : 1.5
+INSTALLED adop_scripts/generate_key.sh
+INSTALLED adop_scripts/generate_sonar_auth_token.sh
+INSTALLED adop_scripts/generate_gerrit_scm.sh
+INSTALLED scriptApproval.xml
+INSTALLED .m2/settings.xml
+INSTALLED jobs/Load_Platform/config.xml
+INSTALLED plugins.txt
+--- Copying files at Mon Dec  2 08:53:40 UTC 2019
+--- Copying files at Thu Dec  5 06:01:19 UTC 2019
+--- Copying files at Mon Dec  9 07:01:22 UTC 2019
+--- Copying files at Tue Dec 10 05:58:47 UTC 2019
+--- Copying files at Wed Dec 11 07:57:15 UTC 2019
+--- Copying files at Thu Dec 19 09:06:48 UTC 2019
+--- Copying files at Thu Jan  9 09:08:22 UTC 2020
+--- Copying files at Mon Apr 13 07:10:48 UTC 2020

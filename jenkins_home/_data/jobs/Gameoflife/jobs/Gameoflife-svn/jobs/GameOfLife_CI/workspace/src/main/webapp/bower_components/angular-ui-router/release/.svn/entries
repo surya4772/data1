@@ -1,0 +1,54 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components/angular-ui-router/release
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+angular-ui-router.js
+file
+
+
+
+
+2019-12-19T10:09:42.068000Z
+918ba26f2dd494a6675db8400a3bfaf4
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+angular-ui-router.min.js
+file
+
+
+
+
+2019-12-19T10:09:42.068000Z
+78c9456351a2c34dd5e01d59832d3956
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

@@ -1,0 +1,188 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.21">
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>projectName</name>
+          <description></description>
+          <value>ExampleProject</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>projectAdmin</name>
+          <description></description>
+          <value>Admin</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>projectDeveloper</name>
+          <description></description>
+          <value>Developer</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>projectViewer</name>
+          <description></description>
+          <value>Viewer</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>workspaceName</name>
+          <description></description>
+          <value>ExampleWorkspace</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>workspaceAdmin</name>
+          <description></description>
+          <value>Admin</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>workspaceDeveloper</name>
+          <description></description>
+          <value>Developer</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>workspaceViewer</name>
+          <description></description>
+          <value>Viewer</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>cartridgeURL</name>
+          <description></description>
+          <value>ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-java.git</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>scmProvider</name>
+          <description></description>
+          <value>http://13.126.65.32/gerrit/ - ssh (adop-gerrit-ssh)</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>projectName</string>
+        <string>projectAdmin</string>
+        <string>projectDeveloper</string>
+        <string>projectViewer</string>
+        <string>workspaceName</string>
+        <string>workspaceAdmin</string>
+        <string>workspaceDeveloper</string>
+        <string>workspaceViewer</string>
+        <string>cartridgeURL</string>
+        <string>scmProvider</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.plugins.parameterizedtrigger.DifferentiatingAction plugin="parameterized-trigger@2.35.2"/>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>Load_Platform</upstreamProject>
+            <upstreamUrl>job/Load_Platform/</upstreamUrl>
+            <upstreamBuild>2</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-RemoteCause>
+                <addr>127.0.0.1</addr>
+              </hudson.model.Cause_-RemoteCause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.9">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <org.jenkinsci.plugins.workflow.cps.EnvActionImpl plugin="workflow-cps@2.53">
+      <env class="tree-map"/>
+    </org.jenkinsci.plugins.workflow.cps.EnvActionImpl>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.28"/>
+  </actions>
+  <queueId>19</queueId>
+  <timestamp>1575275572594</timestamp>
+  <startTime>1575275572598</startTime>
+  <result>SUCCESS</result>
+  <duration>50072</duration>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>
+node {
+    // Setup Workspace
+    def result
+    try {
+        result = build job: &apos;Workspace_Management/Generate_Workspace&apos;, parameters: [[$class: &apos;StringParameterValue&apos;, name: &apos;WORKSPACE_NAME&apos;, value: &quot;${workspaceName}&quot;], [$class: &apos;StringParameterValue&apos;, name: &apos;ADMIN_USERS&apos;, value: &quot;${workspaceName}${workspaceAdmin}&quot;], [$class: &apos;StringParameterValue&apos;, name: &apos;DEVELOPER_USERS&apos;, value: &quot;${workspaceName}${workspaceDeveloper}&quot;], [$class: &apos;StringParameterValue&apos;, name: &apos;VIEWER_USERS&apos;, value: &quot;${workspaceName}${workspaceViewer}&quot;]]
+        echo &quot;RESULT of Workspace Job:&quot; + result.result
+    } catch (Exception err) {
+        if (err.toString().contains(&apos;FAILURE&apos;)){
+            echo &quot;RESULT of Workspace Job: Failure. Failing Pipeline due to failure result..&quot;
+            sh &quot;exit 1&quot;
+        }
+        else {
+            // Assume UNSTABLE
+            echo &quot;RESULT of Workspace Job: UNSTABLE so will continue.&quot; + err.toString()
+        }
+    }
+
+    // Setup Project
+    try {
+        result = build job: &quot;${workspaceName}/Project_Management/Generate_Project&quot;, parameters: [[$class: &apos;StringParameterValue&apos;, name: &apos;PROJECT_NAME&apos;, value: &quot;${projectName}&quot;], [$class: &apos;StringParameterValue&apos;, name: &apos;ADMIN_USERS&apos;, value: &quot;${projectName}${projectAdmin}&quot;], [$class: &apos;StringParameterValue&apos;, name: &apos;DEVELOPER_USERS&apos;, value: &quot;${projectName}${projectDeveloper}&quot;], [$class: &apos;StringParameterValue&apos;, name: &apos;VIEWER_USERS&apos;, value: &quot;${projectName}${projectViewer}&quot;]]
+        echo &quot;RESULT of Project Job:&quot; + result.result
+    } catch (Exception err) {
+        if (err.toString().contains(&apos;FAILURE&apos;)){
+            echo &quot;RESULT of Project Job: Failure. Failing Pipeline due to failure result..&quot;
+            sh &quot;exit 1&quot;
+        }
+        else {
+            // Assume UNSTABLE
+            echo &quot;RESULT of Project Job: UNSTABLE so will continue.&quot; + err.toString()
+        }
+    }
+
+    // Setup Load Cartridge
+    try {
+        retry(5) {
+            result = build job: &quot;${workspaceName}/${projectName}/Cartridge_Management/Load_Cartridge&quot;, parameters: [[$class: &apos;StringParameterValue&apos;, name: &apos;CARTRIDGE_CLONE_URL&apos;, value: &quot;${cartridgeURL}&quot;], [$class: &apos;StringParameterValue&apos;, name: &apos;SCM_PROVIDER&apos;, value: &quot;${scmProvider}&quot;]]
+            echo &quot;RESULT of Load Cartridge Job:&quot; + result.result
+        }
+    } catch (Exception err) {
+        if (err.toString().contains(&apos;FAILURE&apos;)){
+            echo &quot;RESULT of Load Cartridge: Failure. Failing Pipeline due to failure result..&quot;
+            sh &quot;exit 1&quot;
+        }
+        else {
+            // Assume UNSTABLE
+            echo &quot;RESULT of Load Cartridge Job: UNSTABLE so will continue.&quot; + err.toString()
+        }
+    }
+}
+                </script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>117499714</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>67312980</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>270865741</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>56452807</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>22513876</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>17</iota>
+    <head>1:17</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

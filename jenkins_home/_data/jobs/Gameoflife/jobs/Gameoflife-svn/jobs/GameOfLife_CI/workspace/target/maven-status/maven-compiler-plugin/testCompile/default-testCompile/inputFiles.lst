@@ -1,0 +1,5 @@
+/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/src/test/java/be/cegeka/fizzbuzz/FizzBuzzServiceTest.java
+/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/src/test/java/be/cegeka/gameoflife/GameOfLifeControllerIntegrationTest.java
+/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/src/test/java/be/cegeka/status/StatusControllerTest.java
+/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/src/test/java/be/cegeka/GameoflifeApplicationTests.java
+/var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace/src/test/java/be/cegeka/status/StatusControllerIntegrationTest.java

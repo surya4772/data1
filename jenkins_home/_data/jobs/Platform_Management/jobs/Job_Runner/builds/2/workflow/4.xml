@@ -1,0 +1,36 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@2.18">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.53">
+    <parentIds>
+      <string>3</string>
+    </parentIds>
+    <id>4</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.support.steps.build.BuildTriggerStep</descriptorId>
+  </node>
+  <actions>
+    <wf.a.TimingAction plugin="workflow-api@2.27">
+      <startTime>1575275540708</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogActionImpl>
+      <charset>UTF-8</charset>
+    </s.a.LogActionImpl>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.53">
+      <arguments>
+        <entry>
+          <string>job</string>
+          <string>Platform_Management/Setup_Gerrit</string>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.LabelAction plugin="workflow-api@2.27">
+      <displayName>Building Platform Management » Setup_Gerrit</displayName>
+    </wf.a.LabelAction>
+    <io.jenkins.blueocean.listeners.NodeDownstreamBuildAction plugin="blueocean-pipeline-api-impl@1.6.2">
+      <link plugin="blueocean-rest@1.6.2">
+        <href>/blue/rest/organizations/jenkins/pipelines/Platform_Management/pipelines/Setup_Gerrit/runs/2/</href>
+      </link>
+      <description>Platform Management » Setup_Gerrit #2</description>
+    </io.jenkins.blueocean.listeners.NodeDownstreamBuildAction>
+  </actions>
+</Tag>

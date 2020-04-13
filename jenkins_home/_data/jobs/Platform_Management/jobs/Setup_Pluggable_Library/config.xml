@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <EnvInjectJobProperty>
+            <info>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>false</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>#!/bin/bash -ex
+
+echo "Extracting Pluggable library to additonal classpath location: ${PLUGGABLE_SCM_PROVIDER_PATH}"
+cp -r src/main/groovy/pluggable/ ${PLUGGABLE_SCM_PROVIDER_PATH}
+echo "******************"
+
+echo "Library contents: "
+ls ${PLUGGABLE_SCM_PROVIDER_PATH}pluggable/scm/
+</command>
+        </hudson.tasks.Shell>
+        <hudson.plugins.groovy.SystemGroovy plugin="groovy@2.0">
+            <source class="hudson.plugins.groovy.StringSystemScriptSource">
+                <script plugin="script-security@1.44">
+                    <script>
+import hudson.scm.SCM
+import jenkins.model.Jenkins
+import jenkins.plugins.git.GitSCMSource
+import org.jenkinsci.plugins.workflow.libs.*
+import org.jenkinsci.plugins.workflow.libs.LibraryConfiguration
+import org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever
+
+def globalLibrariesParameters = [
+  branch:               "master",
+  credentialId:         "",
+  implicit:             false,
+  name:                 "adop-pluggable-scm-jenkinsfile",
+  repository:           "https://github.com/Accenture/adop-pluggable-scm-jenkinsfile.git"
+]
+
+GitSCMSource gitSCMSource = new GitSCMSource(
+  "global-shared-library",
+  globalLibrariesParameters.repository,
+  globalLibrariesParameters.credentialId,
+  "*",
+  "",
+  false
+)
+
+SCMSourceRetriever sCMSourceRetriever = new SCMSourceRetriever(gitSCMSource)
+
+Jenkins jenkins = Jenkins.getInstance()
+
+def globalLibraries = jenkins.getDescriptor("org.jenkinsci.plugins.workflow.libs.GlobalLibraries")
+
+LibraryConfiguration libraryConfiguration = new LibraryConfiguration(globalLibrariesParameters.name, sCMSourceRetriever)
+libraryConfiguration.setDefaultVersion(globalLibrariesParameters.branch)
+libraryConfiguration.setImplicit(globalLibrariesParameters.implicit)
+
+globalLibraries.get().setLibraries([libraryConfiguration])
+
+jenkins.save()
+</script>
+                    <sandbox>true</sandbox>
+                    <classpath/>
+                </script>
+            </source>
+        </hudson.plugins.groovy.SystemGroovy>
+    </builders>
+    <publishers/>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+    </buildWrappers>
+    <scm class="hudson.plugins.git.GitSCM">
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <name>origin</name>
+                <url>https://github.com/Accenture/adop-pluggable-scm</url>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>*/master</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <configVersion>2</configVersion>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <authorOrCommitter>false</authorOrCommitter>
+        <clean>false</clean>
+        <wipeOutWorkspace>false</wipeOutWorkspace>
+        <pruneBranches>false</pruneBranches>
+        <remotePoll>false</remotePoll>
+        <ignoreNotifyCommit>false</ignoreNotifyCommit>
+        <gitTool>Default</gitTool>
+        <skipTag>true</skipTag>
+    </scm>
+</project>

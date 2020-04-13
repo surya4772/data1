@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view
+END
+ApiKeyButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/ApiKeyButton.js
+END
+ResponseContentTypeView.js
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/ResponseContentTypeView.js
+END
+StatusCodeView.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/StatusCodeView.js
+END
+ResourceView.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/ResourceView.js
+END
+HeaderView.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/HeaderView.js
+END
+ParameterContentTypeView.js
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/ParameterContentTypeView.js
+END
+MainView.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/MainView.js
+END
+ParameterView.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/ParameterView.js
+END
+SignatureView.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/SignatureView.js
+END
+OperationView.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/OperationView.js
+END
+BasicAuthButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/BasicAuthButton.js
+END
+ContentTypeView.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/javascript/view/ContentTypeView.js
+END

@@ -1,0 +1,30 @@
+Started at Thu Dec 19 12:46:50 UTC 2019
+Checking Load_Platform
+Checking Workspace Management » Generate_Workspace
+Checking Platform Management » Generate_Example_Workspace
+Checking Platform Management » Job_Runner
+Checking Platform Management » Load_Cartridge_List
+Checking Platform Management » Load_Platform_Extension
+Checking Platform Management » Load_Platform_Extension_Collection
+Checking Platform Management » Setup_Custom_Cartridge_Library
+Checking Platform Management » Setup_Gerrit
+Checking Platform Management » Setup_Pluggable_Library
+Checking Gameoflife » Gameoflife-svn » GameOfLife_CD
+Checking Gameoflife » Gameoflife-svn » GameOfLife_CI
+Checking Gameoflife » Gameoflife-Git » GameOfLife_CD
+Checking Gameoflife » Gameoflife-Git » Gameoflife_CI
+Checking ExampleWorkspace » Project Management » Generate_Project
+Checking ExampleWorkspace » ExampleProject » Create_Environment
+Checking ExampleWorkspace » ExampleProject » Destroy_Environment
+Checking ExampleWorkspace » ExampleProject » List_Environment
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Build
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Code_Analysis
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Deploy
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Deploy_ProdA
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Deploy_ProdB
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Performance_Tests
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Regression_Tests
+Checking ExampleWorkspace » ExampleProject » Reference_Application_Unit_Tests
+Checking ExampleWorkspace » ExampleProject » Cartridge Management » Load_Cartridge
+Checking ExampleWorkspace » ExampleProject » Cartridge Management » Load_Cartridge_Collection
+Finished at Thu Dec 19 12:46:50 UTC 2019. 67ms

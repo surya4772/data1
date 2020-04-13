@@ -1,0 +1,44 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/test/resources
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+config
+dir
+
+logback-test.xml
+file
+
+
+
+
+2019-12-19T10:10:45.730000Z
+f223a2c2036643dda7df3679994097d8
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

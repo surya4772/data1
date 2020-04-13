@@ -1,0 +1,27 @@
+2019-12-02 06:25:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2019-12-02 08:54:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2019-12-05 06:02:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2019-12-09 07:01:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2019-12-10 05:59:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2019-12-11 07:57:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2019-12-19 09:07:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2020-01-09 09:08:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]
+2020-04-13 07:11:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENV_DASHBOARD" not found; SQL statement:
+ALTER TABLE env_dashboard ADD IF NOT EXISTS packageName VARCHAR(255); [42102-188]

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src
+END
+urlMatcherFactory.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/urlMatcherFactory.js
+END
+stateDirectives.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/stateDirectives.js
+END
+view.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/view.js
+END
+viewScroll.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/viewScroll.js
+END
+state.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/state.js
+END
+templateFactory.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/templateFactory.js
+END
+resolve.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/resolve.js
+END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/common.js
+END
+stateFilters.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/stateFilters.js
+END
+viewDirective.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/viewDirective.js
+END
+urlRouter.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/angular-ui-router/src/urlRouter.js
+END

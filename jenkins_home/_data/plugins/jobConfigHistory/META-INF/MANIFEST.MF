@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: jochenf
+Build-Jdk: 1.8.0_131
+Extension-Name: jobConfigHistory
+Specification-Title: Saves copies of job, node and system configuratio
+ ns.
+Implementation-Title: jobConfigHistory
+Implementation-Version: 2.18
+Plugin-Class: hudson.plugins.jobConfigHistory.JobConfigHistory
+Group-Id: org.jenkins-ci.plugins
+Short-Name: jobConfigHistory
+Long-Name: Jenkins Job Configuration History Plugin
+Url: https://wiki.jenkins.io/display/JENKINS/JobConfigHistory+Plugin
+Plugin-Version: 2.18
+Hudson-Version: 1.554.1
+Jenkins-Version: 1.554.1
+Plugin-Dependencies: maven-plugin:2.0;resolution:=optional
+Plugin-Developers: Stefan Brausch:stefanbrausch:stefan.brausch@1und1.d
+ e,Mirko Friedenhagen:mfriedenhagen:mfriedenhagen@gmail.com,Jochen A. 
+ Fuerbacher:jochenafuerbacher:jochen.fuerbacher@1und1.de,Kathi Stutz:k
+ stutz:kathi.stutz@1und1.de,Yordan Boev:boev:iordan.boev@gmail.com
+

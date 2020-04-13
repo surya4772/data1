@@ -1,0 +1,4 @@
+2020-04-13_07:09:22.28789 time="2020-04-13T07:09:22Z" level=info msg="Starting Gitaly" version="Gitaly, version 0.43.0, built 20171021.231657"
+2020-04-13_07:09:22.32721 time="2020-04-13T07:09:22Z" level=warning msg="git path not configured. Using default path resolution" resolvedPath=/opt/gitlab/embedded/bin/git
+2020-04-13_07:09:29.56360 time="2020-04-13T07:09:29Z" level=info msg="listening on unix socket" address=/var/opt/gitlab/gitaly/gitaly.socket
+2020-04-13_07:09:29.58853 time="2020-04-13T07:09:29Z" level=warning msg=spawned supervisor.args="[bundle exec bin/gitaly-ruby 395 /tmp/gitaly-ruby314431607/socket]" supervisor.name=gitaly-ruby supervisor.pid=502

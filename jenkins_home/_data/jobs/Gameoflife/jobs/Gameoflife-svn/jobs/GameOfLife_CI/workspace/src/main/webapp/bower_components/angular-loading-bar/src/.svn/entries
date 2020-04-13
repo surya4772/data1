@@ -1,0 +1,54 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components/angular-loading-bar/src
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+loading-bar.css
+file
+
+
+
+
+2019-12-19T10:09:41.752000Z
+736ec8295a1911955a32ed8803f79502
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+loading-bar.js
+file
+
+
+
+
+2019-12-19T10:09:41.752000Z
+c7d81f9147c0231cab4fbe533416d7a0
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

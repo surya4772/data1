@@ -1,0 +1,8 @@
+W, [2020-04-13T08:01:24.787273 #657]  WARN -- : #<Unicorn::HttpServer:0x00007f46c34d6a50>: worker (pid: 657) exceeds memory limit (476634624.0 bytes > 471476295 bytes)
+W, [2020-04-13T08:01:24.787442 #657]  WARN -- : Unicorn::WorkerKiller send SIGQUIT (pid: 657) alive: 2873 sec (trial 1)
+I, [2020-04-13T08:01:25.148825 #513]  INFO -- : reaped #<Process::Status: pid 657 exit 0> worker=0
+I, [2020-04-13T08:01:25.318133 #6987]  INFO -- : worker=0 ready
+W, [2020-04-13T08:18:32.038841 #669]  WARN -- : #<Unicorn::HttpServer:0x00007f46c34d6a50>: worker (pid: 669) exceeds memory limit (487902720.0 bytes > 478108120 bytes)
+W, [2020-04-13T08:18:32.040387 #669]  WARN -- : Unicorn::WorkerKiller send SIGQUIT (pid: 669) alive: 4062 sec (trial 1)
+I, [2020-04-13T08:18:32.450536 #513]  INFO -- : reaped #<Process::Status: pid 669 exit 0> worker=4
+I, [2020-04-13T08:18:32.610111 #9094]  INFO -- : worker=4 ready

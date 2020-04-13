@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: gavin
+Build-Jdk: 1.7.0_07
+Extension-Name: jslint
+Specification-Title: Lint JavaScript files using a sensible ruleset - 
+ outputs to checkstyle format
+Implementation-Title: jslint
+Implementation-Version: 0.8.2
+Group-Id: org.jenkins-ci.plugins
+Short-Name: jslint
+Long-Name: Box UK - JSLint
+Url: https://wiki.jenkins-ci.org/display/JENKINS/JSLint+plugin
+Plugin-Version: 0.8.2
+Hudson-Version: 1.523
+Jenkins-Version: 1.523
+Plugin-Developers: Gavin Davies:gavd:gavin.davies@boxuk.com
+

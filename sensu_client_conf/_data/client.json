@@ -1,0 +1,32 @@
+{
+  "client": {
+    "socket": {
+      "bind": "127.0.0.1"
+    },
+    "name": "core",
+    "address": "127.0.0.1",
+    "deregister":  true,
+    
+    "subscriptions": [
+      
+        "proxy"
+      
+        ,"gerrit"
+      
+        ,"jenkins"
+      
+        ,"nexus"
+      
+        ,"sonarqube"
+      
+        ,"sensu"
+      
+        ,"kibana"
+      
+    ],
+    
+    "keepalive": {
+      "handler": "default"
+    }
+  }
+}

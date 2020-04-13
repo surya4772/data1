@@ -1,0 +1,50 @@
+Started by upstream project "[8mha:////4K2NPbuNaP5RsWtWw0rKlI/fmg+5xLMdPR3zJl4JU/98AAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy5EgYN/az8JP2AnMSStPyi3HjfxLzE9NTc1LwSsLhXflJ8UGleXmqRPgAHzL8G3QAAAA==[0mPlatform_Management/Job_Runner" build number [8mha:////4EfhqRvG9kxCiZ75G8pGEKDjzwgE0H7l3meuanUeYHjgAAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBk39rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuFd+UnxQaV5eapG+IQC5Zq1F3gAAAA==[0m1
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4HNf1EQz5dBAQzPep4EPwVxUh+aI9SUKMKYfL49/nuO6AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9QwC2qRdQyQAAAA==[0m1
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+[EnvInject] - Preparing an environment for the build.
+[EnvInject] - Keeping Jenkins system variables.
+[EnvInject] - Keeping Jenkins build variables.
+[EnvInject] - Injecting contributions.
+Building on master in workspace /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Pluggable_Library/workspace
+[WS-CLEANUP] Deleting project workspace...
+Cloning the remote Git repository
+Cloning repository https://github.com/Accenture/adop-pluggable-scm
+ > git init /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Pluggable_Library/workspace # timeout=10
+Fetching upstream changes from https://github.com/Accenture/adop-pluggable-scm
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/Accenture/adop-pluggable-scm +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/Accenture/adop-pluggable-scm # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Accenture/adop-pluggable-scm # timeout=10
+Fetching upstream changes from https://github.com/Accenture/adop-pluggable-scm
+ > git fetch --tags --progress https://github.com/Accenture/adop-pluggable-scm +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 089f37f346126b78aaeead19f3b6f578674ddb99 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 089f37f346126b78aaeead19f3b6f578674ddb99
+Commit message: "Merge pull request #32 from aliciasteen/master"
+First time build. Skipping changelog.
+[workspace] $ /bin/bash -ex /tmp/jenkins8542235863676395703.sh
++ echo 'Extracting Pluggable library to additonal classpath location: /var/jenkins_home/userContent/job_dsl_additional_classpath/'
+Extracting Pluggable library to additonal classpath location: /var/jenkins_home/userContent/job_dsl_additional_classpath/
++ cp -r src/main/groovy/pluggable/ /var/jenkins_home/userContent/job_dsl_additional_classpath/
++ echo '******************'
+******************
++ echo 'Library contents: '
+Library contents: 
++ ls /var/jenkins_home/userContent/job_dsl_additional_classpath/pluggable/scm/
+PropertiesSCMProviderDataStore.groovy
+SCMProvider.groovy
+SCMProviderDataStore.groovy
+SCMProviderFactory.groovy
+SCMProviderHandler.groovy
+SCMProviderInfo.groovy
+bitbucket
+gerrit
+gitlab
+helpers
+Finished: SUCCESS

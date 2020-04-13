@@ -1,0 +1,54 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components/jquery/src/effects
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+Tween.js
+file
+
+
+
+
+2019-12-19T10:09:42.624000Z
+40596bc9250cc3d044a7363711358632
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+
+animatedSelector.js
+file
+
+
+
+
+2019-12-19T10:09:42.624000Z
+293275acc2e12d1a64ed0f9214f85388
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

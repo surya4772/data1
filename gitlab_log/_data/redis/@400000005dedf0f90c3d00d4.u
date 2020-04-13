@@ -1,0 +1,61 @@
+2019-12-05_05:59:52.37777                 _._                                                  
+2019-12-05_05:59:52.37784            _.-``__ ''-._                                             
+2019-12-05_05:59:52.37784       _.-``    `.  `_.  ''-._           Redis 3.2.5 (00000000/0) 64 bit
+2019-12-05_05:59:52.37785   .-`` .-```.  ```\/    _.,_ ''-._                                   
+2019-12-05_05:59:52.37785  (    '      ,       .-`  | `,    )     Running in standalone mode
+2019-12-05_05:59:52.37786  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 0
+2019-12-05_05:59:52.37786  |    `-._   `._    /     _.-'    |     PID: 385
+2019-12-05_05:59:52.37787   `-._    `-._  `-./  _.-'    _.-'                                   
+2019-12-05_05:59:52.37787  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+2019-12-05_05:59:52.37788  |    `-._`-._        _.-'_.-'    |           http://redis.io        
+2019-12-05_05:59:52.37788   `-._    `-._`-.__.-'_.-'    _.-'                                   
+2019-12-05_05:59:52.37788  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+2019-12-05_05:59:52.37789  |    `-._`-._        _.-'_.-'    |                                  
+2019-12-05_05:59:52.37789   `-._    `-._`-.__.-'_.-'    _.-'                                   
+2019-12-05_05:59:52.37790       `-._    `-.__.-'    _.-'                                       
+2019-12-05_05:59:52.37790           `-._        _.-'                                           
+2019-12-05_05:59:52.37792               `-.__.-'                                               
+2019-12-05_05:59:52.37793 
+2019-12-05_05:59:52.37793 385:M 05 Dec 05:59:52.365 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+2019-12-05_05:59:52.37794 385:M 05 Dec 05:59:52.365 # Server started, Redis version 3.2.5
+2019-12-05_05:59:52.37794 385:M 05 Dec 05:59:52.365 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+2019-12-05_05:59:52.37795 385:M 05 Dec 05:59:52.365 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+2019-12-05_05:59:52.44836 385:M 05 Dec 05:59:52.448 * DB loaded from disk: 0.083 seconds
+2019-12-05_05:59:52.44842 385:M 05 Dec 05:59:52.448 * The server is now ready to accept connections at /var/opt/gitlab/redis/redis.socket
+2019-12-05_06:04:53.08579 385:M 05 Dec 06:04:53.085 * 10 changes in 300 seconds. Saving...
+2019-12-05_06:04:53.08648 385:M 05 Dec 06:04:53.086 * Background saving started by pid 1185
+2019-12-05_06:04:53.09111 1185:C 05 Dec 06:04:53.091 * DB saved on disk
+2019-12-05_06:04:53.09148 1185:C 05 Dec 06:04:53.091 * RDB: 8 MB of memory used by copy-on-write
+2019-12-05_06:04:53.18733 385:M 05 Dec 06:04:53.187 * Background saving terminated with success
+2019-12-05_06:09:54.06494 385:M 05 Dec 06:09:54.064 * 10 changes in 300 seconds. Saving...
+2019-12-05_06:09:54.06565 385:M 05 Dec 06:09:54.065 * Background saving started by pid 1835
+2019-12-05_06:09:54.07008 1835:C 05 Dec 06:09:54.070 * DB saved on disk
+2019-12-05_06:09:54.07042 1835:C 05 Dec 06:09:54.070 * RDB: 8 MB of memory used by copy-on-write
+2019-12-05_06:09:54.16581 385:M 05 Dec 06:09:54.165 * Background saving terminated with success
+2019-12-05_06:14:55.04666 385:M 05 Dec 06:14:55.046 * 10 changes in 300 seconds. Saving...
+2019-12-05_06:14:55.04743 385:M 05 Dec 06:14:55.047 * Background saving started by pid 2455
+2019-12-05_06:14:55.05370 2455:C 05 Dec 06:14:55.053 * DB saved on disk
+2019-12-05_06:14:55.05419 2455:C 05 Dec 06:14:55.054 * RDB: 8 MB of memory used by copy-on-write
+2019-12-05_06:14:55.14815 385:M 05 Dec 06:14:55.148 * Background saving terminated with success
+2019-12-05_06:19:56.03254 385:M 05 Dec 06:19:56.032 * 10 changes in 300 seconds. Saving...
+2019-12-05_06:19:56.03330 385:M 05 Dec 06:19:56.033 * Background saving started by pid 3074
+2019-12-05_06:19:56.03829 3074:C 05 Dec 06:19:56.038 * DB saved on disk
+2019-12-05_06:19:56.03870 3074:C 05 Dec 06:19:56.038 * RDB: 8 MB of memory used by copy-on-write
+2019-12-05_06:19:56.13403 385:M 05 Dec 06:19:56.133 * Background saving terminated with success
+2019-12-05_06:24:57.05117 385:M 05 Dec 06:24:57.051 * 10 changes in 300 seconds. Saving...
+2019-12-05_06:24:57.05187 385:M 05 Dec 06:24:57.051 * Background saving started by pid 3712
+2019-12-05_06:24:57.05631 3712:C 05 Dec 06:24:57.056 * DB saved on disk
+2019-12-05_06:24:57.05669 3712:C 05 Dec 06:24:57.056 * RDB: 8 MB of memory used by copy-on-write
+2019-12-05_06:24:57.15219 385:M 05 Dec 06:24:57.152 * Background saving terminated with success
+2019-12-05_06:29:58.05327 385:M 05 Dec 06:29:58.053 * 10 changes in 300 seconds. Saving...
+2019-12-05_06:29:58.05395 385:M 05 Dec 06:29:58.053 * Background saving started by pid 4319
+2019-12-05_06:29:58.05852 4319:C 05 Dec 06:29:58.058 * DB saved on disk
+2019-12-05_06:29:58.05892 4319:C 05 Dec 06:29:58.058 * RDB: 8 MB of memory used by copy-on-write
+2019-12-05_06:29:58.15526 385:M 05 Dec 06:29:58.155 * Background saving terminated with success
+2019-12-05_06:30:28.12114 385:signal-handler (1575527428) Received SIGTERM scheduling shutdown...
+2019-12-05_06:30:28.16035 385:M 05 Dec 06:30:28.160 # User requested shutdown...
+2019-12-05_06:30:28.16037 385:M 05 Dec 06:30:28.160 * Saving the final RDB snapshot before exiting.
+2019-12-05_06:30:28.16413 385:M 05 Dec 06:30:28.164 * DB saved on disk
+2019-12-05_06:30:28.16416 385:M 05 Dec 06:30:28.164 * Removing the pid file.
+2019-12-05_06:30:28.16417 385:M 05 Dec 06:30:28.164 * Removing the unix socket file.
+2019-12-05_06:30:28.16419 385:M 05 Dec 06:30:28.164 # Redis is now ready to exit, bye bye...

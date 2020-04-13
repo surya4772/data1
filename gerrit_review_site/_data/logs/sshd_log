@@ -1,0 +1,365 @@
+[2019-12-02 06:25:29,938 +0000] f50cf5f7 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:25:30,192 +0000] f50cf5f7 jenkins a/2 gerrit.version 49ms 28ms 0
+[2019-12-02 06:25:31,333 +0000] 75200564 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:25:31,413 +0000] 75200564 jenkins a/2 gerrit.ls-projects 3ms 18ms 0
+[2019-12-02 06:25:31,457 +0000] 75200564 jenkins a/2 LOGOUT
+[2019-12-02 06:25:53,358 +0000] 95233973 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:25:53,381 +0000] 95233973 jenkins a/2 gerrit.ls-projects.--type.code 4ms 4ms 0
+[2019-12-02 06:25:53,411 +0000] 95233973 jenkins a/2 LOGOUT
+[2019-12-02 06:25:53,425 +0000] 352a8d4a jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:25:53,525 +0000] 352a8d4a jenkins a/2 gerrit.create-project.--parent.All-Projects.platform-management 2ms 85ms 0
+[2019-12-02 06:25:53,539 +0000] 352a8d4a jenkins a/2 LOGOUT
+[2019-12-02 06:25:53,564 +0000] 953a599f jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:25:53,615 +0000] 953a599f jenkins a/2 git-upload-pack./platform-management 5ms 34ms 0
+[2019-12-02 06:25:53,655 +0000] 953a599f jenkins a/2 LOGOUT
+[2019-12-02 06:25:53,672 +0000] 35e5ad49 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:25:53,914 +0000] 35e5ad49 jenkins a/2 git-receive-pack./platform-management 2ms 229ms 0
+[2019-12-02 06:25:53,951 +0000] 35e5ad49 jenkins a/2 LOGOUT
+[2019-12-02 06:26:13,956 +0000] f505d5e3 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:14,091 +0000] f505d5e3 jenkins a/2 git-upload-pack./platform-management 2ms 114ms 0
+[2019-12-02 06:26:14,131 +0000] f505d5e3 jenkins a/2 LOGOUT
+[2019-12-02 06:26:14,174 +0000] 150189da jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:14,226 +0000] 150189da jenkins a/2 git-upload-pack./platform-management 2ms 39ms 0
+[2019-12-02 06:26:14,263 +0000] 150189da jenkins a/2 LOGOUT
+[2019-12-02 06:26:14,326 +0000] b5ef5d34 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:14,344 +0000] b5ef5d34 jenkins a/2 gerrit.ls-projects.--type.code 2ms 4ms 0
+[2019-12-02 06:26:14,379 +0000] b5ef5d34 jenkins a/2 LOGOUT
+[2019-12-02 06:26:14,393 +0000] d5b53153 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:14,442 +0000] d5b53153 jenkins a/2 gerrit.create-project.--parent.All-Projects.cartridges/adop-cartridge-java 2ms 35ms 0
+[2019-12-02 06:26:14,444 +0000] d5b53153 jenkins a/2 LOGOUT
+[2019-12-02 06:26:14,504 +0000] b5cafdc7 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:14,563 +0000] b5cafdc7 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-java 3ms 35ms 0
+[2019-12-02 06:26:14,603 +0000] b5cafdc7 jenkins a/2 LOGOUT
+[2019-12-02 06:26:16,397 +0000] d59c51e3 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:16,553 +0000] d59c51e3 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-java 1ms 144ms 0
+[2019-12-02 06:26:16,591 +0000] d59c51e3 jenkins a/2 LOGOUT
+[2019-12-02 06:26:16,613 +0000] 959ed9de jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:16,632 +0000] 959ed9de jenkins a/2 gerrit.ls-projects.--type.code 2ms 4ms 0
+[2019-12-02 06:26:16,663 +0000] 959ed9de jenkins a/2 LOGOUT
+[2019-12-02 06:26:16,676 +0000] 35892da9 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:16,708 +0000] 35892da9 jenkins a/2 gerrit.create-project.--parent.All-Projects.cartridges/adop-cartridge-cartridge-dev 1ms 19ms 0
+[2019-12-02 06:26:16,727 +0000] 35892da9 jenkins a/2 LOGOUT
+[2019-12-02 06:26:16,744 +0000] 9579f98d jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:16,795 +0000] 9579f98d jenkins a/2 git-upload-pack./cartridges/adop-cartridge-cartridge-dev 1ms 39ms 0
+[2019-12-02 06:26:16,835 +0000] 9579f98d jenkins a/2 LOGOUT
+[2019-12-02 06:26:18,343 +0000] 35604dd1 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:18,453 +0000] 35604dd1 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-cartridge-dev 2ms 97ms 0
+[2019-12-02 06:26:18,491 +0000] 35604dd1 jenkins a/2 LOGOUT
+[2019-12-02 06:26:18,507 +0000] f564f5ec jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:18,522 +0000] f564f5ec jenkins a/2 gerrit.ls-projects.--type.code 2ms 3ms 0
+[2019-12-02 06:26:18,559 +0000] f564f5ec jenkins a/2 LOGOUT
+[2019-12-02 06:26:18,567 +0000] 1570a9ab jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:18,597 +0000] 1570a9ab jenkins a/2 gerrit.create-project.--parent.All-Projects.cartridges/adop-cartridge-chef 2ms 15ms 0
+[2019-12-02 06:26:18,619 +0000] 1570a9ab jenkins a/2 LOGOUT
+[2019-12-02 06:26:18,673 +0000] f58b95b5 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:18,731 +0000] f58b95b5 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-chef 2ms 38ms 0
+[2019-12-02 06:26:18,771 +0000] f58b95b5 jenkins a/2 LOGOUT
+[2019-12-02 06:26:20,220 +0000] 158749b0 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:20,314 +0000] 158749b0 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-chef 1ms 82ms 0
+[2019-12-02 06:26:20,351 +0000] 158749b0 jenkins a/2 LOGOUT
+[2019-12-02 06:26:20,368 +0000] d5bbf174 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:20,387 +0000] d5bbf174 jenkins a/2 gerrit.ls-projects.--type.code 1ms 6ms 0
+[2019-12-02 06:26:20,419 +0000] d5bbf174 jenkins a/2 LOGOUT
+[2019-12-02 06:26:20,507 +0000] 75aa4525 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:20,532 +0000] 75aa4525 jenkins a/2 gerrit.create-project.--parent.All-Projects.cartridges/adop-cartridge-docker 2ms 12ms 0
+[2019-12-02 06:26:20,559 +0000] 75aa4525 jenkins a/2 LOGOUT
+[2019-12-02 06:26:20,575 +0000] d5e21189 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:20,623 +0000] d5e21189 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-docker 2ms 36ms 0
+[2019-12-02 06:26:20,663 +0000] d5e21189 jenkins a/2 LOGOUT
+[2019-12-02 06:26:22,128 +0000] 75d1e5b4 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:22,220 +0000] 75d1e5b4 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-docker 2ms 79ms 0
+[2019-12-02 06:26:22,259 +0000] 75d1e5b4 jenkins a/2 LOGOUT
+[2019-12-02 06:26:22,279 +0000] 350fed4e jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:22,297 +0000] 350fed4e jenkins a/2 gerrit.ls-projects.--type.code 2ms 5ms 0
+[2019-12-02 06:26:22,331 +0000] 350fed4e jenkins a/2 LOGOUT
+[2019-12-02 06:26:22,344 +0000] 5519419c jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:22,372 +0000] 5519419c jenkins a/2 gerrit.create-project.--parent.All-Projects.cartridges/adop-cartridge-aspnet-linux 2ms 15ms 0
+[2019-12-02 06:26:22,399 +0000] 5519419c jenkins a/2 LOGOUT
+[2019-12-02 06:26:22,416 +0000] 35e60daf jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:22,467 +0000] 35e60daf jenkins a/2 git-upload-pack./cartridges/adop-cartridge-aspnet-linux 1ms 39ms 0
+[2019-12-02 06:26:22,507 +0000] 35e60daf jenkins a/2 LOGOUT
+[2019-12-02 06:26:23,954 +0000] 55006128 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:24,043 +0000] 55006128 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-aspnet-linux 1ms 77ms 0
+[2019-12-02 06:26:24,083 +0000] 55006128 jenkins a/2 LOGOUT
+[2019-12-02 06:26:24,099 +0000] 15666927 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:24,115 +0000] 15666927 jenkins a/2 gerrit.ls-projects.--type.code 2ms 4ms 0
+[2019-12-02 06:26:24,147 +0000] 15666927 jenkins a/2 LOGOUT
+[2019-12-02 06:26:24,160 +0000] b5543d30 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:24,184 +0000] b5543d30 jenkins a/2 gerrit.create-project.--parent.All-Projects.cartridges/adop-cartridge-flyway 1ms 12ms 0
+[2019-12-02 06:26:24,211 +0000] b5543d30 jenkins a/2 LOGOUT
+[2019-12-02 06:26:24,226 +0000] 153d0903 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:24,275 +0000] 153d0903 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-flyway 2ms 37ms 0
+[2019-12-02 06:26:24,315 +0000] 153d0903 jenkins a/2 LOGOUT
+[2019-12-02 06:26:25,772 +0000] b52bddc0 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:25,890 +0000] b52bddc0 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-flyway 1ms 106ms 0
+[2019-12-02 06:26:25,927 +0000] b52bddc0 jenkins a/2 LOGOUT
+[2019-12-02 06:26:33,852 +0000] b5b67dc2 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:33,937 +0000] b5b67dc2 jenkins a/2 git-upload-pack./platform-management 2ms 73ms 0
+[2019-12-02 06:26:33,975 +0000] b5b67dc2 jenkins a/2 LOGOUT
+[2019-12-02 06:26:34,052 +0000] d5c8d135 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:34,106 +0000] d5c8d135 jenkins a/2 git-upload-pack./platform-management 1ms 42ms 0
+[2019-12-02 06:26:34,143 +0000] d5c8d135 jenkins a/2 LOGOUT
+[2019-12-02 06:26:34,192 +0000] 75d7a5da jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:34,245 +0000] 75d7a5da jenkins a/2 git-upload-pack./All-Projects 1ms 40ms 0
+[2019-12-02 06:26:34,246 +0000] 75d7a5da jenkins a/2 LOGOUT
+[2019-12-02 06:26:34,264 +0000] 95ca5931 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:34,318 +0000] 95ca5931 jenkins a/2 git-upload-pack./All-Projects 1ms 42ms 0
+[2019-12-02 06:26:34,355 +0000] 95ca5931 jenkins a/2 LOGOUT
+[2019-12-02 06:26:34,411 +0000] 3575adeb jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 06:26:34,498 +0000] 3575adeb jenkins a/2 git-receive-pack./All-Projects 2ms 75ms 0
+[2019-12-02 06:26:34,535 +0000] 3575adeb jenkins a/2 LOGOUT
+[2019-12-02 06:27:06,233 +0000] f595d525 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:06,322 +0000] f595d525 jenkins a/2 git-upload-pack./platform-management 1ms 86ms 0
+[2019-12-02 06:27:06,359 +0000] f595d525 jenkins a/2 LOGOUT
+[2019-12-02 06:27:06,438 +0000] 1591893c jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:06,481 +0000] 1591893c jenkins a/2 git-upload-pack./platform-management 1ms 40ms 0
+[2019-12-02 06:27:06,519 +0000] 1591893c jenkins a/2 LOGOUT
+[2019-12-02 06:27:18,905 +0000] b57f5dd6 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:18,993 +0000] b57f5dd6 jenkins a/2 git-upload-pack./platform-management 1ms 74ms 0
+[2019-12-02 06:27:19,031 +0000] b57f5dd6 jenkins a/2 LOGOUT
+[2019-12-02 06:27:19,072 +0000] d54531a5 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:19,125 +0000] d54531a5 jenkins a/2 git-upload-pack./platform-management 1ms 39ms 0
+[2019-12-02 06:27:19,163 +0000] d54531a5 jenkins a/2 LOGOUT
+[2019-12-02 06:27:19,599 +0000] 7554855d jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:19,618 +0000] 7554855d jenkins a/2 gerrit.ls-projects.--type.permissions 2ms 5ms 0
+[2019-12-02 06:27:19,651 +0000] 7554855d jenkins a/2 LOGOUT
+[2019-12-02 06:27:19,666 +0000] 9557b964 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:19,693 +0000] 9557b964 jenkins a/2 gerrit.create-project.--parent.All-Projects.--permissions-only.ExampleWorkspace/ExampleProject/permissions 2ms 13ms 0
+[2019-12-02 06:27:19,719 +0000] 9557b964 jenkins a/2 LOGOUT
+[2019-12-02 06:27:19,735 +0000] 753b2542 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:19,789 +0000] 753b2542 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions 1ms 40ms 0
+[2019-12-02 06:27:19,827 +0000] 753b2542 jenkins a/2 LOGOUT
+[2019-12-02 06:27:19,848 +0000] 952ed900 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:19,902 +0000] 952ed900 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions 2ms 40ms 0
+[2019-12-02 06:27:19,939 +0000] 952ed900 jenkins a/2 LOGOUT
+[2019-12-02 06:27:19,992 +0000] 35192deb jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:20,065 +0000] 35192deb jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/permissions 1ms 59ms 0
+[2019-12-02 06:27:20,103 +0000] 35192deb jenkins a/2 LOGOUT
+[2019-12-02 06:27:20,120 +0000] f5f9559d jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:20,141 +0000] f5f9559d jenkins a/2 gerrit.ls-projects.--type.permissions 1ms 5ms 0
+[2019-12-02 06:27:20,171 +0000] f5f9559d jenkins a/2 LOGOUT
+[2019-12-02 06:27:20,185 +0000] 15f509a4 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:20,223 +0000] 15f509a4 jenkins a/2 gerrit.create-project.--parent.All-Projects.--permissions-only.ExampleWorkspace/ExampleProject/permissions-with-review 3ms 18ms 0
+[2019-12-02 06:27:20,239 +0000] 15f509a4 jenkins a/2 LOGOUT
+[2019-12-02 06:27:20,255 +0000] fad4e20a jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:20,309 +0000] fad4e20a jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions-with-review 1ms 38ms 0
+[2019-12-02 06:27:20,347 +0000] fad4e20a jenkins a/2 LOGOUT
+[2019-12-02 06:27:20,368 +0000] 1ae0d6e9 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:20,425 +0000] 1ae0d6e9 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions-with-review 1ms 42ms 0
+[2019-12-02 06:27:20,463 +0000] 1ae0d6e9 jenkins a/2 LOGOUT
+[2019-12-02 06:27:20,496 +0000] baee6adf jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:20,590 +0000] baee6adf jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/permissions-with-review 1ms 79ms 0
+[2019-12-02 06:27:20,632 +0000] baee6adf jenkins a/2 LOGOUT
+[2019-12-02 06:27:38,875 +0000] 7a0f92b7 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:38,952 +0000] 7a0f92b7 jenkins a/2 git-upload-pack./platform-management 1ms 73ms 0
+[2019-12-02 06:27:38,991 +0000] 7a0f92b7 jenkins a/2 LOGOUT
+[2019-12-02 06:27:39,043 +0000] 9a028692 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:39,089 +0000] 9a028692 jenkins a/2 git-upload-pack./platform-management 1ms 44ms 0
+[2019-12-02 06:27:39,127 +0000] 9a028692 jenkins a/2 LOGOUT
+[2019-12-02 06:27:39,666 +0000] 3a2d9a28 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:39,730 +0000] 3a2d9a28 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-java.git 1ms 61ms 0
+[2019-12-02 06:27:39,767 +0000] 3a2d9a28 jenkins a/2 LOGOUT
+[2019-12-02 06:27:58,268 +0000] 5a172edb jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:58,287 +0000] 5a172edb jenkins a/2 gerrit.ls-projects.--type.code 2ms 14ms 0
+[2019-12-02 06:27:58,334 +0000] 5a172edb jenkins a/2 LOGOUT
+[2019-12-02 06:27:58,386 +0000] fa4dc202 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:58,430 +0000] fa4dc202 jenkins a/2 gerrit.create-project.--parent.ExampleWorkspace/ExampleProject/permissions.ExampleWorkspace/ExampleProject/spring-petclinic 2ms 39ms 0
+[2019-12-02 06:27:58,467 +0000] fa4dc202 jenkins a/2 LOGOUT
+[2019-12-02 06:27:58,532 +0000] 5a3e4e63 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:27:58,543 +0000] 5a3e4e63 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/spring-petclinic 1ms 7ms 0
+[2019-12-02 06:27:58,583 +0000] 5a3e4e63 jenkins a/2 LOGOUT
+[2019-12-02 06:28:02,148 +0000] fa786232 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:03,239 +0000] fa786232 jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/spring-petclinic 1ms 1088ms 0
+[2019-12-02 06:28:03,244 +0000] fa786232 jenkins a/2 LOGOUT
+[2019-12-02 06:28:03,281 +0000] ba698a72 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:03,292 +0000] ba698a72 jenkins a/2 gerrit.ls-projects.--type.code 2ms 6ms 0
+[2019-12-02 06:28:03,323 +0000] ba698a72 jenkins a/2 LOGOUT
+[2019-12-02 06:28:03,350 +0000] dacf9ea2 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:03,370 +0000] dacf9ea2 jenkins a/2 gerrit.create-project.--parent.ExampleWorkspace/ExampleProject/permissions.ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests 1ms 16ms 0
+[2019-12-02 06:28:03,391 +0000] dacf9ea2 jenkins a/2 LOGOUT
+[2019-12-02 06:28:03,428 +0000] bac42a8e jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:03,471 +0000] bac42a8e jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests 1ms 40ms 0
+[2019-12-02 06:28:03,515 +0000] bac42a8e jenkins a/2 LOGOUT
+[2019-12-02 06:28:05,086 +0000] dab6be36 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:05,164 +0000] dab6be36 jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests 2ms 75ms 0
+[2019-12-02 06:28:05,203 +0000] dab6be36 jenkins a/2 LOGOUT
+[2019-12-02 06:28:05,232 +0000] 9a9846c5 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:05,242 +0000] 9a9846c5 jenkins a/2 gerrit.ls-projects.--type.code 1ms 7ms 0
+[2019-12-02 06:28:05,275 +0000] 9a9846c5 jenkins a/2 LOGOUT
+[2019-12-02 06:28:05,300 +0000] 3a135a1e jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:05,316 +0000] 3a135a1e jenkins a/2 gerrit.create-project.--parent.ExampleWorkspace/ExampleProject/permissions.ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 2ms 12ms 0
+[2019-12-02 06:28:05,343 +0000] 3a135a1e jenkins a/2 LOGOUT
+[2019-12-02 06:28:05,378 +0000] 9a236673 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:05,419 +0000] 9a236673 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 1ms 38ms 0
+[2019-12-02 06:28:05,459 +0000] 9a236673 jenkins a/2 LOGOUT
+[2019-12-02 06:28:06,974 +0000] 3a2a7a4a jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:07,042 +0000] 3a2a7a4a jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 1ms 65ms 0
+[2019-12-02 06:28:07,079 +0000] 3a2a7a4a jenkins a/2 LOGOUT
+[2019-12-02 06:28:29,645 +0000] fade2278 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:29,701 +0000] fade2278 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 2ms 42ms 0
+[2019-12-02 06:28:29,739 +0000] fade2278 jenkins a/2 LOGOUT
+[2019-12-02 06:28:29,771 +0000] 1aea161b jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 06:28:29,825 +0000] 1aea161b jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 1ms 41ms 0
+[2019-12-02 06:28:29,863 +0000] 1aea161b jenkins a/2 LOGOUT
+[2019-12-02 07:25:31,998 +0000] bad8aa93 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 07:25:32,102 +0000] bad8aa93 jenkins a/2 gerrit.ls-projects 2ms 19ms 0
+[2019-12-02 07:25:32,143 +0000] bad8aa93 jenkins a/2 LOGOUT
+[2019-12-02 08:25:32,685 +0000] da0a3ef4 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:25:32,785 +0000] da0a3ef4 jenkins a/2 gerrit.ls-projects 2ms 10ms 0
+[2019-12-02 08:25:32,823 +0000] da0a3ef4 jenkins a/2 LOGOUT
+[2019-12-02 08:32:02,636 +0000] 7af9d2ff jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:02,657 +0000] 7af9d2ff jenkins a/2 gerrit.ls-projects.--type.code 2ms 8ms 0
+[2019-12-02 08:32:02,687 +0000] 7af9d2ff jenkins a/2 LOGOUT
+[2019-12-02 08:32:02,753 +0000] 9aecc642 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:02,807 +0000] 9aecc642 jenkins a/2 git-upload-pack./platform-management 1ms 42ms 0
+[2019-12-02 08:32:02,847 +0000] 9aecc642 jenkins a/2 LOGOUT
+[2019-12-02 08:32:02,862 +0000] 3ab7da5d jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:02,886 +0000] 3ab7da5d jenkins a/2 git-receive-pack./platform-management 1ms 12ms 0
+[2019-12-02 08:32:02,927 +0000] 3ab7da5d jenkins a/2 LOGOUT
+[2019-12-02 08:32:14,671 +0000] 5ac16eab jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:14,746 +0000] 5ac16eab jenkins a/2 git-upload-pack./platform-management 1ms 63ms 0
+[2019-12-02 08:32:14,750 +0000] 5ac16eab jenkins a/2 LOGOUT
+[2019-12-02 08:32:14,793 +0000] fa9702bc jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:14,846 +0000] fa9702bc jenkins a/2 git-upload-pack./platform-management 1ms 42ms 0
+[2019-12-02 08:32:14,883 +0000] fa9702bc jenkins a/2 LOGOUT
+[2019-12-02 08:32:14,937 +0000] 1a93f6d6 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:14,955 +0000] 1a93f6d6 jenkins a/2 gerrit.ls-projects.--type.code 2ms 6ms 0
+[2019-12-02 08:32:14,987 +0000] 1a93f6d6 jenkins a/2 LOGOUT
+[2019-12-02 08:32:15,002 +0000] baa18a23 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:15,059 +0000] baa18a23 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-java 1ms 46ms 0
+[2019-12-02 08:32:15,099 +0000] baa18a23 jenkins a/2 LOGOUT
+[2019-12-02 08:32:15,787 +0000] da879e93 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:15,808 +0000] da879e93 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-java 1ms 10ms 0
+[2019-12-02 08:32:15,847 +0000] da879e93 jenkins a/2 LOGOUT
+[2019-12-02 08:32:15,861 +0000] 7a76b29b jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:15,879 +0000] 7a76b29b jenkins a/2 gerrit.ls-projects.--type.code 1ms 6ms 0
+[2019-12-02 08:32:15,915 +0000] 7a76b29b jenkins a/2 LOGOUT
+[2019-12-02 08:32:15,930 +0000] 9a79268e jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:15,984 +0000] 9a79268e jenkins a/2 git-upload-pack./cartridges/adop-cartridge-cartridge-dev 1ms 41ms 0
+[2019-12-02 08:32:16,023 +0000] 9a79268e jenkins a/2 LOGOUT
+[2019-12-02 08:32:16,709 +0000] 3a603ad1 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:16,759 +0000] 3a603ad1 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-cartridge-dev 2ms 38ms 0
+[2019-12-02 08:32:16,799 +0000] 3a603ad1 jenkins a/2 LOGOUT
+[2019-12-02 08:32:16,814 +0000] 5a5ace23 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:16,833 +0000] 5a5ace23 jenkins a/2 gerrit.ls-projects.--type.code 1ms 6ms 0
+[2019-12-02 08:32:16,863 +0000] 5a5ace23 jenkins a/2 LOGOUT
+[2019-12-02 08:32:16,878 +0000] fa64e2ec jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:16,931 +0000] fa64e2ec jenkins a/2 git-upload-pack./cartridges/adop-cartridge-chef 1ms 42ms 0
+[2019-12-02 08:32:16,971 +0000] fa64e2ec jenkins a/2 LOGOUT
+[2019-12-02 08:32:17,754 +0000] 1a70d6ab jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:17,803 +0000] 1a70d6ab jenkins a/2 git-receive-pack./cartridges/adop-cartridge-chef 1ms 37ms 0
+[2019-12-02 08:32:17,843 +0000] 1a70d6ab jenkins a/2 LOGOUT
+[2019-12-02 08:32:17,864 +0000] ba7e6a81 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:17,883 +0000] ba7e6a81 jenkins a/2 gerrit.ls-projects.--type.code 2ms 6ms 0
+[2019-12-02 08:32:17,915 +0000] ba7e6a81 jenkins a/2 LOGOUT
+[2019-12-02 08:32:17,931 +0000] da90fee8 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:17,982 +0000] da90fee8 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-docker 1ms 39ms 0
+[2019-12-02 08:32:18,019 +0000] da90fee8 jenkins a/2 LOGOUT
+[2019-12-02 08:32:18,723 +0000] 7a9f92f9 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:18,771 +0000] 7a9f92f9 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-docker 1ms 36ms 0
+[2019-12-02 08:32:18,811 +0000] 7a9f92f9 jenkins a/2 LOGOUT
+[2019-12-02 08:32:18,827 +0000] 9a9286f4 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:18,845 +0000] 9a9286f4 jenkins a/2 gerrit.ls-projects.--type.code 2ms 6ms 0
+[2019-12-02 08:32:18,875 +0000] 9a9286f4 jenkins a/2 LOGOUT
+[2019-12-02 08:32:18,890 +0000] 3abd9a6a jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:18,943 +0000] 3abd9a6a jenkins a/2 git-upload-pack./cartridges/adop-cartridge-aspnet-linux 1ms 42ms 0
+[2019-12-02 08:32:18,983 +0000] 3abd9a6a jenkins a/2 LOGOUT
+[2019-12-02 08:32:19,665 +0000] 5aa72e5d jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:19,715 +0000] 5aa72e5d jenkins a/2 git-receive-pack./cartridges/adop-cartridge-aspnet-linux 1ms 39ms 0
+[2019-12-02 08:32:19,755 +0000] 5aa72e5d jenkins a/2 LOGOUT
+[2019-12-02 08:32:19,771 +0000] faddc2c4 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:19,788 +0000] faddc2c4 jenkins a/2 gerrit.ls-projects.--type.code 1ms 6ms 0
+[2019-12-02 08:32:19,819 +0000] faddc2c4 jenkins a/2 LOGOUT
+[2019-12-02 08:32:19,840 +0000] 1ad9b6db jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:19,895 +0000] 1ad9b6db jenkins a/2 git-upload-pack./cartridges/adop-cartridge-flyway 1ms 42ms 0
+[2019-12-02 08:32:19,935 +0000] 1ad9b6db jenkins a/2 LOGOUT
+[2019-12-02 08:32:20,632 +0000] bac74af9 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:20,655 +0000] bac74af9 jenkins a/2 git-receive-pack./cartridges/adop-cartridge-flyway 1ms 11ms 0
+[2019-12-02 08:32:20,695 +0000] bac74af9 jenkins a/2 LOGOUT
+[2019-12-02 08:32:29,635 +0000] da0d5e54 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:29,708 +0000] da0d5e54 jenkins a/2 git-upload-pack./platform-management 1ms 59ms 0
+[2019-12-02 08:32:29,710 +0000] da0d5e54 jenkins a/2 LOGOUT
+[2019-12-02 08:32:29,756 +0000] 7a1c728c jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:29,810 +0000] 7a1c728c jenkins a/2 git-upload-pack./platform-management 1ms 43ms 0
+[2019-12-02 08:32:29,847 +0000] 7a1c728c jenkins a/2 LOGOUT
+[2019-12-02 08:32:29,897 +0000] 9a1fe683 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:29,950 +0000] 9a1fe683 jenkins a/2 git-upload-pack./All-Projects 1ms 41ms 0
+[2019-12-02 08:32:29,987 +0000] 9a1fe683 jenkins a/2 LOGOUT
+[2019-12-02 08:32:30,001 +0000] 3ae6faae jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:30,054 +0000] 3ae6faae jenkins a/2 git-upload-pack./All-Projects 1ms 40ms 0
+[2019-12-02 08:32:30,095 +0000] 3ae6faae jenkins a/2 LOGOUT
+[2019-12-02 08:32:30,125 +0000] 5a008e28 jenkins a/2 LOGIN FROM 172.18.0.28
+[2019-12-02 08:32:30,207 +0000] 5a008e28 jenkins a/2 git-receive-pack./All-Projects 1ms 70ms 0
+[2019-12-02 08:32:30,247 +0000] 5a008e28 jenkins a/2 LOGOUT
+[2019-12-02 08:32:59,656 +0000] 1a669627 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:32:59,721 +0000] 1a669627 jenkins a/2 git-upload-pack./platform-management 1ms 63ms 0
+[2019-12-02 08:32:59,722 +0000] 1a669627 jenkins a/2 LOGOUT
+[2019-12-02 08:32:59,778 +0000] ba542a30 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:32:59,821 +0000] ba542a30 jenkins a/2 git-upload-pack./platform-management 1ms 40ms 0
+[2019-12-02 08:32:59,859 +0000] ba542a30 jenkins a/2 LOGOUT
+[2019-12-02 08:33:09,676 +0000] da46be88 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:09,754 +0000] da46be88 jenkins a/2 git-upload-pack./platform-management 1ms 65ms 0
+[2019-12-02 08:33:09,756 +0000] da46be88 jenkins a/2 LOGOUT
+[2019-12-02 08:33:09,815 +0000] 7a35521c jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:09,869 +0000] 7a35521c jenkins a/2 git-upload-pack./platform-management 1ms 41ms 0
+[2019-12-02 08:33:09,907 +0000] 7a35521c jenkins a/2 LOGOUT
+[2019-12-02 08:33:10,337 +0000] 9a2846c7 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:10,358 +0000] 9a2846c7 jenkins a/2 gerrit.ls-projects.--type.permissions 2ms 6ms 0
+[2019-12-02 08:33:10,387 +0000] 9a2846c7 jenkins a/2 LOGOUT
+[2019-12-02 08:33:10,403 +0000] 3aa35a80 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:10,465 +0000] 3aa35a80 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions 0ms 49ms 0
+[2019-12-02 08:33:10,499 +0000] 3aa35a80 jenkins a/2 LOGOUT
+[2019-12-02 08:33:10,519 +0000] 5aadee69 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:10,574 +0000] 5aadee69 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions 1ms 42ms 0
+[2019-12-02 08:33:10,611 +0000] 5aadee69 jenkins a/2 LOGOUT
+[2019-12-02 08:33:10,639 +0000] fac38216 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:10,658 +0000] fac38216 jenkins a/2 gerrit.ls-projects.--type.permissions 2ms 5ms 0
+[2019-12-02 08:33:10,691 +0000] fac38216 jenkins a/2 LOGOUT
+[2019-12-02 08:33:10,707 +0000] 1abf769d jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:10,762 +0000] 1abf769d jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions-with-review 1ms 41ms 0
+[2019-12-02 08:33:10,799 +0000] 1abf769d jenkins a/2 LOGOUT
+[2019-12-02 08:33:10,819 +0000] bacd0a4a jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:10,874 +0000] bacd0a4a jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/permissions-with-review 1ms 42ms 0
+[2019-12-02 08:33:10,911 +0000] bacd0a4a jenkins a/2 LOGOUT
+[2019-12-02 08:33:19,670 +0000] da731e06 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:19,735 +0000] da731e06 jenkins a/2 git-upload-pack./platform-management 2ms 61ms 0
+[2019-12-02 08:33:19,775 +0000] da731e06 jenkins a/2 LOGOUT
+[2019-12-02 08:33:19,822 +0000] 7a623236 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:19,865 +0000] 7a623236 jenkins a/2 git-upload-pack./platform-management 1ms 40ms 0
+[2019-12-02 08:33:19,903 +0000] 7a623236 jenkins a/2 LOGOUT
+[2019-12-02 08:33:20,052 +0000] 9a65a640 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:20,100 +0000] 9a65a640 jenkins a/2 git-upload-pack./cartridges/adop-cartridge-java.git 1ms 45ms 0
+[2019-12-02 08:33:20,112 +0000] 9a65a640 jenkins a/2 LOGOUT
+[2019-12-02 08:33:22,426 +0000] 3a8cba1f jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:22,438 +0000] 3a8cba1f jenkins a/2 gerrit.ls-projects.--type.code 1ms 8ms 0
+[2019-12-02 08:33:22,469 +0000] 3a8cba1f jenkins a/2 LOGOUT
+[2019-12-02 08:33:22,515 +0000] 5a864e06 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:22,918 +0000] 5a864e06 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/spring-petclinic 2ms 400ms 0
+[2019-12-02 08:33:22,988 +0000] 5a864e06 jenkins a/2 LOGOUT
+[2019-12-02 08:33:23,920 +0000] fa406295 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:23,940 +0000] fa406295 jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/spring-petclinic 1ms 18ms 0
+[2019-12-02 08:33:23,979 +0000] fa406295 jenkins a/2 LOGOUT
+[2019-12-02 08:33:24,004 +0000] 1a4c56d0 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:24,013 +0000] 1a4c56d0 jenkins a/2 gerrit.ls-projects.--type.code 1ms 5ms 0
+[2019-12-02 08:33:24,047 +0000] 1a4c56d0 jenkins a/2 LOGOUT
+[2019-12-02 08:33:24,079 +0000] ba5aea89 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:24,121 +0000] ba5aea89 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests 1ms 40ms 0
+[2019-12-02 08:33:24,159 +0000] ba5aea89 jenkins a/2 LOGOUT
+[2019-12-02 08:33:24,899 +0000] da2c7e05 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:24,939 +0000] da2c7e05 jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-regression-tests 2ms 37ms 0
+[2019-12-02 08:33:24,979 +0000] da2c7e05 jenkins a/2 LOGOUT
+[2019-12-02 08:33:25,004 +0000] 7a3b1242 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:25,014 +0000] 7a3b1242 jenkins a/2 gerrit.ls-projects.--type.code 1ms 6ms 0
+[2019-12-02 08:33:25,047 +0000] 7a3b1242 jenkins a/2 LOGOUT
+[2019-12-02 08:33:25,081 +0000] 9a2e0601 jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:25,125 +0000] 9a2e0601 jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 1ms 42ms 0
+[2019-12-02 08:33:25,163 +0000] 9a2e0601 jenkins a/2 LOGOUT
+[2019-12-02 08:33:25,888 +0000] 3a191aeb jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:25,927 +0000] 3a191aeb jenkins a/2 git-receive-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 1ms 36ms 0
+[2019-12-02 08:33:25,971 +0000] 3a191aeb jenkins a/2 LOGOUT
+[2019-12-02 08:33:49,678 +0000] 5a03ae7d jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:49,735 +0000] 5a03ae7d jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 1ms 44ms 0
+[2019-12-02 08:33:49,775 +0000] 5a03ae7d jenkins a/2 LOGOUT
+[2019-12-02 08:33:49,806 +0000] faf9429d jenkins a/2 LOGIN FROM 172.18.0.20
+[2019-12-02 08:33:49,861 +0000] faf9429d jenkins a/2 git-upload-pack./ExampleWorkspace/ExampleProject/adop-cartridge-java-environment-template 1ms 42ms 0
+[2019-12-02 08:33:49,899 +0000] faf9429d jenkins a/2 LOGOUT

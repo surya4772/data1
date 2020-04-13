@@ -1,0 +1,6 @@
+Checking out a fresh workspace because /var/jenkins_home/jobs/Gameoflife/jobs/Gameoflife-svn/jobs/GameOfLife_CI/workspace doesn't exist
+Cleaning local Directory .
+Checking out http://52.66.103.232/svn/gameoflife at revision '2019-12-10T06:21:53.299 +0000' --quiet
+Using sole credentials admin/****** (svn) in realm ‘<http://52.66.103.232:80> Forbidden’
+At revision 2
+

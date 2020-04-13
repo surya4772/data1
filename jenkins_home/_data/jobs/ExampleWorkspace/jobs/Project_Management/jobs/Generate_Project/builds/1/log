@@ -1,0 +1,408 @@
+Started by upstream project "[8mha:////4EaXCkjbrXnAYUPi5a3lu+JCfCXniNssbI6Yy1YmhmYlAAAAwB+LCAAAAAAAAP9djT0KwkAUhJ8RPYCl2HiBbCeCpBJRIRHBwjI8zTN/m7fLZiPxGl5DGw/hcbyDwVRmmhmGj5nnBwalgWlSRaVi96y4VJLcQEUkNzdNRqac75QlaNVzAGoDkw7/h868x8u767cDzhaGkji2iQ/9ykgLIz/DKwqJHIuDNSnHi2Zu3Jlbtt791U1wLcxFpk5iL9FelCnCABljKojtr18Tk0FL4arGQksKj8rkpcYziS8nSVLg7QAAAA==[0mPlatform_Management/Generate_Example_Workspace" build number [8mha:////4DCx/Oh7PVC5X5zzaN/kB3IY/JVLlOvFm4ULy/13hCLHAAAAwR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBkv9rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuHtqXmpRYklqvGtFYm5BTmp8eH5RdnFBYnKqviEAKRQ6J+4AAAA=[0m1
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4HNf1EQz5dBAQzPep4EPwVxUh+aI9SUKMKYfL49/nuO6AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9QwC2qRdQyQAAAA==[0m1
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+[EnvInject] - Preparing an environment for the build.
+[EnvInject] - Keeping Jenkins system variables.
+[EnvInject] - Keeping Jenkins build variables.
+[EnvInject] - Injecting as environment variables the properties content 
+WORKSPACE_NAME=ExampleWorkspace
+
+[EnvInject] - Variables injected successfully.
+[EnvInject] - Injecting contributions.
+Building remotely on [8mha:////4KbE300gNUO3ZpoKisBJG38kk6LFXTY/b4Hxh7C/u+bFAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgY5/eT83ILSktQi/eDyxKLc+OCcxLJUXcMUg8RUI8MkAIxBA83TAAAA[0mSwarm_Slave-1d0ae21b (swarm java8 ldap aws docker) in workspace /workspace/ExampleWorkspace/Project_Management/Generate_Project
+[WS-CLEANUP] Deleting project workspace...
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Exec ssh-agent (binary ssh-agent on a remote machine)
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-UEfawkFA0fyO/agent.454
+SSH_AGENT_PID=456
+[ssh-agent] Started.
+$ ssh-add /workspace/ExampleWorkspace/Project_Management/Generate_Project@tmp/private_key_146753424079529845.key
+Identity added: /workspace/ExampleWorkspace/Project_Management/Generate_Project@tmp/private_key_146753424079529845.key (/workspace/ExampleWorkspace/Project_Management/Generate_Project@tmp/private_key_146753424079529845.key)
+[ssh-agent] Using credentials jenkins (ADOP Jenkins Master)
+Cloning the remote Git repository
+Cloning repository ssh://jenkins@gerrit:29418/platform-management
+ > git init /workspace/ExampleWorkspace/Project_Management/Generate_Project # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse 69b37adbd7109ec996ab9785ea4935d0fb2a303e^{commit} # timeout=10
+Checking out Revision 69b37adbd7109ec996ab9785ea4935d0fb2a303e (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 69b37adbd7109ec996ab9785ea4935d0fb2a303e
+Commit message: "Merge pull request #52 from RobertNorthard/feature/custom-cartridge-properties"
+First time build. Skipping changelog.
+[EnvInject] - Inject global passwords.
+[EnvInject] - Mask passwords that will be passed as build parameters.
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+OUTPUT_FILE=output.ldif
+DC=dc=ldap,dc=example,dc=com
+OU_GROUPS=ou=groups
+OU_PEOPLE=ou=people
+
+[EnvInject] - Variables injected successfully.
+[Generate_Project] $ /bin/bash -e /tmp/jenkins5224631694228820450.sh
+[Generate_Project] $ /bin/sh -xe /tmp/jenkins8984455583256958846.sh
++ set -e
++ /workspace/ExampleWorkspace/Project_Management/Generate_Project/common/ldap/generate_role.sh -r admin -n ExampleWorkspace.ExampleProject -d dc=ldap,dc=example,dc=com -g ou=groups -p ou=people -u ExampleProjectAdmin -f output.ldif -w /workspace/ExampleWorkspace/Project_Management/Generate_Project
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Role
+2019/12/02 06:27:19:INFO > ROLE = admin
+2019/12/02 06:27:19:INFO > NAMESPACE = ExampleWorkspace.ExampleProject
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > PEOPLE_OU = ou=people
+2019/12/02 06:27:19:INFO > GROUPS_OU = ou=groups
+2019/12/02 06:27:19:INFO > USERS = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generating Role: admin
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate User
+2019/12/02 06:27:19:INFO > CN = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > OU = ou=people
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > DISPLAYNAME = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > GIVENNAME = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > SURNAME = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > MAIL = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > UID = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > PASSWORD = ********
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate User elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Group Member
+2019/12/02 06:27:19:INFO > CN = ExampleProjectAdmin
+2019/12/02 06:27:19:INFO > OU = ou=people
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = tmp_admin.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Group Member elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Group
+2019/12/02 06:27:19:INFO > CN = ExampleWorkspace.ExampleProject.admin
+2019/12/02 06:27:19:INFO > OU = ou=groups
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Group elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Finished Generating Role: admin
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Role elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ /workspace/ExampleWorkspace/Project_Management/Generate_Project/common/ldap/generate_role.sh -r developer -n ExampleWorkspace.ExampleProject -d dc=ldap,dc=example,dc=com -g ou=groups -p ou=people -u ExampleProjectDeveloper -f output.ldif -w /workspace/ExampleWorkspace/Project_Management/Generate_Project
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Role
+2019/12/02 06:27:19:INFO > ROLE = developer
+2019/12/02 06:27:19:INFO > NAMESPACE = ExampleWorkspace.ExampleProject
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > PEOPLE_OU = ou=people
+2019/12/02 06:27:19:INFO > GROUPS_OU = ou=groups
+2019/12/02 06:27:19:INFO > USERS = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generating Role: developer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate User
+2019/12/02 06:27:19:INFO > CN = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > OU = ou=people
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > DISPLAYNAME = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > GIVENNAME = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > SURNAME = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > MAIL = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > UID = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > PASSWORD = ********
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate User elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Group Member
+2019/12/02 06:27:19:INFO > CN = ExampleProjectDeveloper
+2019/12/02 06:27:19:INFO > OU = ou=people
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = tmp_developer.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Group Member elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Group
+2019/12/02 06:27:19:INFO > CN = ExampleWorkspace.ExampleProject.developer
+2019/12/02 06:27:19:INFO > OU = ou=groups
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Group elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Finished Generating Role: developer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Role elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ /workspace/ExampleWorkspace/Project_Management/Generate_Project/common/ldap/generate_role.sh -r viewer -n ExampleWorkspace.ExampleProject -d dc=ldap,dc=example,dc=com -g ou=groups -p ou=people -u ExampleProjectViewer -f output.ldif -w /workspace/ExampleWorkspace/Project_Management/Generate_Project
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Role
+2019/12/02 06:27:19:INFO > ROLE = viewer
+2019/12/02 06:27:19:INFO > NAMESPACE = ExampleWorkspace.ExampleProject
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > PEOPLE_OU = ou=people
+2019/12/02 06:27:19:INFO > GROUPS_OU = ou=groups
+2019/12/02 06:27:19:INFO > USERS = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generating Role: viewer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate User
+2019/12/02 06:27:19:INFO > CN = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > OU = ou=people
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > DISPLAYNAME = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > GIVENNAME = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > SURNAME = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > MAIL = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > UID = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > PASSWORD = ********
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate User elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Group Member
+2019/12/02 06:27:19:INFO > CN = ExampleProjectViewer
+2019/12/02 06:27:19:INFO > OU = ou=people
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = tmp_viewer.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Group Member elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Running Generate Group
+2019/12/02 06:27:19:INFO > CN = ExampleWorkspace.ExampleProject.viewer
+2019/12/02 06:27:19:INFO > OU = ou=groups
+2019/12/02 06:27:19:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:19:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Starting LDIF Generation
+2019/12/02 06:27:19:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Group elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Finished Generating Role: viewer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:19:INFO > Generate Role elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ set +e
++ /workspace/ExampleWorkspace/Project_Management/Generate_Project/common/ldap/load_ldif.sh -h ldap -u **** -p **** -b dc=ldap,dc=example,dc=com -f output.ldif
+Testing LDAP Connection
+LDAP available, adding data
+adding new entry "cn=ExampleProjectAdmin,ou=people,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspace.ExampleProject.admin,ou=groups,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleProjectDeveloper,ou=people,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspace.ExampleProject.developer,ou=groups,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleProjectViewer,ou=people,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspace.ExampleProject.viewer,ou=groups,dc=ldap,dc=example,dc=com"
+
++ set -e
+++ echo ExampleProjectAdmin
+++ tr , ' '
++ ADMIN_USERS=ExampleProjectAdmin
+++ echo ExampleProjectDeveloper
+++ tr , ' '
++ DEVELOPER_USERS=ExampleProjectDeveloper
+++ echo ExampleProjectViewer
+++ tr , ' '
++ VIEWER_USERS=ExampleProjectViewer
++ for user in '$ADMIN_USERS' '$DEVELOPER_USERS' '$VIEWER_USERS'
+++ echo ExampleProjectAdmin
+++ cut -d@ -f1
++ username=ExampleProjectAdmin
++ /workspace/ExampleWorkspace/Project_Management/Generate_Project/common/gerrit/create_user.sh -g http://gerrit:8080/gerrit -u ExampleProjectAdmin -p ExampleProjectAdmin
+Testing Gerrit Connection
+Creating user: ExampleProjectAdmin
++ for user in '$ADMIN_USERS' '$DEVELOPER_USERS' '$VIEWER_USERS'
+++ echo ExampleProjectDeveloper
+++ cut -d@ -f1
++ username=ExampleProjectDeveloper
++ /workspace/ExampleWorkspace/Project_Management/Generate_Project/common/gerrit/create_user.sh -g http://gerrit:8080/gerrit -u ExampleProjectDeveloper -p ExampleProjectDeveloper
+Testing Gerrit Connection
+Creating user: ExampleProjectDeveloper
++ for user in '$ADMIN_USERS' '$DEVELOPER_USERS' '$VIEWER_USERS'
+++ echo ExampleProjectViewer
+++ cut -d@ -f1
++ username=ExampleProjectViewer
++ /workspace/ExampleWorkspace/Project_Management/Generate_Project/common/gerrit/create_user.sh -g http://gerrit:8080/gerrit -u ExampleProjectViewer -p ExampleProjectViewer
+Testing Gerrit Connection
+Creating user: ExampleProjectViewer
+[Generate_Project] $ /bin/bash -ex /tmp/jenkins8054785626299402371.sh
++ source /workspace/ExampleWorkspace/Project_Management/Generate_Project/projects/gerrit/configure.sh
+++ unset permissions_name
+++ unset permissions_config_name
+++ getopts :r: opt
+++ '[' -z '' ']'
+++ permissions_name=permissions
+++ permissions_repo_name=ExampleWorkspace/ExampleProject/permissions
+++ mkdir /workspace/ExampleWorkspace/Project_Management/Generate_Project/tmp
+++ cd /workspace/ExampleWorkspace/Project_Management/Generate_Project/tmp
+++ permissions_repo_exists=0
++++ ssh -o StrictHostKeyChecking=no -p 29418 jenkins@gerrit gerrit ls-projects --type permissions
+++ list_of_repos=All-Projects
+++ for repo in '${list_of_repos}'
+++ '[' All-Projects = ExampleWorkspace/ExampleProject/permissions ']'
+++ '[' 0 -eq 0 ']'
+++ ssh -o StrictHostKeyChecking=no -p 29418 jenkins@gerrit gerrit create-project --parent All-Projects --permissions-only ExampleWorkspace/ExampleProject/permissions
+++ git clone ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/permissions
+Cloning into 'permissions'...
+Total 3 (delta 0), reused 0 (delta 0)
+Note: checking out 'f910c24127be65c7a9fc081c95e5cc23bce68345'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+++ cd permissions/
+++ git fetch origin refs/meta/config:refs/remotes/origin/meta/config
+From ssh://gerrit:29418/ExampleWorkspace/ExampleProject/permissions
+ * [new ref]         refs/meta/config -> origin/meta/config
+++ git checkout meta/config
+Switched to a new branch 'meta/config'
+Branch meta/config set up to track remote branch meta/config from origin.
+++ perl -p -i -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg'
+++ perl -p -i -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg'
++++ git status --porcelain
++++ wc -l
+++ '[' 2 -gt 0 ']'
+++ git add project.config groups
+++ git commit -m 'Generating parent project permissions'
+[meta/config 93f5ad4] Generating parent project permissions
+ 2 files changed, 27 insertions(+)
+ create mode 100644 groups
+++ git push origin meta/config:meta/config
+remote: remote: Processing changes: refs: 1        remote: Processing changes: refs: 1, done            
+To ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/permissions
+   f910c24..93f5ad4  meta/config -> refs/meta/config
+++ rm -rf /workspace/ExampleWorkspace/Project_Management/Generate_Project/tmp
++ source /workspace/ExampleWorkspace/Project_Management/Generate_Project/projects/gerrit/configure.sh -r permissions-with-review
+++ unset permissions_name
+++ unset permissions_config_name
+++ getopts :r: opt
+++ case $opt in
+++ permissions_name=permissions-with-review
+++ permissions_config_name=-permissions-with-review
+++ getopts :r: opt
+++ '[' -z permissions-with-review ']'
+++ permissions_repo_name=ExampleWorkspace/ExampleProject/permissions-with-review
+++ mkdir /workspace/ExampleWorkspace/Project_Management/Generate_Project/tmp
+++ cd /workspace/ExampleWorkspace/Project_Management/Generate_Project/tmp
+++ permissions_repo_exists=0
++++ ssh -o StrictHostKeyChecking=no -p 29418 jenkins@gerrit gerrit ls-projects --type permissions
+++ list_of_repos='All-Projects
+ExampleWorkspace/ExampleProject/permissions'
+++ for repo in '${list_of_repos}'
+++ '[' All-Projects = ExampleWorkspace/ExampleProject/permissions-with-review ']'
+++ for repo in '${list_of_repos}'
+++ '[' ExampleWorkspace/ExampleProject/permissions = ExampleWorkspace/ExampleProject/permissions-with-review ']'
+++ '[' 0 -eq 0 ']'
+++ ssh -o StrictHostKeyChecking=no -p 29418 jenkins@gerrit gerrit create-project --parent All-Projects --permissions-only ExampleWorkspace/ExampleProject/permissions-with-review
+++ git clone ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/permissions-with-review
+Cloning into 'permissions-with-review'...
+Total 3 (delta 0), reused 0 (delta 0)
+Note: checking out '0ea96ca43307bddef05283f99356dace4416a512'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+++ cd permissions-with-review/
+++ git fetch origin refs/meta/config:refs/remotes/origin/meta/config
+From ssh://gerrit:29418/ExampleWorkspace/ExampleProject/permissions-with-review
+ * [new ref]         refs/meta/config -> origin/meta/config
+++ git checkout meta/config
+Switched to a new branch 'meta/config'
+Branch meta/config set up to track remote branch meta/config from origin.
+++ perl -p -i -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg'
+++ perl -p -i -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg'
++++ git status --porcelain
++++ wc -l
+++ '[' 2 -gt 0 ']'
+++ git add project.config groups
+++ git commit -m 'Generating parent project permissions'
+[meta/config 3db24a4] Generating parent project permissions
+ 2 files changed, 56 insertions(+)
+ create mode 100644 groups
+++ git push origin meta/config:meta/config
+remote: remote: Processing changes: refs: 1        remote: Processing changes: refs: 1, done            
+To ssh://jenkins@gerrit:29418/ExampleWorkspace/ExampleProject/permissions-with-review
+   0ea96ca..3db24a4  meta/config -> refs/meta/config
+++ rm -rf /workspace/ExampleWorkspace/Project_Management/Generate_Project/tmp
+Processing DSL script jobs.groovy
+Warning: (jobs.groovy, line 34) workflowJob is deprecated
+Added items:
+    GeneratedJob{name='ExampleWorkspace/ExampleProject'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Cartridge_Management'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge'}
+    GeneratedJob{name='ExampleWorkspace/ExampleProject/Cartridge_Management/Load_Cartridge_Collection'}
+Admin role created...OK
+Saving changes.
+Developer role created...OK
+Saving changes.
+Viewer role created...OK
+Saving changes.
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 456 killed;
+[ssh-agent] Stopped.
+Finished: SUCCESS

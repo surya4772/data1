@@ -1,0 +1,272 @@
+Started by upstream project "[8mha:////4EaXCkjbrXnAYUPi5a3lu+JCfCXniNssbI6Yy1YmhmYlAAAAwB+LCAAAAAAAAP9djT0KwkAUhJ8RPYCl2HiBbCeCpBJRIRHBwjI8zTN/m7fLZiPxGl5DGw/hcbyDwVRmmhmGj5nnBwalgWlSRaVi96y4VJLcQEUkNzdNRqac75QlaNVzAGoDkw7/h868x8u767cDzhaGkji2iQ/9ykgLIz/DKwqJHIuDNSnHi2Zu3Jlbtt791U1wLcxFpk5iL9FelCnCABljKojtr18Tk0FL4arGQksKj8rkpcYziS8nSVLg7QAAAA==[0mPlatform_Management/Generate_Example_Workspace" build number [8mha:////4DCx/Oh7PVC5X5zzaN/kB3IY/JVLlOvFm4ULy/13hCLHAAAAwR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBkv9rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuHtqXmpRYklqvGtFYm5BTmp8eH5RdnFBYnKqviEAKRQ6J+4AAAA=[0m1
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4HNf1EQz5dBAQzPep4EPwVxUh+aI9SUKMKYfL49/nuO6AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9QwC2qRdQyQAAAA==[0m1
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+Building remotely on [8mha:////4KbE300gNUO3ZpoKisBJG38kk6LFXTY/b4Hxh7C/u+bFAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgY5/eT83ILSktQi/eDyxKLc+OCcxLJUXcMUg8RUI8MkAIxBA83TAAAA[0mSwarm_Slave-1d0ae21b (swarm java8 ldap aws docker) in workspace /workspace/Workspace_Management/Generate_Workspace
+[WS-CLEANUP] Deleting project workspace...
+Cloning the remote Git repository
+Cloning repository ssh://jenkins@gerrit:29418/platform-management
+ > git init /workspace/Workspace_Management/Generate_Workspace # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+ > git --version # timeout=10
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://jenkins@gerrit:29418/platform-management # timeout=10
+Fetching upstream changes from ssh://jenkins@gerrit:29418/platform-management
+using GIT_SSH to set credentials ADOP Jenkins Master
+ > git fetch --tags --progress ssh://jenkins@gerrit:29418/platform-management +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse 69b37adbd7109ec996ab9785ea4935d0fb2a303e^{commit} # timeout=10
+Checking out Revision 69b37adbd7109ec996ab9785ea4935d0fb2a303e (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 69b37adbd7109ec996ab9785ea4935d0fb2a303e
+Commit message: "Merge pull request #52 from RobertNorthard/feature/custom-cartridge-properties"
+First time build. Skipping changelog.
+[EnvInject] - Inject global passwords.
+[EnvInject] - Mask passwords that will be passed as build parameters.
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+OUTPUT_FILE=output.ldif
+DC=dc=ldap,dc=example,dc=com
+OU_GROUPS=ou=groups
+OU_PEOPLE=ou=people
+
+[EnvInject] - Variables injected successfully.
+[Generate_Workspace] $ /bin/bash /tmp/jenkins3693747243743904830.sh
+[Generate_Workspace] $ /bin/sh -xe /tmp/jenkins5112109609614365352.sh
++ /workspace/Workspace_Management/Generate_Workspace/common/ldap/generate_role.sh -r admin -n ExampleWorkspace -d dc=ldap,dc=example,dc=com -g ou=groups -p ou=people -u ExampleWorkspaceAdmin -f output.ldif -w /workspace/Workspace_Management/Generate_Workspace
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate Role
+2019/12/02 06:27:07:INFO > ROLE = admin
+2019/12/02 06:27:07:INFO > NAMESPACE = ExampleWorkspace
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > PEOPLE_OU = ou=people
+2019/12/02 06:27:07:INFO > GROUPS_OU = ou=groups
+2019/12/02 06:27:07:INFO > USERS = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generating Role: admin
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate User
+2019/12/02 06:27:07:INFO > CN = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > OU = ou=people
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > DISPLAYNAME = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > GIVENNAME = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > SURNAME = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > MAIL = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > UID = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > PASSWORD = ********
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Starting LDIF Generation
+2019/12/02 06:27:07:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate User elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate Group Member
+2019/12/02 06:27:07:INFO > CN = ExampleWorkspaceAdmin
+2019/12/02 06:27:07:INFO > OU = ou=people
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = tmp_admin.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Starting LDIF Generation
+2019/12/02 06:27:07:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate Group Member elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate Group
+2019/12/02 06:27:07:INFO > CN = ExampleWorkspace.admin
+2019/12/02 06:27:07:INFO > OU = ou=groups
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Starting LDIF Generation
+2019/12/02 06:27:07:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate Group elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Finished Generating Role: admin
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate Role elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ /workspace/Workspace_Management/Generate_Workspace/common/ldap/generate_role.sh -r developer -n ExampleWorkspace -d dc=ldap,dc=example,dc=com -g ou=groups -p ou=people -u ExampleWorkspaceDeveloper -f output.ldif -w /workspace/Workspace_Management/Generate_Workspace
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate Role
+2019/12/02 06:27:07:INFO > ROLE = developer
+2019/12/02 06:27:07:INFO > NAMESPACE = ExampleWorkspace
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > PEOPLE_OU = ou=people
+2019/12/02 06:27:07:INFO > GROUPS_OU = ou=groups
+2019/12/02 06:27:07:INFO > USERS = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generating Role: developer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate User
+2019/12/02 06:27:07:INFO > CN = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > OU = ou=people
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > DISPLAYNAME = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > GIVENNAME = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > SURNAME = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > MAIL = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > UID = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > PASSWORD = ********
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Starting LDIF Generation
+2019/12/02 06:27:07:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate User elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate Group Member
+2019/12/02 06:27:07:INFO > CN = ExampleWorkspaceDeveloper
+2019/12/02 06:27:07:INFO > OU = ou=people
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = tmp_developer.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Starting LDIF Generation
+2019/12/02 06:27:07:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate Group Member elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate Group
+2019/12/02 06:27:07:INFO > CN = ExampleWorkspace.developer
+2019/12/02 06:27:07:INFO > OU = ou=groups
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Starting LDIF Generation
+2019/12/02 06:27:07:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate Group elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Finished Generating Role: developer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generate Role elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ /workspace/Workspace_Management/Generate_Workspace/common/ldap/generate_role.sh -r viewer -n ExampleWorkspace -d dc=ldap,dc=example,dc=com -g ou=groups -p ou=people -u ExampleWorkspaceViewer -f output.ldif -w /workspace/Workspace_Management/Generate_Workspace
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Running Generate Role
+2019/12/02 06:27:07:INFO > ROLE = viewer
+2019/12/02 06:27:07:INFO > NAMESPACE = ExampleWorkspace
+2019/12/02 06:27:07:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:07:INFO > PEOPLE_OU = ou=people
+2019/12/02 06:27:07:INFO > GROUPS_OU = ou=groups
+2019/12/02 06:27:07:INFO > USERS = ExampleWorkspaceViewer
+2019/12/02 06:27:07:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:07:INFO > Generating Role: viewer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Running Generate User
+2019/12/02 06:27:08:INFO > CN = ExampleWorkspaceViewer
+2019/12/02 06:27:08:INFO > OU = ou=people
+2019/12/02 06:27:08:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:08:INFO > DISPLAYNAME = ExampleWorkspaceViewer
+2019/12/02 06:27:08:INFO > GIVENNAME = ExampleWorkspaceViewer
+2019/12/02 06:27:08:INFO > SURNAME = ExampleWorkspaceViewer
+2019/12/02 06:27:08:INFO > MAIL = ExampleWorkspaceViewer
+2019/12/02 06:27:08:INFO > UID = ExampleWorkspaceViewer
+2019/12/02 06:27:08:INFO > PASSWORD = ********
+2019/12/02 06:27:08:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Starting LDIF Generation
+2019/12/02 06:27:08:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Generate User elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Running Generate Group Member
+2019/12/02 06:27:08:INFO > CN = ExampleWorkspaceViewer
+2019/12/02 06:27:08:INFO > OU = ou=people
+2019/12/02 06:27:08:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:08:INFO > OUTPUT_FILE = tmp_viewer.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Starting LDIF Generation
+2019/12/02 06:27:08:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Generate Group Member elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Running Generate Group
+2019/12/02 06:27:08:INFO > CN = ExampleWorkspace.viewer
+2019/12/02 06:27:08:INFO > OU = ou=groups
+2019/12/02 06:27:08:INFO > DC = dc=ldap,dc=example,dc=com
+2019/12/02 06:27:08:INFO > OUTPUT_FILE = output.ldif
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Starting LDIF Generation
+2019/12/02 06:27:08:INFO > Finished LDIF Generation
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Generate Group elapsed script time (in seconds): 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Finished Generating Role: viewer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019/12/02 06:27:08:INFO > Generate Role elapsed script time (in seconds): 1
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ set +e
++ /workspace/Workspace_Management/Generate_Workspace/common/ldap/load_ldif.sh -h ldap -u **** -p **** -b dc=ldap,dc=example,dc=com -f output.ldif
+Testing LDAP Connection
+LDAP available, adding data
+adding new entry "cn=ExampleWorkspaceAdmin,ou=people,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspace.admin,ou=groups,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspaceDeveloper,ou=people,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspace.developer,ou=groups,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspaceViewer,ou=people,dc=ldap,dc=example,dc=com"
+
+adding new entry "cn=ExampleWorkspace.viewer,ou=groups,dc=ldap,dc=example,dc=com"
+
++ set -e
+++ echo ExampleWorkspaceAdmin
+++ tr , ' '
++ ADMIN_USERS=ExampleWorkspaceAdmin
+++ echo ExampleWorkspaceDeveloper
+++ tr , ' '
++ DEVELOPER_USERS=ExampleWorkspaceDeveloper
+++ echo ExampleWorkspaceViewer
+++ tr , ' '
++ VIEWER_USERS=ExampleWorkspaceViewer
++ for user in '$ADMIN_USERS' '$DEVELOPER_USERS' '$VIEWER_USERS'
+++ echo ExampleWorkspaceAdmin
+++ cut -d@ -f1
++ username=ExampleWorkspaceAdmin
++ /workspace/Workspace_Management/Generate_Workspace/common/gerrit/create_user.sh -g http://gerrit:8080/gerrit -u ExampleWorkspaceAdmin -p ExampleWorkspaceAdmin
+Testing Gerrit Connection
+Creating user: ExampleWorkspaceAdmin
++ for user in '$ADMIN_USERS' '$DEVELOPER_USERS' '$VIEWER_USERS'
+++ echo ExampleWorkspaceDeveloper
+++ cut -d@ -f1
++ username=ExampleWorkspaceDeveloper
++ /workspace/Workspace_Management/Generate_Workspace/common/gerrit/create_user.sh -g http://gerrit:8080/gerrit -u ExampleWorkspaceDeveloper -p ExampleWorkspaceDeveloper
+Testing Gerrit Connection
+Creating user: ExampleWorkspaceDeveloper
++ for user in '$ADMIN_USERS' '$DEVELOPER_USERS' '$VIEWER_USERS'
+++ echo ExampleWorkspaceViewer
+++ cut -d@ -f1
++ username=ExampleWorkspaceViewer
++ /workspace/Workspace_Management/Generate_Workspace/common/gerrit/create_user.sh -g http://gerrit:8080/gerrit -u ExampleWorkspaceViewer -p ExampleWorkspaceViewer
+Testing Gerrit Connection
+Creating user: ExampleWorkspaceViewer
+Processing DSL script jobs.groovy
+Added items:
+    GeneratedJob{name='ExampleWorkspace'}
+    GeneratedJob{name='ExampleWorkspace/Project_Management'}
+    GeneratedJob{name='ExampleWorkspace/Project_Management/Generate_Project'}
+Admin role created...OK
+Saving changes.
+Developer role created...OK
+Saving changes.
+Viewer role created...OK
+Saving changes.
+Finished: SUCCESS

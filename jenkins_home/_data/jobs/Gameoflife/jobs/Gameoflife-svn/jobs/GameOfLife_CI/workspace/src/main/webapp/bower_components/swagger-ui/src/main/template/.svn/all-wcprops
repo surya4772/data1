@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template
+END
+parameter_content_type.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/parameter_content_type.handlebars
+END
+param_readonly.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/param_readonly.handlebars
+END
+param_required.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/param_required.handlebars
+END
+param_list.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/param_list.handlebars
+END
+resource.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/resource.handlebars
+END
+param.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/param.handlebars
+END
+basic_auth_button_view.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/basic_auth_button_view.handlebars
+END
+param_readonly_required.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/param_readonly_required.handlebars
+END
+operation.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/operation.handlebars
+END
+content_type.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/content_type.handlebars
+END
+response_content_type.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/response_content_type.handlebars
+END
+status_code.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/status_code.handlebars
+END
+main.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/main.handlebars
+END
+apikey_button_view.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/apikey_button_view.handlebars
+END
+signature.handlebars
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/swagger-ui/src/main/template/signature.handlebars
+END

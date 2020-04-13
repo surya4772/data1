@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><flow-definition>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>projectName</name>
+                    <defaultValue>ExampleProject</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>projectAdmin</name>
+                    <defaultValue>Admin</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>projectDeveloper</name>
+                    <defaultValue>Developer</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>projectViewer</name>
+                    <defaultValue>Viewer</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>workspaceName</name>
+                    <defaultValue>ExampleWorkspace</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>workspaceAdmin</name>
+                    <defaultValue>Admin</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>workspaceDeveloper</name>
+                    <defaultValue>Developer</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>workspaceViewer</name>
+                    <defaultValue>Viewer</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>cartridgeURL</name>
+                    <defaultValue>ssh://jenkins@gerrit:29418/cartridges/adop-cartridge-java.git</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>scmProvider</name>
+                    <defaultValue>http://13.126.65.32/gerrit/ - ssh (adop-gerrit-ssh)</defaultValue>
+                    <description/>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <com.sonyericsson.rebuild.RebuildSettings>
+            <autoRebuild>false</autoRebuild>
+            <rebuildDisabled>false</rebuildDisabled>
+        </com.sonyericsson.rebuild.RebuildSettings>
+    </properties>
+    <triggers/>
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition">
+        <script>
+node {
+    // Setup Workspace
+    def result
+    try {
+        result = build job: 'Workspace_Management/Generate_Workspace', parameters: [[$class: 'StringParameterValue', name: 'WORKSPACE_NAME', value: "${workspaceName}"], [$class: 'StringParameterValue', name: 'ADMIN_USERS', value: "${workspaceName}${workspaceAdmin}"], [$class: 'StringParameterValue', name: 'DEVELOPER_USERS', value: "${workspaceName}${workspaceDeveloper}"], [$class: 'StringParameterValue', name: 'VIEWER_USERS', value: "${workspaceName}${workspaceViewer}"]]
+        echo "RESULT of Workspace Job:" + result.result
+    } catch (Exception err) {
+        if (err.toString().contains('FAILURE')){
+            echo "RESULT of Workspace Job: Failure. Failing Pipeline due to failure result.."
+            sh "exit 1"
+        }
+        else {
+            // Assume UNSTABLE
+            echo "RESULT of Workspace Job: UNSTABLE so will continue." + err.toString()
+        }
+    }
+
+    // Setup Project
+    try {
+        result = build job: "${workspaceName}/Project_Management/Generate_Project", parameters: [[$class: 'StringParameterValue', name: 'PROJECT_NAME', value: "${projectName}"], [$class: 'StringParameterValue', name: 'ADMIN_USERS', value: "${projectName}${projectAdmin}"], [$class: 'StringParameterValue', name: 'DEVELOPER_USERS', value: "${projectName}${projectDeveloper}"], [$class: 'StringParameterValue', name: 'VIEWER_USERS', value: "${projectName}${projectViewer}"]]
+        echo "RESULT of Project Job:" + result.result
+    } catch (Exception err) {
+        if (err.toString().contains('FAILURE')){
+            echo "RESULT of Project Job: Failure. Failing Pipeline due to failure result.."
+            sh "exit 1"
+        }
+        else {
+            // Assume UNSTABLE
+            echo "RESULT of Project Job: UNSTABLE so will continue." + err.toString()
+        }
+    }
+
+    // Setup Load Cartridge
+    try {
+        retry(5) {
+            result = build job: "${workspaceName}/${projectName}/Cartridge_Management/Load_Cartridge", parameters: [[$class: 'StringParameterValue', name: 'CARTRIDGE_CLONE_URL', value: "${cartridgeURL}"], [$class: 'StringParameterValue', name: 'SCM_PROVIDER', value: "${scmProvider}"]]
+            echo "RESULT of Load Cartridge Job:" + result.result
+        }
+    } catch (Exception err) {
+        if (err.toString().contains('FAILURE')){
+            echo "RESULT of Load Cartridge: Failure. Failing Pipeline due to failure result.."
+            sh "exit 1"
+        }
+        else {
+            // Assume UNSTABLE
+            echo "RESULT of Load Cartridge Job: UNSTABLE so will continue." + err.toString()
+        }
+    }
+}
+                </script>
+        <sandbox>true</sandbox>
+    </definition>
+</flow-definition>

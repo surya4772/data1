@@ -1,0 +1,19 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.plugins.sonar.SonarGlobalConfiguration plugin="sonar@2.7.1">
+  <installations>
+    <hudson.plugins.sonar.SonarInstallation>
+      <name>ADOP Sonar</name>
+      <serverUrl>http://sonar:9000/sonar/</serverUrl>
+      <serverAuthenticationToken>63e94298485a5008a5deb59bf79d2396afc2effb</serverAuthenticationToken>
+      <mojoVersion></mojoVersion>
+      <additionalProperties></additionalProperties>
+      <additionalAnalysisProperties></additionalAnalysisProperties>
+      <triggers>
+        <skipScmCause>false</skipScmCause>
+        <skipUpstreamCause>false</skipUpstreamCause>
+      </triggers>
+    </hudson.plugins.sonar.SonarInstallation>
+  </installations>
+  <buildWrapperEnabled>false</buildWrapperEnabled>
+  <dataMigrated>true</dataMigrated>
+</hudson.plugins.sonar.SonarGlobalConfiguration>

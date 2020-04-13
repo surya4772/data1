@@ -1,0 +1,66 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.21">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.2.9"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.2.9">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.28">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.53">
+    <script>pipeline{
+    agent { label &apos;master&apos; }
+    stages{
+        stage(&apos;git Checkout&apos;){
+            steps{
+                script{
+                    checkout([$class: &apos;GitSCM&apos;, branches: [[name: &apos;*/master&apos;]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: &apos;svn&apos;, url: &apos;http://52.66.103.232/gitlab/admin1/gameoflife.git&apos;]]])
+                }
+            }
+        }
+        
+        stage(&apos;Maven Execution&apos;){
+            steps{
+                script{
+                    withMaven(jdk: &apos;jdk8&apos;, maven: &apos;Maven&apos;) {
+                        withSonarQubeEnv(&apos;Sonar&apos;) {
+                            sh &apos;mvn clean install sonar:sonar&apos;
+                        //sh &apos;mvn clean install&apos;   
+                        }
+                    }
+                }
+            }
+        }
+        
+       // stage(&apos;Sonarqube analysis&apos;){
+         //   steps{
+           //     script{
+             //       def sonar = tool name: &apos;SonarScanner&apos;, type: &apos;hudson.plugins.sonar.SonarRunnerInstallation&apos;
+               //     sh &apos; $sonar -Dsonar.languages=java -Dsonar.projectKey=Game -Dsonar.projectName=Gameoflife -Dsonar.projectVersion=0.0.1 -Dsonar.sources=src&apos;
+        //        }
+        //    }
+        //}
+        
+        stage(&apos;Nexus Upload&apos;){
+            steps{
+                script{
+                    nexusArtifactUploader artifacts: [[artifactId: &apos;gameoflife&apos;, classifier: &apos;&apos;, file: &apos;target/gameoflife-0.0.1.war&apos;, type: &apos;war&apos;]], credentialsId: &apos;Nexus&apos;, groupId: &apos;be.cegeka&apos;, nexusUrl: &apos;52.66.103.232/nexus&apos;, nexusVersion: &apos;nexus3&apos;, protocol: &apos;http&apos;, repository: &apos;maven-releases&apos;, version: &apos;0.0.1&apos;
+                }
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jvnet.hudson.tools' artifactId='versionnumber' version='1.9'><l:dependency name='Version Number Plug-In' groupId='org.jvnet.hudson.tools' artifactId='versionnumber' version='1.9' url='https://wiki.jenkins-ci.org/display/JENKINS/Version+Number+Plugin'><l:description>Jenkins plugin which generates formatted version numbers for build jobs.</l:description><l:license name='MIT License' url='http://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>

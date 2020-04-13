@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition plugin="extensible-choice-parameter@1.5.0">
+                    <name>CARTRIDGE_CLONE_URL</name>
+                    <description>Cartridge URL to load</description>
+                    <editable>true</editable>
+                    <choiceListProvider class="jp.ikedam.jenkins.plugins.extensible_choice_parameter.SystemGroovyChoiceListProvider">
+                        <groovyScript plugin="script-security@1.44">
+                            <script>
+import jenkins.model.*
+
+nodes = Jenkins.instance.globalNodeProperties
+nodes.getAll(hudson.slaves.EnvironmentVariablesNodeProperty.class)
+envVars = nodes[0].envVars
+
+def URLS = envVars['CARTRIDGE_SOURCES'];
+
+if (URLS == null) {
+  println "[ERROR] CARTRIDGE_SOURCES Jenkins environment variable has not been set";
+  return ['Type the cartridge URL (or add CARTRIDGE_SOURCES as a Jenkins environment variable if you wish to see a list here)'];
+}
+if (URLS.length() &lt; 11) {
+  println "[ERROR] CARTRIDGE_SOURCES Jenkins environment variable does not seem to contain valid URLs";
+  return ['Type the cartridge URL (the CARTRIDGE_SOURCES Jenkins environment variable does not seem valid)'];
+}
+
+def cartridge_urls = [];
+
+URLS.split(';').each{ source_url -&gt;
+
+  try {
+    def html = source_url.toURL().text;
+
+    html.eachLine { line -&gt;
+      if (line.contains("url:")) {
+        def url = line.substring(line.indexOf("\"") + 1, line.lastIndexOf("\""))
+        cartridge_urls.add(url)
+      }
+    }
+  }
+  catch (UnknownHostException e) {
+    cartridge_urls.add("[ERROR] Provided URL was not found: ${source_url}");
+    println "[ERROR] Provided URL was not found: ${source_url}";
+  }
+  catch (Exception e) {
+    cartridge_urls.add("[ERROR] Unknown error while processing: ${source_url}");
+    println "[ERROR] Unknown error while processing: ${source_url}";
+  }
+}
+
+return cartridge_urls;
+</script>
+                            <sandbox>true</sandbox>
+                            <classpath/>
+                        </groovyScript>
+                        <defaultChoice>Top</defaultChoice>
+                        <usePredefinedVariables>false</usePredefinedVariables>
+                    </choiceListProvider>
+                </jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition>
+                <jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition plugin="extensible-choice-parameter@1.5.0">
+                    <name>SCM_PROVIDER</name>
+                    <description>Your chosen SCM Provider and the appropriate cloning protocol</description>
+                    <editable>false</editable>
+                    <choiceListProvider class="jp.ikedam.jenkins.plugins.extensible_choice_parameter.SystemGroovyChoiceListProvider">
+                        <groovyScript plugin="script-security@1.44">
+                            <script>
+import hudson.model.*;
+import hudson.util.*;
+
+base_path = "/var/jenkins_home/userContent/datastore/pluggable/scm"
+
+// Initialise folder containing all SCM provider properties files
+String PropertiesPath = base_path + "/ScmProviders/"
+File folder = new File(PropertiesPath)
+def providerList = []
+
+// Loop through all files in properties data store and add to returned list
+for (File fileEntry : folder.listFiles()) {
+  if (!fileEntry.isDirectory()){
+    String title = PropertiesPath +  fileEntry.getName()
+    Properties scmProperties = new Properties()
+    InputStream input = null
+    input = new FileInputStream(title)
+    scmProperties.load(input)
+    String url = scmProperties.getProperty("scm.url")
+    String protocol = scmProperties.getProperty("scm.protocol")
+    String id = scmProperties.getProperty("scm.id")
+    String output = url + " - " + protocol + " (" + id + ")"
+    providerList.add(output)
+  }
+}
+
+if (providerList.isEmpty()) {
+    providerList.add("No SCM providers found")
+}
+return providerList;
+</script>
+                            <sandbox>true</sandbox>
+                            <classpath/>
+                        </groovyScript>
+                        <defaultChoice>Top</defaultChoice>
+                        <usePredefinedVariables>false</usePredefinedVariables>
+                    </choiceListProvider>
+                </jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>CARTRIDGE_FOLDER</name>
+                    <defaultValue/>
+                    <description>The folder within the project namespace where your cartridge will be loaded into.</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>FOLDER_DISPLAY_NAME</name>
+                    <defaultValue/>
+                    <description>Display name of the folder where the cartridge is loaded.</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>FOLDER_DESCRIPTION</name>
+                    <defaultValue/>
+                    <description>Description of the folder where the cartridge is loaded.</description>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.TextParameterDefinition>
+                    <name>CARTRIDGE_CUSTOM_PROPERTIES</name>
+                    <defaultValue/>
+                    <description>Custom cartridge properties .e.g sonar.projectKey=adop</description>
+                </hudson.model.TextParameterDefinition>
+                <hudson.model.BooleanParameterDefinition>
+                    <name>ENABLE_CODE_REVIEW</name>
+                    <defaultValue>false</defaultValue>
+                    <description>Enables Code Reviewing for the selected cartridge</description>
+                </hudson.model.BooleanParameterDefinition>
+                <hudson.model.BooleanParameterDefinition>
+                    <name>OVERWRITE_REPOS</name>
+                    <defaultValue>false</defaultValue>
+                    <description>If ticked, existing code repositories (previously loaded by the cartridge) will be overwritten. For first time cartridge runs, this property is redundant and will perform the same behavior regardless.</description>
+                </hudson.model.BooleanParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+        <EnvInjectJobProperty>
+            <info>
+                <propertiesContent>WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject</propertiesContent>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+            <on>true</on>
+            <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+            <keepBuildVariables>true</keepBuildVariables>
+            <overrideBuildParameters>true</overrideBuildParameters>
+            <contributors/>
+        </EnvInjectJobProperty>
+    </properties>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers class="vector"/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Shell>
+            <command>#!/bin/bash -ex
+
+mkdir ${WORKSPACE}/tmp
+
+# Output SCM provider ID to a properties file
+echo SCM_PROVIDER_ID=$(echo ${SCM_PROVIDER} | cut -d "(" -f2 | cut -d ")" -f1) &gt; ${WORKSPACE}/cartridge.properties
+
+# Check if SCM namespace is specified
+if [ -z ${SCM_NAMESPACE} ] ; then
+    echo "SCM_NAMESPACE not specified, setting to PROJECT_NAME..."
+    if [ -z ${CARTRIDGE_FOLDER} ] ; then
+      SCM_NAMESPACE="${PROJECT_NAME}"
+    else
+      SCM_NAMESPACE="${PROJECT_NAME}"/"${CARTRIDGE_FOLDER}"
+    fi
+else
+    echo "SCM_NAMESPACE specified, injecting into properties file..."
+fi
+
+echo SCM_NAMESPACE=$(echo ${SCM_NAMESPACE} | cut -d "(" -f2 | cut -d ")" -f1) &gt;&gt; ${WORKSPACE}/cartridge.properties
+</command>
+        </hudson.tasks.Shell>
+        <EnvInjectBuilder>
+            <info>
+                <propertiesFilePath>${WORKSPACE}/cartridge.properties</propertiesFilePath>
+            </info>
+        </EnvInjectBuilder>
+        <hudson.plugins.groovy.SystemGroovy>
+            <bindings/>
+            <classpath>/var/jenkins_home/userContent/job_dsl_additional_classpath/</classpath>
+            <scriptSource class="hudson.plugins.groovy.StringScriptSource">
+                <command>
+import com.cloudbees.plugins.credentials.*;
+import com.cloudbees.plugins.credentials.common.*;
+import pluggable.scm.PropertiesSCMProviderDataStore;
+import pluggable.scm.SCMProviderDataStore;
+import pluggable.configuration.EnvVarProperty;
+import pluggable.scm.helpers.PropertyUtils;
+import java.util.Properties;
+import hudson.FilePath;
+
+println "[INFO] - Attempting to inject SCM provider credentials. Note: Not all SCM provider require a username/password combination."
+
+String scmProviderId = build.getEnvironment(listener).get('SCM_PROVIDER_ID');
+
+EnvVarProperty envVarProperty = EnvVarProperty.getInstance();
+envVarProperty.setVariableBindings(
+  build.getEnvironment(listener));
+
+SCMProviderDataStore scmProviderDataStore = new PropertiesSCMProviderDataStore();
+Properties scmProviderProperties = scmProviderDataStore.get(scmProviderId);
+
+String credentialId = scmProviderProperties.get("loader.credentialId");
+
+if(credentialId != null){
+
+  if(credentialId.equals("")){
+    println "[WARN] - load.credentialId property provided but is an empty string. SCM providers that require a username/password may not behave as expected.";
+    println "[WARN] - Credential secret file not created."
+  }else{
+    def username_matcher = CredentialsMatchers.withId(credentialId);
+    def available_credentials = CredentialsProvider.lookupCredentials(StandardUsernameCredentials.class);
+
+    def credential = CredentialsMatchers.firstOrNull(available_credentials, username_matcher);
+
+    if(credential == null){
+      println "[WARN] - Credential with id " + credentialId + " not found."
+      println "[WARN] - SCM providers that require a username/password may not behave as expected.";
+      println "[WARN] - Credential secret file not created."
+    }else{
+      credentialInfo = [credential.username, credential.password];
+
+      channel = build.workspace.channel;
+      filePath = new FilePath(channel, build.workspace.toString() + "@tmp/secretFiles/" + build.getEnvVars()["SCM_KEY"]);
+      filePath.write("SCM_USERNAME="+credentialInfo[0]+"\nSCM_PASSWORD="+credentialInfo[1], null);
+
+      println "[INFO] - Credentials injected."
+    }
+  }
+}else{
+  println "[INFO] - No credential to inject. SCM provider load.credentialId property not found."
+}
+</command>
+            </scriptSource>
+        </hudson.plugins.groovy.SystemGroovy>
+        <hudson.tasks.Shell>
+            <command>#!/bin/bash -ex
+
+# We trust everywhere
+echo -e "#!/bin/sh
+exec ssh -i ${SCM_SSH_KEY} -o StrictHostKeyChecking=no "\$@"
+" &gt; ${WORKSPACE}/custom_ssh
+chmod +x ${WORKSPACE}/custom_ssh
+export GIT_SSH="${WORKSPACE}/custom_ssh"
+
+# Clone Cartridge
+echo "INFO: cloning ${CARTRIDGE_CLONE_URL}"
+# we do not want to show the password
+set +x
+if ( [ ${CARTRIDGE_CLONE_URL%://*} == "https" ] ||  [ ${CARTRIDGE_CLONE_URL%://*} == "http" ] ) &amp;&amp; [ -f ${WORKSPACE}/${SCM_KEY} ]; then
+	source ${WORKSPACE}/${SCM_KEY}
+	git clone ${CARTRIDGE_CLONE_URL%://*}://${SCM_USERNAME}:${SCM_PASSWORD}@${CARTRIDGE_CLONE_URL#*://} cartridge
+else
+    git clone ${CARTRIDGE_CLONE_URL} cartridge
+fi
+set -x
+
+# Find the cartridge
+export CART_HOME=$(dirname $(find -name metadata.cartridge | head -1))
+echo "CART_HOME=${CART_HOME}" &gt; ${WORKSPACE}/carthome.properties
+
+# Output SCM provider ID to a properties file
+echo GIT_SSH="${GIT_SSH}" &gt;&gt; ${WORKSPACE}/scm_provider.properties
+
+# Provision one-time infrastructure
+if [ -d ${WORKSPACE}/${CART_HOME}/infra ]; then
+    cd ${WORKSPACE}/${CART_HOME}/infra
+    if [ -f provision.sh ]; then
+        source provision.sh
+    else
+        echo "INFO: ${CART_HOME}/infra/provision.sh not found"
+    fi
+fi
+
+# Generate Jenkins Jobs
+if [ -d ${WORKSPACE}/${CART_HOME}/jenkins/jobs ]; then
+    cd ${WORKSPACE}/${CART_HOME}/jenkins/jobs
+    if [ -f generate.sh ]; then
+        source generate.sh
+    else
+        echo "INFO: ${CART_HOME}/jenkins/jobs/generate.sh not found"
+    fi
+fi
+</command>
+        </hudson.tasks.Shell>
+        <EnvInjectBuilder>
+            <info>
+                <propertiesFilePath>${WORKSPACE}/carthome.properties</propertiesFilePath>
+            </info>
+        </EnvInjectBuilder>
+        <EnvInjectBuilder>
+            <info>
+                <propertiesFilePath>${WORKSPACE}/scm_provider.properties</propertiesFilePath>
+            </info>
+        </EnvInjectBuilder>
+        <hudson.plugins.groovy.SystemGroovy plugin="groovy@2.0">
+            <source class="hudson.plugins.groovy.StringSystemScriptSource">
+                <script plugin="script-security@1.44">
+                    <script>
+import jenkins.model.*;
+import groovy.io.FileType;
+import hudson.FilePath;
+
+def jenkinsInstace = Jenkins.instance;
+def projectName = build.getEnvironment(listener).get('PROJECT_NAME');
+def cartHome = build.getEnvironment(listener).get('CART_HOME');
+def workspace = build.workspace.toString();
+def cartridgeWorkspace = workspace + '/' + cartHome + '/jenkins/jobs/xml/';
+def channel = build.workspace.channel;
+FilePath filePath = new FilePath(channel, cartridgeWorkspace);
+List&lt;FilePath&gt; xmlFiles = filePath.list('**/*.xml');
+
+xmlFiles.each {
+  File configFile = new File(it.toURI());
+
+  String configXml = it.readToString();
+
+  ByteArrayInputStream xmlStream = new ByteArrayInputStream(
+    configXml.getBytes());
+
+  String jobName = configFile.getName()
+      .substring(0,
+                   configFile
+                   .getName()
+                    .lastIndexOf('.'));
+
+  jenkinsInstace.getItem(projectName,jenkinsInstace)
+    .createProjectFromXML(jobName, xmlStream);
+
+  println '[INFO] - Imported XML job config: ' + it.toURI();
+}
+</script>
+                    <sandbox>true</sandbox>
+                    <classpath/>
+                </script>
+            </source>
+        </hudson.plugins.groovy.SystemGroovy>
+        <EnvInjectBuilder>
+            <info>
+                <propertiesContent>PLUGGABLE_SCM_PROVIDER_PATH=${WORKSPACE}/job_dsl_additional_classpath/
+PLUGGABLE_SCM_PROVIDER_PROPERTIES_PATH=${WORKSPACE}/datastore/pluggable/scm</propertiesContent>
+            </info>
+        </EnvInjectBuilder>
+        <hudson.plugins.groovy.Groovy plugin="groovy@2.0">
+            <scriptSource class="hudson.plugins.groovy.StringScriptSource">
+                <command>
+import pluggable.scm.SCMProvider;
+import pluggable.scm.SCMProviderHandler;
+import pluggable.configuration.EnvVarProperty;
+
+EnvVarProperty envVarProperty = EnvVarProperty.getInstance();
+envVarProperty.setVariableBindings(System.getenv());
+
+String scmProviderId = envVarProperty.getProperty('SCM_PROVIDER_ID')
+
+SCMProvider scmProvider = SCMProviderHandler.getScmProvider(scmProviderId, System.getenv())
+
+def workspace = envVarProperty.getProperty('WORKSPACE')
+def projectFolderName = envVarProperty.getProperty('PROJECT_NAME')
+def overwriteRepos = envVarProperty.getProperty('OVERWRITE_REPOS')
+def codeReviewEnabled = envVarProperty.getProperty('ENABLE_CODE_REVIEW')
+
+def cartridgeFolder = '';
+def scmNamespace = '';
+
+// Checking if the parameters have been set and they exist within the env properties
+if (envVarProperty.hasProperty('CARTRIDGE_FOLDER')){
+  cartridgeFolder = envVarProperty.getProperty('CARTRIDGE_FOLDER')
+}else{
+  cartridgeFolder = ''
+}
+if (envVarProperty.hasProperty('SCM_NAMESPACE')){
+  scmNamespace = envVarProperty.getProperty('SCM_NAMESPACE')
+}else{
+  scmNamespace = ''
+}
+
+String repoNamespace = null;
+
+if (scmNamespace != null &amp;&amp; !scmNamespace.isEmpty()){
+  println("Custom SCM namespace specified...")
+  repoNamespace = scmNamespace
+} else {
+  println("Custom SCM namespace not specified, using default project namespace...")
+  if (cartridgeFolder == ""){
+    println("Folder name not specified...")
+    repoNamespace = projectFolderName
+  } else {
+    println("Folder name specified, changing project namespace value..")
+    repoNamespace = projectFolderName + "/" + cartridgeFolder
+  }
+}
+
+scmProvider.createScmRepos(workspace, repoNamespace, codeReviewEnabled, overwriteRepos)
+</command>
+            </scriptSource>
+            <groovyName>ADOP Groovy</groovyName>
+            <parameters/>
+            <scriptParameters/>
+            <properties/>
+            <javaOpts/>
+            <classPath>${WORKSPACE}/job_dsl_additional_classpath</classPath>
+        </hudson.plugins.groovy.Groovy>
+        <EnvInjectBuilder>
+            <info>
+                <propertiesFilePath>${WORKSPACE}/cartridge.properties</propertiesFilePath>
+                <propertiesContent>PLUGGABLE_SCM_PROVIDER_PATH=${JENKINS_HOME}/userContent/job_dsl_additional_classpath/
+PLUGGABLE_SCM_PROVIDER_PROPERTIES_PATH=${JENKINS_HOME}/userContent/datastore/pluggable/scm
+CARTRIDGE_FOLDER=${CARTRIDGE_FOLDER}
+WORKSPACE_NAME=ExampleWorkspace
+PROJECT_NAME=ExampleWorkspace/ExampleProject
+FOLDER_DISPLAY_NAME=${FOLDER_DISPLAY_NAME}
+FOLDER_DESCRIPTION=${FOLDER_DESCRIPTION}</propertiesContent>
+            </info>
+        </EnvInjectBuilder>
+        <org.jenkinsci.plugins.conditionalbuildstep.ConditionalBuilder>
+            <runner class="org.jenkins_ci.plugins.run_condition.BuildStepRunner$RunUnstable"/>
+            <conditionalbuilders>
+                <EnvInjectBuilder>
+                    <info>
+                        <propertiesFilePath>${WORKSPACE}/cartridge.properties</propertiesFilePath>
+                    </info>
+                </EnvInjectBuilder>
+                <javaposse.jobdsl.plugin.ExecuteDslScripts>
+                    <targets/>
+                    <usingScriptText>true</usingScriptText>
+                    <scriptText>// Creating folder to house the cartridge...
+
+def cartridgeFolderName = "${PROJECT_NAME}"
+def FolderDisplayName = "${FOLDER_DISPLAY_NAME}"
+
+if (FolderDisplayName=="") {
+    println "Folder display name not specified, using folder name..."
+    FolderDisplayName = "${CARTRIDGE_FOLDER}"
+}
+
+def FolderDescription = "${FOLDER_DESCRIPTION}"
+println("Creating folder: " + cartridgeFolderName + "...")
+
+def cartridgeFolder = folder(cartridgeFolderName) {
+  displayName(FolderDisplayName)
+  description(FolderDescription)
+}
+                    </scriptText>
+                    <ignoreExisting>false</ignoreExisting>
+                    <removedJobAction>IGNORE</removedJobAction>
+                    <removedViewAction>IGNORE</removedViewAction>
+                    <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+                    <additionalClasspath/>
+                </javaposse.jobdsl.plugin.ExecuteDslScripts>
+            </conditionalbuilders>
+            <runCondition class="org.jenkins_ci.plugins.run_condition.contributed.ShellCondition">
+                <command>#!/bin/bash
+
+# Checking to see if folder is specified and project name needs to be updated
+
+if [ -z ${CARTRIDGE_FOLDER} ] ; then
+    echo "Folder name not specified, moving on..."
+    echo PROJECT_NAME=${PROJECT_NAME} &gt;&gt; cartridge.properties
+    exit 1
+else
+    echo "Folder name specified, changing project name value.."
+    echo PROJECT_NAME=${PROJECT_NAME}/${CARTRIDGE_FOLDER} &gt;&gt; cartridge.properties
+    exit 0
+fi
+                </command>
+            </runCondition>
+        </org.jenkinsci.plugins.conditionalbuildstep.ConditionalBuilder>
+        <EnvInjectBuilder>
+            <info>
+                <propertiesFilePath>${WORKSPACE}/cartridge.properties</propertiesFilePath>
+            </info>
+        </EnvInjectBuilder>
+        <javaposse.jobdsl.plugin.ExecuteDslScripts>
+            <targets>cartridge/**/jenkins/jobs/dsl/*.groovy</targets>
+            <usingScriptText>false</usingScriptText>
+            <scriptText/>
+            <ignoreExisting>false</ignoreExisting>
+            <removedJobAction>IGNORE</removedJobAction>
+            <removedViewAction>IGNORE</removedViewAction>
+            <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+            <additionalClasspath>job_dsl_additional_classpath</additionalClasspath>
+        </javaposse.jobdsl.plugin.ExecuteDslScripts>
+    </builders>
+    <publishers/>
+    <buildWrappers>
+        <hudson.plugins.ws__cleanup.PreBuildCleanup>
+            <patterns/>
+            <deleteDirs>false</deleteDirs>
+            <cleanupParameter/>
+            <externalDelete/>
+        </hudson.plugins.ws__cleanup.PreBuildCleanup>
+        <EnvInjectPasswordWrapper>
+            <injectGlobalPasswords>true</injectGlobalPasswords>
+            <maskPasswordParameters>true</maskPasswordParameters>
+            <passwordEntries/>
+        </EnvInjectPasswordWrapper>
+        <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+        <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+            <bindings>
+                <org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+                    <variable>SCM_SSH_KEY</variable>
+                    <credentialsId>adop-jenkins-private</credentialsId>
+                </org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+            </bindings>
+        </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+        <com.michelin.cio.hudson.plugins.copytoslave.CopyToSlaveBuildWrapper plugin="copy-to-slave@1.4.4">
+            <includes>**/**</includes>
+            <excludes/>
+            <flatten>false</flatten>
+            <includeAntExcludes>false</includeAntExcludes>
+            <hudsonHomeRelative>false</hudsonHomeRelative>
+            <relativeTo>${JENKINS_HOME}/userContent</relativeTo>
+        </com.michelin.cio.hudson.plugins.copytoslave.CopyToSlaveBuildWrapper>
+        <EnvInjectBuildWrapper plugin="envinject@2.1.5">
+            <info>
+                <secureGroovyScript plugin="script-security@1.44">
+                    <script>return [SCM_KEY: org.apache.commons.lang.RandomStringUtils.randomAlphanumeric(20)]</script>
+                    <sandbox>true</sandbox>
+                    <classpath/>
+                </secureGroovyScript>
+                <loadFilesFromMaster>false</loadFilesFromMaster>
+            </info>
+        </EnvInjectBuildWrapper>
+    </buildWrappers>
+    <assignedNode>!master &amp;&amp; !windows &amp;&amp; !ios</assignedNode>
+    <scm class="hudson.plugins.git.GitSCM">
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <name>origin</name>
+                <url>ssh://jenkins@gerrit:29418/platform-management</url>
+                <credentialsId>adop-jenkins-master</credentialsId>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>${ADOP_PLATFORM_MANAGEMENT_VERSION}</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <configVersion>2</configVersion>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <authorOrCommitter>false</authorOrCommitter>
+        <clean>false</clean>
+        <wipeOutWorkspace>false</wipeOutWorkspace>
+        <pruneBranches>false</pruneBranches>
+        <remotePoll>false</remotePoll>
+        <ignoreNotifyCommit>false</ignoreNotifyCommit>
+        <gitTool>Default</gitTool>
+        <skipTag>true</skipTag>
+    </scm>
+</project>

@@ -1,0 +1,41 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/resources/config
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+application.yml
+file
+
+
+
+
+2019-12-19T10:09:41.336000Z
+4f4959838477a4d854e798342a518eb6
+2019-12-10T06:16:04.524200Z
+2
+admin
+has-props
+

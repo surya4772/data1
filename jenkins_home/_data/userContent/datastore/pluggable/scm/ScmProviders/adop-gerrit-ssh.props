@@ -1,0 +1,11 @@
+scm.loader.id=adop-gerrit
+scm.id=adop-gerrit-ssh
+scm.type=gerrit
+scm.code_review.enabled=true
+scm.protocol=ssh
+scm.port=29418
+scm.host=gerrit
+scm.url=http://13.126.65.32/gerrit/
+
+scm.gerrit.server.profile=ADOP Gerrit
+scm.gerrit.ssh.clone.user=jenkins

@@ -1,0 +1,51 @@
+<div class="container-fluid text-center">
+
+    <h1>{{title}}</h1>
+
+    <div class="row">
+        <div class="col-md-offset-2 btn-group col-md-3">
+            <button type="button" class="btn btn-primary" ng-click="startEvolution()">Start
+                <span class="glyphicon glyphicon-play"></span>
+            </button>
+
+            <button type="button" class="btn btn-danger" ng-click="stopEvolution()">Stop
+                <span class="glyphicon glyphicon-stop"></span>
+            </button>
+
+            <button type="button" class="btn btn-default" ng-click="getNextStatusOfWorld()">Step
+                <span class="glyphicon glyphicon-step-forward"></span>
+            </button>
+        </div>
+
+        <div class="btn-group col-md-2">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                Pattern <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a ng-click="initializeWorld(blinker())">Blinker</a></li>
+                <li><a ng-click="initializeWorld(pulsar())">Pulsar</a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-2 input-group">
+            <span class="input-group-addon" id="basic-addon1">Dimension</span>
+            <input class="form-control" type="number" ng-model="worldDimension"
+                   ng-change="dimensionChanged(worldDimension)" name="worldDimension" min="0" max="999"
+                   required="string"/>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="board">
+            <div class="row-in-world" ng-repeat="cellrow in world track by $index">
+                <div class="cell-container" ng-repeat="cell in cellrow track by $index">
+                    <div class="cell" ng-class="{'true': cell, 'false': !cell}"
+                         ng-click="toggleCell($index, $parent.$index)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

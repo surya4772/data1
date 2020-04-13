@@ -1,0 +1,147 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>GIT_URL</name>
+          <description>The URL of the git repo for Platform Management.</description>
+          <value>https://github.com/Accenture/adop-platform-management.git</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.BooleanParameterValue>
+          <name>GENERATE_EXAMPLE_WORKSPACE</name>
+          <description>Should an example workspace be generated?</description>
+          <value>true</value>
+        </hudson.model.BooleanParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>GIT_URL</string>
+        <string>GENERATE_EXAMPLE_WORKSPACE</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-RemoteCause>
+            <addr>127.0.0.1</addr>
+          </hudson.model.Cause_-RemoteCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.envinject.EnvInjectPluginAction plugin="envinject@2.1.5"/>
+    <hudson.plugins.git.util.BuildData plugin="git@3.9.0">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.7.2">
+              <sha1>f922a490fbaf2856c4745a5185a3e6e9870f7944</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>2</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>$GIT_URL</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.9.0">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/var/jenkins_home/jobs/Load_Platform/workspace</ws>
+    </hudson.plugins.git.GitTagAction>
+    <hudson.scm.SCMRevisionState_-None/>
+    <javaposse.jobdsl.plugin.actions.GeneratedJobsBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set">
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Generate_Example_Workspace</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Job_Runner</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Load_Cartridge_List</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Load_Platform_Extension</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Load_Platform_Extension_Collection</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Setup_Custom_Cartridge_Library</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Setup_Gerrit</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Platform_Management/Setup_Pluggable_Library</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Workspace_Management</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+        <javaposse.jobdsl.dsl.GeneratedJob>
+          <jobName>/Workspace_Management/Generate_Workspace</jobName>
+        </javaposse.jobdsl.dsl.GeneratedJob>
+      </modifiedObjects>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+    </javaposse.jobdsl.plugin.actions.GeneratedJobsBuildAction>
+    <javaposse.jobdsl.plugin.actions.GeneratedViewsBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set"/>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+    </javaposse.jobdsl.plugin.actions.GeneratedViewsBuildAction>
+    <javaposse.jobdsl.plugin.actions.GeneratedConfigFilesBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set"/>
+    </javaposse.jobdsl.plugin.actions.GeneratedConfigFilesBuildAction>
+    <javaposse.jobdsl.plugin.actions.GeneratedUserContentsBuildAction plugin="job-dsl@1.48">
+      <modifiedObjects class="linked-hash-set"/>
+    </javaposse.jobdsl.plugin.actions.GeneratedUserContentsBuildAction>
+    <hudson.plugins.parameterizedtrigger.BuildInfoExporterAction plugin="parameterized-trigger@2.35.2">
+      <builds>
+        <hudson.plugins.parameterizedtrigger.BuildInfoExporterAction_-BuildReference>
+          <projectName>Platform_Management/Job_Runner</projectName>
+          <buildNumber>2</buildNumber>
+          <buildResult>SUCCESS</buildResult>
+        </hudson.plugins.parameterizedtrigger.BuildInfoExporterAction_-BuildReference>
+        <hudson.plugins.parameterizedtrigger.BuildInfoExporterAction_-BuildReference>
+          <projectName>Platform_Management/Generate_Example_Workspace</projectName>
+          <buildNumber>2</buildNumber>
+          <buildResult>SUCCESS</buildResult>
+        </hudson.plugins.parameterizedtrigger.BuildInfoExporterAction_-BuildReference>
+      </builds>
+      <lastReference reference="../builds/hudson.plugins.parameterizedtrigger.BuildInfoExporterAction_-BuildReference[2]"/>
+    </hudson.plugins.parameterizedtrigger.BuildInfoExporterAction>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.28"/>
+  </actions>
+  <queueId>13</queueId>
+  <timestamp>1575275519551</timestamp>
+  <startTime>1575275519556</startTime>
+  <result>SUCCESS</result>
+  <duration>104119</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/jobs/Load_Platform/workspace</workspace>
+  <hudsonVersion>2.107.3</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@3.9.0">
+    <authorOrCommitter>false</authorOrCommitter>
+  </scm>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

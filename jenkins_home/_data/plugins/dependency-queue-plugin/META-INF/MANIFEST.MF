@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: lshatzer
+Build-Jdk: 1.6.0_24
+Extension-Name: dependency-queue-plugin
+Implementation-Title: dependency-queue-plugin
+Implementation-Version: 1.1
+Group-Id: org.jenkins-ci.plugins
+Short-Name: dependency-queue-plugin
+Long-Name: Dependency Queue Plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Dependency+Queue+Plugin
+Plugin-Version: 1.1
+Hudson-Version: 1.427
+Jenkins-Version: 1.427
+Plugin-Developers: Larry Shatzer, Jr.:lshatzer:larrys@gmail.com
+

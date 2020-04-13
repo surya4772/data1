@@ -1,0 +1,33 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2019-12-02 06:25:50.79 UTC</timestamp>
+  <md5sum>8954756471c76568038ba87def284a4e</md5sum>
+  <fileName>Credential id=adop-jenkins-master name=jenkins (ADOP Jenkins Master)</fileName>
+  <usages>
+    <entry>
+      <string>Load_Platform</string>
+      <ranges>1-2</ranges>
+    </entry>
+    <entry>
+      <string>Workspace_Management/Generate_Workspace</string>
+      <ranges>1-2</ranges>
+    </entry>
+    <entry>
+      <string>Platform_Management/Setup_Gerrit</string>
+      <ranges>1-2</ranges>
+    </entry>
+    <entry>
+      <string>ExampleWorkspace/Project_Management/Generate_Project</string>
+      <ranges>1-2</ranges>
+    </entry>
+    <entry>
+      <string>ExampleWorkspace/ExampleProject/Create_Environment</string>
+      <ranges>1-2</ranges>
+    </entry>
+    <entry>
+      <string>Platform_Management/Load_Cartridge_List</string>
+      <ranges>1-2</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

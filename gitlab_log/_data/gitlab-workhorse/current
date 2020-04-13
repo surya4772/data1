@@ -1,0 +1,93 @@
+2020-04-13_07:09:22.46292 2020/04/13 07:09:22 Starting gitlab-workhorse v3.2.0-20171021.231641
+2020-04-13_07:09:22.51870 2020/04/13 07:09:22 keywatcher: starting process loop
+2020-04-13_07:09:22.53156 2020/04/13 07:09:22 redis: dialing "unix", "/var/opt/gitlab/redis/redis.socket"
+2020-04-13_07:09:43.60768 2020/04/13 07:09:43 error: GET "/gitlab/help": badgateway: failed after 0s: dial unix /var/opt/gitlab/gitlab-rails/sockets/gitlab.socket: connect: connection refused
+2020-04-13_07:09:43.60834 localhost @ - - [2020-04-13 07:09:43.599010044 +0000 UTC] "GET /gitlab/help HTTP/1.1" 502 2916 "" "curl/7.53.0" 0.009222
+2020-04-13_07:10:50.32249 localhost @ - - [2020-04-13 07:10:44.157944777 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 6.164430
+2020-04-13_07:11:54.18739 localhost @ - - [2020-04-13 07:11:50.650449035 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.536877
+2020-04-13_07:12:54.59340 localhost @ - - [2020-04-13 07:12:54.494412999 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.098927
+2020-04-13_07:13:58.25834 localhost @ - - [2020-04-13 07:13:54.894098696 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.364181
+2020-04-13_07:14:58.68223 localhost @ - - [2020-04-13 07:14:58.582411842 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.099748
+2020-04-13_07:15:59.10047 localhost @ - - [2020-04-13 07:15:58.995838596 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.104567
+2020-04-13_07:16:59.51739 localhost @ - - [2020-04-13 07:16:59.417556478 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.099767
+2020-04-13_07:17:59.91770 localhost @ - - [2020-04-13 07:17:59.81832816 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.099314
+2020-04-13_07:19:00.32307 localhost @ - - [2020-04-13 07:19:00.223143092 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.099859
+2020-04-13_07:20:03.96482 localhost @ - - [2020-04-13 07:20:00.643845986 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.320908
+2020-04-13_07:21:04.41866 localhost @ - - [2020-04-13 07:21:04.280606395 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.137940
+2020-04-13_07:22:04.82738 localhost @ - - [2020-04-13 07:22:04.728483428 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.098801
+2020-04-13_07:23:05.22482 localhost @ - - [2020-04-13 07:23:05.127143242 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.097617
+2020-04-13_07:24:08.81555 localhost @ - - [2020-04-13 07:24:05.523638686 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.291848
+2020-04-13_07:25:09.25157 localhost @ - - [2020-04-13 07:25:09.114170582 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.137333
+2020-04-13_07:26:09.65490 localhost @ - - [2020-04-13 07:26:09.555496719 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.099355
+2020-04-13_07:27:10.05174 localhost @ - - [2020-04-13 07:27:09.956783587 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.094895
+2020-04-13_07:28:10.48143 localhost @ - - [2020-04-13 07:28:10.357509708 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.123859
+2020-04-13_07:29:10.89275 localhost @ - - [2020-04-13 07:29:10.783327641 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.109358
+2020-04-13_07:30:11.29127 localhost @ - - [2020-04-13 07:30:11.187746244 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.103453
+2020-04-13_07:31:11.68245 localhost @ - - [2020-04-13 07:31:11.586023535 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.096349
+2020-04-13_07:32:12.11161 localhost @ - - [2020-04-13 07:32:11.975232655 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.136320
+2020-04-13_07:33:12.50505 localhost @ - - [2020-04-13 07:33:12.4096871 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.095310
+2020-04-13_07:34:12.90357 localhost @ - - [2020-04-13 07:34:12.809517302 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.094007
+2020-04-13_07:35:13.34059 localhost @ - - [2020-04-13 07:35:13.202339263 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.138158
+2020-04-13_07:36:13.76612 localhost @ - - [2020-04-13 07:36:13.658292183 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.107773
+2020-04-13_07:37:14.17108 localhost @ - - [2020-04-13 07:37:14.07424661 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.096764
+2020-04-13_07:38:14.57223 localhost @ - - [2020-04-13 07:38:14.475682171 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.096488
+2020-04-13_07:39:14.96569 localhost @ - - [2020-04-13 07:39:14.874594443 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.091036
+2020-04-13_07:40:15.37258 localhost @ - - [2020-04-13 07:40:15.277115695 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.095301
+2020-04-13_07:41:15.77299 localhost @ - - [2020-04-13 07:41:15.677115666 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.095805
+2020-04-13_07:42:16.18941 localhost @ - - [2020-04-13 07:42:16.076649226 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.112708
+2020-04-13_07:43:16.58494 localhost @ - - [2020-04-13 07:43:16.487249842 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.097640
+2020-04-13_07:44:17.06097 localhost @ - - [2020-04-13 07:44:16.925937953 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.134919
+2020-04-13_07:45:17.50491 localhost @ - - [2020-04-13 07:45:17.39487268 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.109976
+2020-04-13_07:46:18.00484 localhost @ - - [2020-04-13 07:46:17.914780969 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.089951
+2020-04-13_07:47:18.45453 localhost @ - - [2020-04-13 07:47:18.316010257 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.138455
+2020-04-13_07:48:19.09971 localhost @ - - [2020-04-13 07:48:18.791346758 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.308308
+2020-04-13_07:49:19.53734 localhost @ - - [2020-04-13 07:49:19.443235605 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.094036
+2020-04-13_07:50:19.92574 localhost @ - - [2020-04-13 07:50:19.832587712 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.093084
+2020-04-13_07:51:20.57785 localhost @ - - [2020-04-13 07:51:20.232233352 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.345556
+2020-04-13_07:52:21.11969 localhost @ - - [2020-04-13 07:52:20.980037097 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.139595
+2020-04-13_07:53:21.53174 localhost @ - - [2020-04-13 07:53:21.435489764 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.096190
+2020-04-13_07:54:21.92463 localhost @ - - [2020-04-13 07:54:21.829898107 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.094665
+2020-04-13_07:55:22.30195 localhost @ - - [2020-04-13 07:55:22.214258881 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.087643
+2020-04-13_07:56:22.71102 localhost @ - - [2020-04-13 07:56:22.602161065 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.108796
+2020-04-13_07:57:23.10392 localhost @ - - [2020-04-13 07:57:23.012783704 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.091082
+2020-04-13_07:58:23.53818 localhost @ - - [2020-04-13 07:58:23.40719335 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.130921
+2020-04-13_07:59:23.94384 localhost @ - - [2020-04-13 07:59:23.841738017 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.102011
+2020-04-13_08:00:24.33218 localhost @ - - [2020-04-13 08:00:24.234731741 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.097391
+2020-04-13_08:01:24.76347 localhost @ - - [2020-04-13 08:01:24.6464698 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.116879
+2020-04-13_08:02:28.55677 localhost @ - - [2020-04-13 08:02:25.072473087 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.484232
+2020-04-13_08:03:28.94715 localhost @ - - [2020-04-13 08:03:28.85435261 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.092737
+2020-04-13_08:04:29.37829 localhost @ - - [2020-04-13 08:04:29.27571339 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.102464
+2020-04-13_08:05:30.14157 localhost @ - - [2020-04-13 08:05:30.045302728 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.096213
+2020-04-13_08:06:34.33325 localhost @ - - [2020-04-13 08:06:34.210777198 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.122342
+2020-04-13_08:07:34.83486 localhost @ - - [2020-04-13 08:07:34.734605774 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.100194
+2020-04-13_08:08:35.26002 localhost @ - - [2020-04-13 08:08:35.130560965 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.129397
+2020-04-13_08:09:35.67769 localhost @ - - [2020-04-13 08:09:35.580214578 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.097415
+2020-04-13_08:10:36.09652 localhost @ - - [2020-04-13 08:10:35.998045151 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.098418
+2020-04-13_08:11:36.57340 localhost @ - - [2020-04-13 08:11:36.419693491 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.153606
+2020-04-13_08:12:37.01497 localhost @ - - [2020-04-13 08:12:36.884508859 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.130394
+2020-04-13_08:13:20.33678 52.66.196.122 @ - - [2020-04-13 08:13:20.306275967 +0000 UTC] "GET /gitlab/ HTTP/1.1" 302 107 "http://52.66.196.122/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.030454
+2020-04-13_08:13:20.88555 52.66.196.122 @ - - [2020-04-13 08:13:20.477020971 +0000 UTC] "GET /gitlab/users/sign_in HTTP/1.1" 200 11557 "http://52.66.196.122/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.408450
+2020-04-13_08:13:21.05429 2020/04/13 08:13:21 Send static file "/opt/gitlab/embedded/service/gitlab-rails/public/assets/application-5c29d1073ae1ba08ec6179721ab9d6abede5acac80495095c1d949bf5dd4e04c.css" ("gzip") for GET "/gitlab/assets/application-5c29d1073ae1ba08ec6179721ab9d6abede5acac80495095c1d949bf5dd4e04c.css"
+2020-04-13_08:13:21.07042 52.66.196.122 @ - - [2020-04-13 08:13:21.043604615 +0000 UTC] "GET /gitlab/assets/application-5c29d1073ae1ba08ec6179721ab9d6abede5acac80495095c1d949bf5dd4e04c.css HTTP/1.1" 200 162411 "http://52.66.196.122/gitlab/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.026750
+2020-04-13_08:13:21.10371 2020/04/13 08:13:21 Send static file "/opt/gitlab/embedded/service/gitlab-rails/public/assets/webpack/webpack_runtime.67dda47a839ac118f1d5.bundle.js" ("gzip") for GET "/gitlab/assets/webpack/webpack_runtime.67dda47a839ac118f1d5.bundle.js"
+2020-04-13_08:13:21.10520 52.66.196.122 @ - - [2020-04-13 08:13:21.100895096 +0000 UTC] "GET /gitlab/assets/webpack/webpack_runtime.67dda47a839ac118f1d5.bundle.js HTTP/1.1" 200 2597 "http://52.66.196.122/gitlab/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.004236
+2020-04-13_08:13:21.23630 2020/04/13 08:13:21 Send static file "/opt/gitlab/embedded/service/gitlab-rails/public/assets/webpack/main.9985d32fdb624c88fe40.bundle.js" ("gzip") for GET "/gitlab/assets/webpack/main.9985d32fdb624c88fe40.bundle.js"
+2020-04-13_08:13:21.23775 2020/04/13 08:13:21 Send static file "/opt/gitlab/embedded/service/gitlab-rails/public/assets/webpack/common.6f239be7166c827d3505.bundle.js" ("gzip") for GET "/gitlab/assets/webpack/common.6f239be7166c827d3505.bundle.js"
+2020-04-13_08:13:21.23887 52.66.196.122 @ - - [2020-04-13 08:13:21.235750013 +0000 UTC] "GET /gitlab/assets/webpack/main.9985d32fdb624c88fe40.bundle.js HTTP/1.1" 200 164852 "http://52.66.196.122/gitlab/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.003057
+2020-04-13_08:13:21.23973 52.66.196.122 @ - - [2020-04-13 08:13:21.236678244 +0000 UTC] "GET /gitlab/assets/webpack/common.6f239be7166c827d3505.bundle.js HTTP/1.1" 200 110363 "http://52.66.196.122/gitlab/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.002993
+2020-04-13_08:13:21.61003 2020/04/13 08:13:21 Send static file "/opt/gitlab/embedded/service/gitlab-rails/public/assets/print-74b3d49adeaada27337e759b75a34af7cf3d80051de91d60d40570f5a382e132.css" ("gzip") for GET "/gitlab/assets/print-74b3d49adeaada27337e759b75a34af7cf3d80051de91d60d40570f5a382e132.css"
+2020-04-13_08:13:21.61138 52.66.196.122 @ - - [2020-04-13 08:13:21.6079049 +0000 UTC] "GET /gitlab/assets/print-74b3d49adeaada27337e759b75a34af7cf3d80051de91d60d40570f5a382e132.css HTTP/1.1" 200 347 "http://52.66.196.122/gitlab/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.002567
+2020-04-13_08:13:21.82272 2020/04/13 08:13:21 Send static file "/opt/gitlab/embedded/service/gitlab-rails/public/assets/webpack/emoji.048fc80ba07822b25abc.chunk.js" ("gzip") for GET "/gitlab/assets/webpack/emoji.048fc80ba07822b25abc.chunk.js"
+2020-04-13_08:13:21.82497 52.66.196.122 @ - - [2020-04-13 08:13:21.822606515 +0000 UTC] "GET /gitlab/assets/webpack/emoji.048fc80ba07822b25abc.chunk.js HTTP/1.1" 200 109363 "http://52.66.196.122/gitlab/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.002233
+2020-04-13_08:13:22.09607 2020/04/13 08:13:22 Send static file "/opt/gitlab/embedded/service/gitlab-rails/public/assets/favicon-075eba76312e8421991a0c1f89a89ee81678bcde72319dd3e8047e2a47cd3a42.ico" ("gzip") for GET "/gitlab/assets/favicon-075eba76312e8421991a0c1f89a89ee81678bcde72319dd3e8047e2a47cd3a42.ico"
+2020-04-13_08:13:22.09661 52.66.196.122 @ - - [2020-04-13 08:13:22.095080916 +0000 UTC] "GET /gitlab/assets/favicon-075eba76312e8421991a0c1f89a89ee81678bcde72319dd3e8047e2a47cd3a42.ico HTTP/1.1" 200 1384 "http://52.66.196.122/gitlab/users/sign_in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" 0.001469
+2020-04-13_08:13:37.45134 localhost @ - - [2020-04-13 08:13:37.316857524 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.134411
+2020-04-13_08:14:37.83725 localhost @ - - [2020-04-13 08:14:37.746604054 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.090578
+2020-04-13_08:15:38.52192 localhost @ - - [2020-04-13 08:15:38.212122464 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.309668
+2020-04-13_08:16:38.93906 localhost @ - - [2020-04-13 08:16:38.842266388 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.096725
+2020-04-13_08:17:39.72180 localhost @ - - [2020-04-13 08:17:39.460286498 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.261452
+2020-04-13_08:18:43.58359 localhost @ - - [2020-04-13 08:18:40.068559617 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 3.514967
+2020-04-13_08:19:44.01523 localhost @ - - [2020-04-13 08:19:43.914394082 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.100775
+2020-04-13_08:20:44.59777 localhost @ - - [2020-04-13 08:20:44.431648737 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.165995
+2020-04-13_08:21:45.02013 localhost @ - - [2020-04-13 08:21:44.921712421 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.098363
+2020-04-13_08:22:45.41850 localhost @ - - [2020-04-13 08:22:45.32389542 +0000 UTC] "GET /gitlab/help HTTP/1.1" 200 37650 "" "curl/7.53.0" 0.094549

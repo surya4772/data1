@@ -1,0 +1,43 @@
+Started by upstream project "[8mha:////4K2NPbuNaP5RsWtWw0rKlI/fmg+5xLMdPR3zJl4JU/98AAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy5EgYN/az8JP2AnMSStPyi3HjfxLzE9NTc1LwSsLhXflJ8UGleXmqRPgAHzL8G3QAAAA==[0mPlatform_Management/Job_Runner" build number [8mha:////4EfhqRvG9kxCiZ75G8pGEKDjzwgE0H7l3meuanUeYHjgAAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBk39rPwk/YCcxJK0/KLceN/EvMT01NzUvBKwuFd+UnxQaV5eapG+IQC5Zq1F3gAAAA==[0m1
+originally caused by:
+ Started by upstream project "[8mha:////4GTrkACdA+5FFtALgOwrsDQVJFlEkXaILUgqKXRRxq0WAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JH2f/MSU+ICcxJK0/KJcfQBBvhP8yAAAAA==[0mLoad_Platform" build number [8mha:////4HNf1EQz5dBAQzPep4EPwVxUh+aI9SUKMKYfL49/nuO6AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwkfZ/8xJT4gJzEkrT8olx9QwC2qRdQyQAAAA==[0m1
+ originally caused by:
+  Started by remote host 127.0.0.1
+[EnvInject] - Loading node environment variables.
+[EnvInject] - Preparing an environment for the build.
+[EnvInject] - Keeping Jenkins system variables.
+[EnvInject] - Keeping Jenkins build variables.
+[EnvInject] - Injecting contributions.
+Building on master in workspace /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Custom_Cartridge_Library/workspace
+[WS-CLEANUP] Deleting project workspace...
+Cloning the remote Git repository
+Cloning repository https://github.com/Accenture/adop-dsl-custom-cartridge-properties.git
+ > git init /var/jenkins_home/jobs/Platform_Management/jobs/Setup_Custom_Cartridge_Library/workspace # timeout=10
+Fetching upstream changes from https://github.com/Accenture/adop-dsl-custom-cartridge-properties.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/Accenture/adop-dsl-custom-cartridge-properties.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/Accenture/adop-dsl-custom-cartridge-properties.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Accenture/adop-dsl-custom-cartridge-properties.git # timeout=10
+Fetching upstream changes from https://github.com/Accenture/adop-dsl-custom-cartridge-properties.git
+ > git fetch --tags --progress https://github.com/Accenture/adop-dsl-custom-cartridge-properties.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 84610e69947a4fa1c65a77384c35d2f875e51b67 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 84610e69947a4fa1c65a77384c35d2f875e51b67
+Commit message: "Merge pull request #1 from RobertNorthard/master"
+First time build. Skipping changelog.
+[workspace] $ /bin/bash -ex /tmp/jenkins4798868320591905596.sh
++ echo 'Extracting Custom_Cartridge library to additonal classpath location: /var/jenkins_home/userContent/job_dsl_additional_classpath/'
+Extracting Custom_Cartridge library to additonal classpath location: /var/jenkins_home/userContent/job_dsl_additional_classpath/
++ cp -r src/main/groovy/adop /var/jenkins_home/userContent/job_dsl_additional_classpath/
++ echo '******************'
+******************
++ echo 'Library contents: '
+Library contents: 
++ ls -ltr /var/jenkins_home/userContent/job_dsl_additional_classpath/
+total 8
+drwxr-xr-x 4 jenkins jenkins 4096 Dec  2 06:26 pluggable
+drwxr-xr-x 3 jenkins jenkins 4096 Dec  2 06:26 adop
+Finished: SUCCESS

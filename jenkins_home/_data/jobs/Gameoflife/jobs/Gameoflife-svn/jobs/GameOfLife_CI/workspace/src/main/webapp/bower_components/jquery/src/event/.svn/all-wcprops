@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/jquery/src/event
+END
+ajax.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/jquery/src/event/ajax.js
+END
+alias.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/jquery/src/event/alias.js
+END
+support.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gameoflife/!svn/ver/2/src/main/webapp/bower_components/jquery/src/event/support.js
+END

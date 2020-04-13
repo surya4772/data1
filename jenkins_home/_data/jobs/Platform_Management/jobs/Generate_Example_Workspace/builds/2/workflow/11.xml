@@ -1,0 +1,69 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@2.18">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.53">
+    <parentIds>
+      <string>10</string>
+    </parentIds>
+    <id>11</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.support.steps.build.BuildTriggerStep</descriptorId>
+  </node>
+  <actions>
+    <wf.a.TimingAction plugin="workflow-api@2.27">
+      <startTime>1575275593666</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogActionImpl>
+      <charset>UTF-8</charset>
+    </s.a.LogActionImpl>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.53">
+      <arguments>
+        <entry>
+          <string>job</string>
+          <wf.a.ArgumentsAction_-NotStoredReason>MASKED_VALUE</wf.a.ArgumentsAction_-NotStoredReason>
+        </entry>
+        <entry>
+          <string>parameters</string>
+          <list>
+            <map>
+              <entry>
+                <string>$class</string>
+                <string>StringParameterValue</string>
+              </entry>
+              <entry>
+                <string>name</string>
+                <string>CARTRIDGE_CLONE_URL</string>
+              </entry>
+              <entry>
+                <string>value</string>
+                <wf.a.ArgumentsAction_-NotStoredReason>MASKED_VALUE</wf.a.ArgumentsAction_-NotStoredReason>
+              </entry>
+            </map>
+            <map>
+              <entry>
+                <string>$class</string>
+                <string>StringParameterValue</string>
+              </entry>
+              <entry>
+                <string>name</string>
+                <string>SCM_PROVIDER</string>
+              </entry>
+              <entry>
+                <string>value</string>
+                <wf.a.ArgumentsAction_-NotStoredReason>MASKED_VALUE</wf.a.ArgumentsAction_-NotStoredReason>
+              </entry>
+            </map>
+          </list>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>false</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.LabelAction plugin="workflow-api@2.27">
+      <displayName>Building ExampleWorkspace » ExampleProject » Cartridge Management » Load_Cartridge</displayName>
+    </wf.a.LabelAction>
+    <io.jenkins.blueocean.listeners.NodeDownstreamBuildAction plugin="blueocean-pipeline-api-impl@1.6.2">
+      <link plugin="blueocean-rest@1.6.2">
+        <href>/blue/rest/organizations/jenkins/pipelines/ExampleWorkspace/pipelines/ExampleProject/pipelines/Cartridge_Management/pipelines/Load_Cartridge/runs/2/</href>
+      </link>
+      <description>ExampleWorkspace » ExampleProject » Cartridge Management » Load_Cartridge #2</description>
+    </io.jenkins.blueocean.listeners.NodeDownstreamBuildAction>
+  </actions>
+</Tag>

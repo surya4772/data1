@@ -1,0 +1,88 @@
+8
+
+dir
+2
+http://3.6.38.166/svn/gameoflife/src/main/webapp/bower_components
+http://3.6.38.166/svn/gameoflife
+
+
+
+2019-12-10T06:16:04.524200Z
+2
+admin
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04d4b092-3d98-42ce-bad7-f677c0c1cc9d
+
+angular
+dir
+
+angular-aria
+dir
+
+angular-bootstrap
+dir
+
+angular-cache-buster
+dir
+
+angular-cookies
+dir
+
+angular-loading-bar
+dir
+
+angular-local-storage
+dir
+
+angular-mocks
+dir
+
+angular-resource
+dir
+
+angular-route
+dir
+
+angular-sanitize
+dir
+
+angular-scenario
+dir
+
+angular-ui-router
+dir
+
+bootstrap
+dir
+
+jquery
+dir
+
+json3
+dir
+
+modernizr
+dir
+
+ng-file-upload
+dir
+
+ngInfiniteScroll
+dir
+
+swagger-ui
+dir
+

@@ -65,7 +65,7 @@
     <dependency>
       <groupId>org.jvnet.hudson.plugins</groupId>
       <artifactId>warnings</artifactId>
-      <version>4.49</version>
+      <version>5.0.2</version>
       <optional>true</optional>
     </dependency>
     <dependency>
